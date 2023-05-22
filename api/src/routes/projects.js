@@ -12,4 +12,4 @@ router.put('/:id', projects_controller.updateProject);
 
 router.delete('/:id', projects_controller.deleteProject);
 
-module.exports = router
+module.exports = router;
