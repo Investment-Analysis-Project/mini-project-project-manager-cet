@@ -1,3 +1,5 @@
+const db = require('../db');
+
 const getProjects = async (req, res) => {
     res.send(`List of all projects`);
 };
