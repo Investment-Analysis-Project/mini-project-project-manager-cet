@@ -1,14 +1,15 @@
 .addproject{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 200px;
     align-items: center;
     margin-top: 10px;
 }
 
 .inputform{
     background: rgb(41, 96, 216);
-    height: 100%;
+    height: 100px;
     width: 100%;
     max-width:1024px ;
     display: flex;
@@ -17,4 +18,15 @@
     gap:5px;
     padding-left: 1px;
     padding-right: 1px;
+}
+
+.filecomponent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    height: 200px;
+    align-items: center;
+    margin-top: 5px;
+    gap:5px;
 }

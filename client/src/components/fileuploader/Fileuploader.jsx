@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import baseurl from '../../baseurl/baseurl';
 import { Fragment } from 'react';
+import './fileuploader.css';
+import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Fileupload = () => {
 
     const [filename,setfilename]=useState('Chose File');
     const [file,setfile]=useState('');
+
+    const {setUrl}=useContext(ProjectsContext);
 
     const change = (e) => {
         setfile(e.target.files[0]);
@@ -24,22 +28,20 @@ const Fileupload = () => {
                 }
             });
             const fileUrl=res.data;
-            console.log(fileUrl);
+            setUrl(fileUrl);
         }catch(err){
             console.log(err);
         }
     }   
 
   return (
-    <Fragment>
-        <form className='container mt-4'>
-            <div className='custom-file mb-4'>
-                <input type="file" className="custom-file-input border border-dark rounded" id="customFile" onChange={change}/>
-                <label className="custom-file-label" htmlFor="customFile">{filename}</label>
-            </div>
-            <input type='submit' value="Upload" className='btn btn-primary bt-block mt-4' onClick={submit}></input>
-        </form>
-    </Fragment>
+   <>
+    <div className='inputupload'>
+        <input type="file" className="customfile" onChange={change}/>
+        <label className="filelabel" htmlFor="customFile">{filename}</label>
+    </div>
+    <button onClick={submit}>Upload Abstract</button>
+    </>
   );
 }
 

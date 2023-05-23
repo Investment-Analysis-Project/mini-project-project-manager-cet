@@ -1,0 +1,26 @@
+.customfile{
+    border:2px solid black;
+    height: 50%;
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    background: rgb(4, 169, 230);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.inputupload{
+    padding-top: 25px;
+    width: 100%;
+    max-width: 1024px;
+    background:red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

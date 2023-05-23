@@ -3,6 +3,7 @@ import './addproject.css';
 import baseurl from '../../baseurl/baseurl';
 import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
+import Fileuploader from '../fileuploader/Fileuploader'
 
 const Addproject = () => {
     const [p_id,setp_id]=useState("");
@@ -13,7 +14,7 @@ const Addproject = () => {
     const [completed,setcompleted]=useState("");
     const [abstract,setabstract]=useState("");
 
-    const {addProject}=useContext(ProjectsContext);
+    const {addProject,url}=useContext(ProjectsContext);
 
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -26,7 +27,7 @@ const Addproject = () => {
                 team_id,
                 domain,
                 completed,
-                abstract
+                abstract:url
             });
             addProject(response.data[0])
             console.log(response.data[0]);
@@ -36,34 +37,38 @@ const Addproject = () => {
     };
 
     return(
-        <div className='addproject'>
-        <form className='inputform'>
-            <div class="form-group">
-                <input type="text" class="form-control" value={p_id} onChange={e=>setp_id(e.target.value)} placeholder="ID"/>
+        <>
+            <div className='addproject'>
+                <form className='inputform'>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value={p_id} onChange={e=>setp_id(e.target.value)} placeholder="ID"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value={p_name} onChange={e=>setp_name(e.target.value)} placeholder="Name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value={p_desc} onChange={e=>setp_desc(e.target.value)} placeholder="Desc"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team_Id"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value={domain} onChange={e=>setdomain(e.target.value)} placeholder="Domain"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" value={completed} onChange={e=>setcompleted(e.target.value)} placeholder="Completed"/>
+                    </div>
+                    
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary" onClick={submitForm}>Add</button>
+                    </div> 
+                </form>
+                <div className='filecomponent'>
+                    <Fileuploader/>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" value={p_name} onChange={e=>setp_name(e.target.value)} placeholder="Name"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" value={p_desc} onChange={e=>setp_desc(e.target.value)} placeholder="Desc"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control"  value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team_Id"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" value={domain} onChange={e=>setdomain(e.target.value)} placeholder="Domain"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" value={completed} onChange={e=>setcompleted(e.target.value)} placeholder="Completed"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" value={abstract} onChange={e=>setabstract(e.target.value)} placeholder="Abstract"/>
-            </div>
-            <div class="form-group">
-            <button type="submit" class="btn btn-primary" onClick={submitForm}>Add</button>
-            </div> 
-        </form>
-        </div>
+            
+        </>
     );
 }
 
