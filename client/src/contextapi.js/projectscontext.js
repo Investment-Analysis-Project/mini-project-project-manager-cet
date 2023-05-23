@@ -7,7 +7,11 @@ export const ProjectsContextProvider = (props)=>{
 
     const [projects,setProjects]=useState([]);
 
-    const contextValues={projects,setProjects};
+    const addProject= (project)=>{
+        setProjects([...projects,project]);
+    };
+
+    const contextValues={projects,setProjects,addProject};
 
     return(
         <ProjectsContext.Provider value={contextValues}>

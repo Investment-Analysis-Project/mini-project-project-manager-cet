@@ -12,3 +12,7 @@
     height: 100%;
     margin-top: 10px;
 }
+
+#projectpointer{
+    cursor: pointer;
+}

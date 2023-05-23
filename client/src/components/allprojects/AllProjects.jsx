@@ -16,12 +16,12 @@ const AllProjects = (props) => {
             const response = await baseurl.get("/projects");
             setProjects(response.data);
             console.log(response.data);
-            console.log(projects );
+            console.log(projects);
         }catch(err){
             console.log(err)
         }
-        };
-    fetchData();
+    };
+        fetchData();
   },[]);
 
     return(
@@ -30,19 +30,19 @@ const AllProjects = (props) => {
             <table className="table table-striped table-dark">
 
             <thead>
-            <tr className='bg-primary'>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Domain</th>
-                <th scope="col">Status</th>
-            </tr>
+                <tr className='bg-primary'>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Domain</th>
+                    <th scope="col">Status</th>
+                </tr>
             </thead>
 
             <tbody>
             {projects.map((res,i)=>{
                 return(
                 <tr key={i}>
-                <td>{res.p_id}</td>
+                <td onClick={()=>navigate(`/project/${res.p_id}`)} id="projectpointer">{res.p_id}</td>
                 <td>{res.p_name}</td>
                 <td>{res.domain}</td>
                 <td>{res.completed ? "Finished" : "Ongoing"}</td>

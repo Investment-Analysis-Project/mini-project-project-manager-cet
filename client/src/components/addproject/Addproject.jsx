@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './addproject.css';
 import baseurl from '../../baseurl/baseurl';
+import { useContext } from 'react';
+import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Addproject = () => {
     const [p_id,setp_id]=useState("");
@@ -10,6 +12,8 @@ const Addproject = () => {
     const [domain,setdomain]=useState("");
     const [completed,setcompleted]=useState("");
     const [abstract,setabstract]=useState("");
+
+    const {addProject}=useContext(ProjectsContext);
 
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -24,7 +28,8 @@ const Addproject = () => {
                 completed,
                 abstract
             });
-            console.log(response.data);
+            addProject(response.data[0])
+            console.log(response.data[0]);
         }catch(err){
             console.log(err);
         }
