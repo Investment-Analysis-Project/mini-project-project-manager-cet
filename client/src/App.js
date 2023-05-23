@@ -1,14 +1,24 @@
-import baseurl from './baseurl/baseurl';
-import Fileupload from './component/Fileupload';
+import React from 'react';
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import { Home } from './pages/home/Home';
+import Project from './pages/project/Project';
+import Guides from './pages/guides/Guides';
+import { ProjectsContextProvider } from './contextapi.js/projectscontext';
+
 
 function App() {
   return (
-    <div className='container mt-4'>
-      <h4 className='display-4 text-center mb-4'>
-        <i className='fab fa-react'/>React File Upload
-      </h4>
-      <Fileupload/>
-    </div>
+    <ProjectsContextProvider>
+      <>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/project" element={<Project />}/>
+            <Route path="/guides" element={<Guides />}/>
+          </Routes>
+        </BrowserRouter>
+      </>
+    </ProjectsContextProvider>
   );
 }
 

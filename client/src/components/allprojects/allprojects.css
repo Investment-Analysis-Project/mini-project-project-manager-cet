@@ -1,0 +1,14 @@
+.allprojects{
+    height: 100vh;
+    color: azure;
+    display: flex;
+    justify-content: center;
+}
+
+.projectcontainer{
+    width: 100%;
+    max-width: 1024px;
+    background: white;
+    height: 100%;
+    margin-top: 10px;
+}

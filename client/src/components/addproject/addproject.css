@@ -1,0 +1,20 @@
+.addproject{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.inputform{
+    background: rgb(41, 96, 216);
+    height: 100%;
+    width: 100%;
+    max-width:1024px ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:5px;
+    padding-left: 1px;
+    padding-right: 1px;
+}

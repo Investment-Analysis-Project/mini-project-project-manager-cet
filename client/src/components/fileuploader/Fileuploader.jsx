@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import baseurl from '../baseurl/baseurl';
+import baseurl from '../../baseurl/baseurl';
 import { Fragment } from 'react';
 
 const Fileupload = () => {
@@ -32,7 +32,7 @@ const Fileupload = () => {
 
   return (
     <Fragment>
-        <form>
+        <form className='container mt-4'>
             <div className='custom-file mb-4'>
                 <input type="file" className="custom-file-input border border-dark rounded" id="customFile" onChange={change}/>
                 <label className="custom-file-label" htmlFor="customFile">{filename}</label>
