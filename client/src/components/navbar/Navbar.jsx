@@ -9,9 +9,9 @@ const Navbar = () => {
     return(
         <div className='navbar'>
             <button onClick={()=>{navigate('/')}}>Home</button>
-            <button onClick={()=>{navigate('/')}}>Add Students</button>
-            <button onClick={()=>{navigate('/')}}>Add Guides</button>
-            <button onClick={()=>{navigate('/')}}>Add Teams</button>
+            <button onClick={()=>{navigate('/students')}}>Students</button>
+            <button onClick={()=>{navigate('/guides')}}>Guides</button>
+            <button onClick={()=>{navigate('/teams')}}>Teams</button>
         </div>
     );
 }

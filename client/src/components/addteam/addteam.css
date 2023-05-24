@@ -1,0 +1,23 @@
+.addteam{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inputform{
+    background: rgb(41, 96, 216);
+    width: 100%;
+    max-width:1024px ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:5px;
+    padding: 5px;
+    margin-top: 20px;
+}
+.inputform input{
+    outline: none;
+}

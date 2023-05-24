@@ -19,12 +19,12 @@ export const ProjectsContextProvider = (props)=>{
         setGuides([...guides,guide]);
     }
 
-    const addTeam= (guide)=>{
-        setGuides([...teams,guide]);
+    const addTeam= (team)=>{
+        setTeams([...teams,team]);
     }
 
-    const addStudent= (guide)=>{
-        setGuides([...students,guide]);
+    const addStudent= (student)=>{
+        setStudents([...students,student]);
     }
 
     const contextValues={projects,setProjects,addProject,guides,setGuides,addGuide,teams,setTeams,addTeam,
