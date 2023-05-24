@@ -26,6 +26,7 @@ const AllProjects = (props) => {
 
     return(
     <div className='allprojects'>
+        <h1 className='mainhead'>Projects List</h1>
         <div className='projectcontainer'>
             <table className="table table-striped table-dark">
 

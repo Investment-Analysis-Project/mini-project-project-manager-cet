@@ -36,17 +36,17 @@ const Addguide = () => {
     return(
         <>
             <div className='addguide'>
-                <h1>Add Guide</h1>
+                <h1>Project Guides</h1>
                 <div className='inputform'>
-                        <input type="text" value={g_id} onChange={e=>setg_id(e.target.value)} placeholder="ID"/>
+                        <input className='guideinput' type="text" value={g_id} onChange={e=>setg_id(e.target.value)} placeholder="ID"/>
             
-                        <input type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
+                        <input className='guideinput' type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
                    
-                        <input type="text" value={areas_of_interest1} onChange={e=>setareas_of_interest1(e.target.value)} placeholder="Skill 1"/>
+                        <input className='guideinput' type="text" value={areas_of_interest1} onChange={e=>setareas_of_interest1(e.target.value)} placeholder="Skill 1"/>
 
-                        <input type="text" value={areas_of_interest2} onChange={e=>setareas_of_interest2(e.target.value)} placeholder="Skill 2"/>
+                        <input className='guideinput' type="text" value={areas_of_interest2} onChange={e=>setareas_of_interest2(e.target.value)} placeholder="Skill 2"/>
 
-                        <button type="submit" className='btn' onClick={submitForm}>Add</button> 
+                        <button className='guidebut' type="submit"  onClick={submitForm}>Add</button> 
                 </div>
             </div>
         </>

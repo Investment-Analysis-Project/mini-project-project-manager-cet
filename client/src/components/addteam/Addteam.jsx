@@ -32,13 +32,13 @@ const Addteam = () => {
     return(
         <>
             <div className='addteam'>
-                <h1>Add Student</h1>
+                <h1>Project Teams</h1>
                 <div className='inputform'>
-                        <input type="text" value={t_id} onChange={e=>sett_id(e.target.value)} placeholder="ID"/>
-                        <input type="text" value={guide_id} onChange={e=>setguide_id(e.target.value)} placeholder="Guide Id"/>
-                        <input type="text" value={grad_year} onChange={e=>setgrad_year(e.target.value)} placeholder="Grad Year"/>
-                        <input type="text" value={program} onChange={e=>setprogram(e.target.value)} placeholder="Program"/>
-                        <button type="submit" classguide_id='btn' onClick={submitForm}>Add</button> 
+                        <input className='teaminput' type="text" value={t_id} onChange={e=>sett_id(e.target.value)} placeholder="ID"/>
+                        <input className='teaminput' type="text" value={guide_id} onChange={e=>setguide_id(e.target.value)} placeholder="Guide Id"/>
+                        <input className='teaminput' type="text" value={grad_year} onChange={e=>setgrad_year(e.target.value)} placeholder="Grad Year"/>
+                        <input className='teaminput' type="text" value={program} onChange={e=>setprogram(e.target.value)} placeholder="Program"/>
+                        <button className='teambut' type="submit" classguide_id='btn' onClick={submitForm}>Add</button> 
                 </div>
             </div>
         </>

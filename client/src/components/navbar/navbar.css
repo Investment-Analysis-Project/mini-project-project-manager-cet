@@ -4,7 +4,7 @@
 
 .navbar{
     background: rgb(23, 91, 249);
-    max-height: 100px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,11 +26,15 @@
     outline: none;
     color: black;
     font-weight: 600;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .navbut:hover {
     background-color:#25da7c;
     transition: 0.7s;
+    outline: none;
 }
 
 .admin{

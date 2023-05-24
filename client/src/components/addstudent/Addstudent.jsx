@@ -31,15 +31,15 @@ const Addstudent = () => {
     return(
         <>
             <div className='addstudent'>
-                <h1>Add Student</h1>
+                <h1 className='studenthead'>Student List</h1>
                 <div className='inputform'>
-                        <input type="text" value={s_id} onChange={e=>sets_id(e.target.value)} placeholder="ID"/>
+                        <input className='studinput' type="text" value={s_id} onChange={e=>sets_id(e.target.value)} placeholder="ID"/>
             
-                        <input type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
+                        <input className='studinput' type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
                    
-                        <input type="text" value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team ID"/>
+                        <input className='studinput' type="text" value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team ID"/>
 
-                        <button type="submit" className='btn' onClick={submitForm}>Add</button> 
+                        <button className='studbut' type="submit" onClick={submitForm}>Add</button> 
                 </div>
             </div>
         </>

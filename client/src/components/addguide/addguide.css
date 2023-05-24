@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 200px;
     align-items: center;
     margin-top: 20px;
 }
@@ -17,7 +17,29 @@
     gap:5px;
     padding: 5px;
     margin-top: 20px;
+    font-weight: 600;
+    font-size: 18PX;
 }
-.inputform input{
+
+.guideinput{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
     outline: none;
 }
+
+.guidebut{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+}
+
+.guidebut:hover{
+    outline: none;
+    background:rgb(45, 240, 126);
+}
+
+
+

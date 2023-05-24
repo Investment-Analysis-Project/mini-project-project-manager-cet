@@ -2,8 +2,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
     align-items: center;
+    margin-top: 20px;
+}
+
+.studenthead{
     margin-top: 20px;
 }
 
@@ -18,6 +21,23 @@
     padding: 5px;
     margin-top: 20px;
 }
-.inputform input{
+
+.studinput{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
     outline: none;
+}
+
+.studbut{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+}
+
+.studbut:hover{
+    outline: none;
+    background:rgb(45, 240, 126);
 }

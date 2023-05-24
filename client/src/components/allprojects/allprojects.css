@@ -1,8 +1,14 @@
 .allprojects{
     height: 100vh;
-    color: azure;
+    color: rgb(0, 0, 0);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center;align-items: center;
+}
+
+.mainhead{
+    margin-top: 30px;
+    font-weight: 800;
 }
 
 .projectcontainer{
