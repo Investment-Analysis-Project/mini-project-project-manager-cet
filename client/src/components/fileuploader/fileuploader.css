@@ -1,29 +1,44 @@
 .customfile{
     border:2px solid black;
-    height: 50%;
+    height: 100%;
     width: 100%;
     max-width: 580px;
     display: flex;
     justify-content: space-between;
     font-weight: 700;
+    background: aliceblue;
 }
 
-button{
-    background:rgb(45, 240, 126);
+.upbut{
+    background: aliceblue;
     margin-bottom: 10px;
     border-radius: 5px;
+    border:none;
     outline: none;
-    font-weight: 700;
+    font-weight: 500;
+    color: aliceblue;
+    margin-top: 8px;
+    color: black;
+}
+
+.upbut:hover{
+    background:rgb(45, 240, 126);
+    outline: none;
 }
 
 .inputupload{
-    padding-top: 25px;
     width: 100%;
     max-width: 1024px;
-    background:rgb(45, 240, 126);
+    background: rgb(41, 96, 216);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-weight: 700;
+    gap: 5px;
+}
+
+.filelabel{
+    margin-top: 8px;
+    color: aliceblue;
 }

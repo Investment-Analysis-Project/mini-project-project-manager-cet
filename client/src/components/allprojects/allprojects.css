@@ -16,3 +16,8 @@
 #projectpointer{
     cursor: pointer;
 }
+
+#projectpointer:hover{
+    background:rgb(45, 240, 126);
+    color: black;
+}

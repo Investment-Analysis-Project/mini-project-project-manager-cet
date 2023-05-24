@@ -1,10 +1,38 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 .navbar{
     background: rgb(23, 91, 249);
     max-height: 100px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar button{
+.items{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    gap:8px;
+}
+
+.navbut{
     cursor: pointer;
+    border: 5px;
+    background: aliceblue;
+    outline: none;
+    color: black;
+    font-weight: 600;
+}
+
+.navbut:hover {
+    background-color:#25da7c;
+    transition: 0.7s;
+}
+
+.admin{
+    margin-top: 5px;
 }

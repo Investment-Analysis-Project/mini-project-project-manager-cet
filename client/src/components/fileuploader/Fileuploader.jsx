@@ -28,6 +28,7 @@ const Fileupload = () => {
                 }
             });
             const fileUrl=res.data;
+            console.log(res.data)
             setUrl(fileUrl);
         }catch(err){
             console.log(err);
@@ -35,13 +36,11 @@ const Fileupload = () => {
     }   
 
   return (
-   <>
     <div className='inputupload'>
         <input type="file" className="customfile" onChange={change}/>
         <label className="filelabel" htmlFor="customFile">{filename}</label>
+        <button className='upbut' onClick={submit}>Upload Abstract</button>
     </div>
-    <button onClick={submit}>Upload Abstract</button>
-    </>
   );
 }
 

@@ -39,35 +39,28 @@ const Addproject = () => {
     return(
         <>
             <div className='addproject'>
-                <form className='inputform'>
-                    <div class="form-group">
-                        <input type="text" class="form-control" value={p_id} onChange={e=>setp_id(e.target.value)} placeholder="ID"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" value={p_name} onChange={e=>setp_name(e.target.value)} placeholder="Name"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" value={p_desc} onChange={e=>setp_desc(e.target.value)} placeholder="Desc"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control"  value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team_Id"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" value={domain} onChange={e=>setdomain(e.target.value)} placeholder="Domain"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" value={completed} onChange={e=>setcompleted(e.target.value)} placeholder="Completed"/>
-                    </div>
-                    
-                    <div class="form-group">
-                    <button type="submit" class="btn btn-primary" onClick={submitForm}>Add</button>
-                    </div> 
-                </form>
+                <div className='inputform'>
+                   
+                        <input className='inp' type="text" value={p_id} onChange={e=>setp_id(e.target.value)} placeholder="ID"/>
+                   
+                        <input className='inp' type="text" value={p_name} onChange={e=>setp_name(e.target.value)} placeholder="Name"/>                
+                   
+                        <input className='inp' type="text" value={p_desc} onChange={e=>setp_desc(e.target.value)} placeholder="Desc"/>
+                
+                        <input className='inp' type="text" value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team_Id"/>
+                         
+                        <input className='inp' type="text" value={domain} onChange={e=>setdomain(e.target.value)} placeholder="Domain"/>
+                              
+                        <input className='inp' type="text" value={completed} onChange={e=>setcompleted(e.target.value)} placeholder="Completed"/>
+                             
+                        <button type="submit" className='but' onClick={submitForm}>Add</button>
+        
+                </div>
+
                 <div className='filecomponent'>
                     <Fileuploader/>
                 </div>
-            </div>
-            
+            </div>  
         </>
     );
 }

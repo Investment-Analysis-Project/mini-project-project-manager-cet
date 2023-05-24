@@ -8,10 +8,15 @@ const Navbar = () => {
 
     return(
         <div className='navbar'>
-            <button onClick={()=>{navigate('/')}}>Home</button>
-            <button onClick={()=>{navigate('/students')}}>Students</button>
-            <button onClick={()=>{navigate('/guides')}}>Guides</button>
-            <button onClick={()=>{navigate('/teams')}}>Teams</button>
+            <div className='items'>
+                <button className='navbut' onClick={()=>{navigate('/')}}>Home</button>
+                <button className='navbut' onClick={()=>{navigate('/students')}}>Students</button>
+                <button className='navbut' onClick={()=>{navigate('/guides')}}>Guides</button>
+                <button className='navbut' onClick={()=>{navigate('/teams')}}>Teams</button>
+            </div>
+            <div className='admin'>
+                <button className='navbut' onClick={()=>{navigate('/login')}}>Admin Login</button>
+            </div>
         </div>
     );
 }
