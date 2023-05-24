@@ -6,7 +6,6 @@ import Guides from './pages/guides/Guides';
 import Team from './pages/team/Team';
 import { ProjectsContextProvider } from './contextapi.js/projectscontext';
 
-
 function App() {
   return (
     <ProjectsContextProvider>

@@ -19,6 +19,16 @@ const getidStudent = async(req,res)=>{
     }
 };
 
+const getteamStudent = async(req,res)=>{
+    try{
+        const {id}=req.params;
+        const {rows} = await db.query('SELECT * FROM students where team_id=$1',[id]);
+        res.json(rows);
+    }catch(err){
+        console.log(err);
+    }
+};
+
 const addStudent = async(req,res)=>{
     try{
         const {s_id,name,team_id} = req.body;
@@ -50,4 +60,4 @@ const deleteStudent = async(req,res)=>{
     }
 };
 
-module.exports = {getAllStudents,getidStudent,addStudent,updateStudent,deleteStudent};
+module.exports = {getAllStudents,getidStudent,getteamStudent,addStudent,updateStudent,deleteStudent};

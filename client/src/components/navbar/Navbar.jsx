@@ -8,7 +8,10 @@ const Navbar = () => {
 
     return(
         <div className='navbar'>
-            <h1 onClick={()=>{navigate('/')}}>This Navbar</h1>
+            <button onClick={()=>{navigate('/')}}>Home</button>
+            <button onClick={()=>{navigate('/')}}>Add Students</button>
+            <button onClick={()=>{navigate('/')}}>Add Guides</button>
+            <button onClick={()=>{navigate('/')}}>Add Teams</button>
         </div>
     );
 }

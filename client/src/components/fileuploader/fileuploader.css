@@ -5,22 +5,25 @@
     max-width: 580px;
     display: flex;
     justify-content: space-between;
+    font-weight: 700;
 }
 
 button{
-    background: rgb(4, 169, 230);
+    background:rgb(45, 240, 126);
     margin-bottom: 10px;
     border-radius: 5px;
     outline: none;
+    font-weight: 700;
 }
 
 .inputupload{
     padding-top: 25px;
     width: 100%;
     max-width: 1024px;
-    background:red;
+    background:rgb(45, 240, 126);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
 }
