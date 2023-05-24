@@ -6,7 +6,7 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const AllProjects = (props) => {
 
-   const {projects,setProjects}=useContext(ProjectsContext);
+   const {projects,setProjects,domain}=useContext(ProjectsContext);
 
     let navigate = useNavigate();
 
@@ -21,8 +21,15 @@ const AllProjects = (props) => {
             console.log(err)
         }
     };
-        fetchData();
-  },[]);
+        fetchData();    
+  },[domain]);
+
+    let filteredprojects = projects;
+        
+    if (domain !== "All"){
+      filteredprojects = projects.filter((item)=>item.domain===domain);
+      console.log(filteredprojects);
+  }
 
     return(
     <div className='allprojects'>
@@ -40,7 +47,7 @@ const AllProjects = (props) => {
             </thead>
 
             <tbody>
-            {projects.map((res,i)=>{
+            {filteredprojects.map((res,i)=>{
                 return(
                 <tr key={i}>
                 <td onClick={()=>navigate(`/project/${res.p_id}`)} id="projectpointer">{res.p_id}</td>

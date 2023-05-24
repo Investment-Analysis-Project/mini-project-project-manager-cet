@@ -1,5 +1,4 @@
 .customfile{
-    border:2px solid black;
     height: 100%;
     width: 100%;
     max-width: 580px;
@@ -35,7 +34,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    gap: 5px;
+    gap: 10px;
 }
 
 .filelabel{
