@@ -13,7 +13,7 @@ const Addguide = () => {
 
     let areas_of_interest = []
    
-    const {guides,setGuides,addGuide}=useContext(ProjectsContext);
+    const {guides,setGuides,addGuide,loged}=useContext(ProjectsContext);
 
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -37,7 +37,7 @@ const Addguide = () => {
         <>
             <div className='addguide'>
                 <h1>Project Guides</h1>
-                <div className='inputform'>
+                {loged ? (<div className='inputform'>
                         <input className='guideinput' type="text" value={g_id} onChange={e=>setg_id(e.target.value)} placeholder="ID"/>
             
                         <input className='guideinput' type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
@@ -47,7 +47,7 @@ const Addguide = () => {
                         <input className='guideinput' type="text" value={areas_of_interest2} onChange={e=>setareas_of_interest2(e.target.value)} placeholder="Skill 2"/>
 
                         <button className='guidebut' type="submit"  onClick={submitForm}>Add</button> 
-                </div>
+                </div>) : <></>}
             </div>
         </>
     );

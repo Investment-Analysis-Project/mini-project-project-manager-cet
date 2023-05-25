@@ -35,18 +35,18 @@ const Allguides = (props) => {
             </thead>
 
             <tbody>
-            {guides.map((res,i)=>{
+            {guides.map((res)=>{
                 return(
-                <tr key={i}>
+                <tr key={res.g_id}>
                 <td>{res.g_id}</td>
                 <td>{res.name}</td>
                 <td>
                     {(res.areas_of_interest).map((aof,i)=>{
                         return(
-                            <>
+                            <div key={i}>
                                 <span>{aof}</span>
                                 <span>&nbsp;</span>
-                            </>
+                            </div>
                         )
                     })}
                 </td>

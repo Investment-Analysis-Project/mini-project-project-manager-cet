@@ -2,25 +2,60 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 500px;
     align-items: center;
-    margin-top: 20px;
+    margin-top:20px;
+
 }
 
 .teamform{
     margin-top: 20px;
-    background: rgb(9, 104, 145);
+    background: rgb(23, 91, 249);
     width:100%;
-    max-width: 1024px;
     height: 100%;
+    max-width: 1024px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 5px;
-    border: 2px solid black;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    gap:30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.teammem{
+.teamitem{
     display: flex;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.teamlabel{
+    font-size: 25px;
+    width: 200px;
+    color: aliceblue;
+    font-weight: 600;
+    text-align: center;
+}
+
+.formcontrol{
+    width: 800px;
+    text-align: center;
+}
+
+.mem{
+    width: 500px;
+}
+.teammem {
+    font-size: 30px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.teamdet{
+    display: flex;
+    align-items: center;
+    gap:20px
 }

@@ -37,33 +37,44 @@ const TeamDetails = () => {
   return(
     <div className='teamdetails'>
         <h1>Team Details</h1>
-        <form className='teamform'>
-            <div class="form-group">
-                <input type="text" class="form-control" value={t_id}/>
+
+        <div className='teamform'>
+
+            <div className='teamitem'>
+                <span className='teamlabel'>Team ID</span>
+                <input type="text" className="formcontrol" value={t_id}/>
             </div>
 
-            {team.map((mem)=>{
-                return(
-                    <div class="teammem">
-                        <span key={mem.s_id}>{mem.s_id}</span>
-                        <span>&nbsp;</span>
-                        <span>{mem.name}</span>
-                    </div>
-                )
-            })}
-
-            <div class="form-group">
-                <input type="text" class="form-control" value={guide_id}/>
+            <div className='teamdet'>
+                <span className='teamlabel'>Members</span>
+                <div className='mem'>
+                {team.map((mem)=>{
+                    return(
+                        <div className="teammem">
+                            <span key={mem.s_id}>{mem.s_id}</span>
+                            <span>&nbsp;</span>
+                            <span>{mem.name}</span>
+                        </div>
+                    )
+                })}
+                </div>
             </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control" value={program}/>
+            <div className='teamitem'>
+                <span className='teamlabel'>Guide ID</span>
+                <input type="text" className="formcontrol" value={guide_id}/>
             </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control"  value={grad_year}/>
+            <div className='teamitem'>
+                <span className='teamlabel'>Program</span>
+                <input type="text" className="formcontrol" value={program}/>
             </div>
-        </form>        
+
+            <div className='teamitem'>
+                <span className='teamlabel'>Graduation Year</span>  
+                <input type="text" className="formcontrol"  value={grad_year}/>
+            </div>
+        </div>        
     </div>
   );
 }

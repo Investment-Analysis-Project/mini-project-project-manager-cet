@@ -14,7 +14,7 @@ const Addproject = () => {
     const [completed,setcompleted]=useState("");
     const [abstract,setabstract]=useState("");
 
-    const {addProject,url}=useContext(ProjectsContext);
+    const {addProject,url,loged}=useContext(ProjectsContext);
 
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -38,7 +38,7 @@ const Addproject = () => {
 
     return(
         <>
-            <div className='addproject'>
+            {loged ? (<div className='addproject'>
                 <div className='inputform'>
                    
                         <input className='inp' type="text" value={p_id} onChange={e=>setp_id(e.target.value)} placeholder="ID"/>
@@ -60,7 +60,7 @@ const Addproject = () => {
                 <div className='filecomponent'>
                     <Fileuploader/>
                 </div>
-            </div>  
+            </div>) : <></>}  
         </>
     );
 }

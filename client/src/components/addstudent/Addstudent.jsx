@@ -10,7 +10,7 @@ const Addstudent = () => {
     const [name,setname]=useState("");
     const [team_id,setteam_id]=useState("");
     
-    const {addStudent}=useContext(ProjectsContext);
+    const {addStudent,loged}=useContext(ProjectsContext);
 
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -32,7 +32,7 @@ const Addstudent = () => {
         <>
             <div className='addstudent'>
                 <h1 className='studenthead'>Student List</h1>
-                <div className='inputform'>
+                {loged ? (<div className='inputform'>
                         <input className='studinput' type="text" value={s_id} onChange={e=>sets_id(e.target.value)} placeholder="ID"/>
             
                         <input className='studinput' type="text" value={name} onChange={e=>setname(e.target.value)} placeholder="Name"/>
@@ -40,7 +40,7 @@ const Addstudent = () => {
                         <input className='studinput' type="text" value={team_id} onChange={e=>setteam_id(e.target.value)} placeholder="Team ID"/>
 
                         <button className='studbut' type="submit" onClick={submitForm}>Add</button> 
-                </div>
+                </div>) : <></>}
             </div>
         </>
     );

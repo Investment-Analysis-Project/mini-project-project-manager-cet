@@ -6,9 +6,11 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const AllProjects = (props) => {
 
-   const {projects,setProjects,domain}=useContext(ProjectsContext);
+   const {projects,setProjects,domain,loged}=useContext(ProjectsContext);
 
     let navigate = useNavigate();
+
+    console.log(loged);
 
     useEffect(()=>{
         const fetchData =async()=>{

@@ -1,0 +1,50 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.loginform{
+    margin-top: 30px;
+    border: 5px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+
+.logintext{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    width: 100%;
+}
+
+.loginput{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.logbut{
+    width: 100px;
+    background: rgb(23, 91, 249);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+button:focus{
+    outline: none;
+  }
+
+  
+.logbut:active{
+    background-color: rgb(151, 6, 6);
+  }
