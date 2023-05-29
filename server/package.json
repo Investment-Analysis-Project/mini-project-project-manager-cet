@@ -1,8 +1,8 @@
 {
-  "name": "api",
+  "name": "server",
   "version": "1.0.0",
   "description": "Backend API for Project Management System for CSE CET",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
