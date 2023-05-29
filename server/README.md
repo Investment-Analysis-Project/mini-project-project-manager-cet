@@ -16,9 +16,13 @@ This dicrectory containd backend for the Project management system.
 ```
 
 3. Install the dependencies:
-```bash npm install```
+```bash 
+npm install
+```
 
 4. Start the server:
-```bash npm start   ```
+```bash
+npm start
+```
 
 The server will start running on http://localhost:3000. or the specified PORT
