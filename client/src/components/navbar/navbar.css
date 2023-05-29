@@ -29,11 +29,11 @@
     outline: none;
     padding: 10px;
     border-radius: 5px;
+    transition: box-shadow 0.3s;
 }
 
-.navbut:hover {
+.navbut:active {
     background-color:#25da7c;
-    transition: 0.7s;
     outline: none;
 }
 
