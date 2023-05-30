@@ -12,17 +12,16 @@
 .upbut{
     background: aliceblue;
     margin-bottom: 10px;
-    border-radius: 5px;
     border:none;
     outline: none;
-    font-weight: 500;
+    font-weight: 600;
     color: aliceblue;
     margin-top: 8px;
     color: black;
     margin-bottom: 20px;
 }
 
-.upbut:hover{
+.upbut:active{
     background:rgb(45, 240, 126);
     outline: none;
 }

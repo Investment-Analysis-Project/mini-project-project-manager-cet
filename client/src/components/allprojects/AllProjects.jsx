@@ -6,7 +6,7 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const AllProjects = (props) => {
 
-   const {projects,setProjects,domain,loged}=useContext(ProjectsContext);
+   const {projects,setProjects,domain,loged,completed,year,program}=useContext(ProjectsContext);
 
     let navigate = useNavigate();
 
@@ -29,11 +29,32 @@ const AllProjects = (props) => {
     let filteredprojects = projects;
         
     if (domain !== "All"){
-      filteredprojects = projects.filter((item)=>item.domain===domain);
+      filteredprojects = filteredprojects.filter((item)=>item.domain===domain);
       console.log(filteredprojects);
-  }
+    }
+
+    if (program !== "All"){
+        filteredprojects = filteredprojects.filter((item)=>item.program===program);
+        console.log(filteredprojects);
+    }
+
+    if (year !== "All"){
+        filteredprojects = filteredprojects.filter((item)=>item.grad_year===year);
+        console.log(filteredprojects);
+    }
+
+    if (completed !== "All"){
+       if(completed==="true"){
+        filteredprojects = filteredprojects.filter((item)=>item.completed===true);
+       }
+
+       if(completed==="false"){
+        filteredprojects = filteredprojects.filter((item)=>item.completed===false);
+       }
+    }
 
     return(
+        
     <div className='allprojects'>
         <h1 className='mainhead'>Projects List</h1>
         <div className='projectcontainer'>

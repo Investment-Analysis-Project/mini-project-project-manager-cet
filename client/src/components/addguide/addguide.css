@@ -18,26 +18,23 @@
     padding: 5px;
     margin-top: 20px;
     font-weight: 600;
-    font-size: 18PX;
 }
 
 .guideinput{
     border: none;
-    border-radius: 5px;
-    height: 40px;
     width: 20%;
     outline: none;
 }
 
 .guidebut{
     border: none;
-    border-radius: 5px;
-    height: 40px;
-    padding: 10px;
+    padding: 5px;
     outline: none;
+    font-size: medium;
+    font-weight: 600;
 }
 
-.guidebut:hover{
+.guidebut:active{
     outline: none;
     background:rgb(45, 240, 126);
 }

@@ -2,7 +2,7 @@ const db = require('../db');
 
 const getAllProjects = async(req,res)=>{
     try{
-        const {rows} = await db.query('SELECT * FROM projects');
+        const {rows} = await db.query('select * from projects as p join teams as t on p.team_id=t.t_id');
         res.json(rows);
     }catch(err){
         console.log(err);

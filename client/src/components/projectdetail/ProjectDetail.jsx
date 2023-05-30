@@ -42,40 +42,40 @@ const ProjectDetail=()=>{
             <h1>Project Details</h1>
             <div className='outputform'>
                     <div className='detitem'>
-                    <label className='lab' htmlFor="aa">Project ID :</label>
+                    <label className='lab' htmlFor="aa">Project ID</label>
                     <input type="text" name='aa' className="formcontrol" value={p_id}/>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="bb">Project Name :</label>
+                    <label className='lab' htmlFor="bb">Project Name</label>
                     <input type="text" name='bb' className="formcontrol" value={p_name}/>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="cc">Project Description :</label>
-                    <input type="text" name='cc' className="formcontrol" value={p_desc}/>
+                    <label className='lab' htmlFor="cc">Project Description</label>
+                    <div className="formcontroldesc">{p_desc}</div>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="dd">Team ID :</label>
+                    <label className='lab' htmlFor="dd">Team ID</label>
                     <input id='nexteam' name='dd' type="text" className="formcontrol"  value={team_id} onClick={()=>{navigate(`/team/${team_id}`)}}/>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="ee">Domain :</label>
+                    <label className='lab' htmlFor="ee">Domain</label>
                     <input type="text" name='ee' className="formcontrol" value={domain}/>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="ff">Status :</label>
+                    <label className='lab' htmlFor="ff">Status</label>
                     <input type="text" name='ff' className="formcontrol" value={completed}/>
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="gg">Abstract :</label>
+                    <label className='lab' htmlFor="gg">View Abstract</label>
                     <input type="text" name='gg' className="formcontrol" id='ablink' value={abstract} onClick={()=>{window.open(abstract)}}/>
                     </div>
-            </div>
+            </div>   
         </div>
     )
 }

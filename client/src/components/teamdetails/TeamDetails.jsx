@@ -45,21 +45,6 @@ const TeamDetails = () => {
                 <input type="text" className="formcontrol" value={t_id}/>
             </div>
 
-            <div className='teamdet'>
-                <span className='teamlabel'>Members</span>
-                <div className='mem'>
-                {team.map((mem)=>{
-                    return(
-                        <div className="teammem">
-                            <span key={mem.s_id}>{mem.s_id}</span>
-                            <span>&nbsp;</span>
-                            <span>{mem.name}</span>
-                        </div>
-                    )
-                })}
-                </div>
-            </div>
-
             <div className='teamitem'>
                 <span className='teamlabel'>Guide ID</span>
                 <input type="text" className="formcontrol" value={guide_id}/>
@@ -73,6 +58,20 @@ const TeamDetails = () => {
             <div className='teamitem'>
                 <span className='teamlabel'>Graduation Year</span>  
                 <input type="text" className="formcontrol"  value={grad_year}/>
+            </div>
+
+            <div className='teamdet'>
+                <span className='teamlabel'>Members</span>
+                <div className='mem'>
+                {team.map((mem)=>{
+                    return(
+                        <div className="teammem">
+                            <span key={mem.s_id}>{mem.s_id}</span>
+                            <span>{mem.name}</span>
+                        </div>
+                    )
+                })}
+                </div>
             </div>
         </div>        
     </div>

@@ -7,7 +7,7 @@
 
 .loginform{
     margin-top: 30px;
-    border: 5px solid black;
+    border: 1.5px solid black;
     padding: 10px;
     display: flex;
     flex-direction: column;

@@ -1,14 +1,9 @@
 .allprojects{
-    height: 100vh;
     color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;align-items: center;
     margin-top: 50px;
-}
-
-.mainhead{
-    position: relative;
 }
 
 .projectcontainer{

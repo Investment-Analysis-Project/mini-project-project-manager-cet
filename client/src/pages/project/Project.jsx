@@ -8,8 +8,7 @@ const Project = () => {
         <div className='navcomp'>
             <Navbar/>
         </div>
-        
-            
+               
         <div className='projectcomp'>
             <ProjectDetail/> 
         </div>

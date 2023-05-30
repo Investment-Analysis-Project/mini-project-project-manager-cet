@@ -4,7 +4,7 @@
 
 .navbar{
     background: rgb(23, 91, 249);
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,14 +21,13 @@
 
 .navbut{
     cursor: pointer;
-    border: 5px;
+    border: none;
     background: aliceblue;
-    outline: none;
     color: black;
     font-weight: 600;
+    font-size: medium;
     outline: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px;
     transition: box-shadow 0.3s;
 }
 

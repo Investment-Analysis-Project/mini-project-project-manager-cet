@@ -4,7 +4,7 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Header = () => {
 
-    const {setDomain}=useContext(ProjectsContext);
+    const {setDomain,setProgram,setYear,setCompleted}=useContext(ProjectsContext);
 
     return(
         <div className='header'>
@@ -12,20 +12,20 @@ const Header = () => {
             <div className='filter'>
                 <div className='drop'>
                     <label htmlFor="program">Program:</label>
-                    <select name="program">
-                        <option value="option1">All</option>
-                        <option value="option1">B.TECH</option>
-                        <option value="option2">M.TECH</option>
+                    <select name="program" onChange={(e)=>setProgram(e.target.value)}>
+                        <option value="All">All</option>
+                        <option value="BTECH">B.TECH</option>
+                        <option value="MTECH">M.TECH</option>
                     </select>
                 </div>
 
                 <div className='drop'>
                     <label htmlFor="year">Year:</label>
-                    <select name="year">
-                        <option value="option1">All</option>
-                        <option value="option1">2023</option>
-                        <option value="option2">2024</option>
-                        <option value="option3">2025</option>
+                    <select name="year" onChange={(e)=>setYear(e.target.value)}>
+                        <option value="All">All</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
                     </select>
                 </div>
 
@@ -41,10 +41,10 @@ const Header = () => {
 
                 <div className='drop'>
                     <label htmlFor="status">Staus:</label>
-                    <select name="status">
-                        <option value="option1">All</option>
-                        <option value="option1">Completed</option>
-                        <option value="option2">Ongoing</option>
+                    <select name="status" onChange={(e)=>setCompleted(e.target.value)}>
+                        <option value="All">All</option>
+                        <option value="true">Completed</option>
+                        <option value="false">Ongoing</option>
                     </select>
                 </div>
             </div>
