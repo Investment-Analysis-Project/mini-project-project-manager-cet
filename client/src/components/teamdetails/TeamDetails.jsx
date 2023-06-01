@@ -38,9 +38,9 @@ const TeamDetails = () => {
     <div className='teamdetails'>
         <h1>Team Details</h1>
 
-        <div className='teamform'>
+        <div className='teamdetailconatiner'>
 
-            <div className='teamitem'>
+            {/* <div className='teamitem'>
                 <span className='teamlabel'>Team ID</span>
                 <input type="text" className="formcontrol" value={t_id}/>
             </div>
@@ -72,7 +72,28 @@ const TeamDetails = () => {
                     )
                 })}
                 </div>
-            </div>
+            </div> */}
+
+                    <div className='teamdivision'>
+                            <p className='teamdet'>Team ID <button className='teamdetbut'>{t_id}</button></p>
+                            <p className='teamdet'>Guide ID<button className='teamdetbut'>{guide_id}</button></p>
+                            <p className='teamdet'>Program<button className='teamdetbut'>{program}</button></p>
+                            <p className='teamdet'>Graduation Year <button className='teamdetbut'>{grad_year}</button></p>
+                    </div>
+
+                    <div className='teamdivision'>
+                    <h1>Members</h1>
+                        <div className='members'>
+                        {team.map((mem)=>{
+                            return(
+                                <div className="eachmem">
+                                    <span className='memid' key={mem.s_id}>{mem.s_id}</span>
+                                    <span className='memname'>{mem.name}</span>
+                                </div>
+                            )
+                        })}
+                        </div>
+                    </div>
         </div>        
     </div>
   );

@@ -90,7 +90,7 @@
 
 .division{
     width: 50%;
-    border: 2px solid;
+    border: 1.5px solid;
     display: flex;
     flex-direction: column;
     padding: 5px;

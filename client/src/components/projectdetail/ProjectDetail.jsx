@@ -4,7 +4,7 @@ import baseurl from '../../baseurl/baseurl';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBarsProgress, faCircleCheck, faCodeBranch, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
+import { faBarsProgress, faCircleCheck, faCodeBranch, faFilePdf, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectDetail=()=>{
     const [p_id,setp_id]=useState("");
@@ -98,10 +98,10 @@ const ProjectDetail=()=>{
                                 <p className='projectteam'>Project Domain <button className='projectsubbut'>{domain}</button></p>
                             </div>
                             <div className='projectsdoc'>
-                                <button className='docbut'>View SRS</button>
-                                <button className='docbut'>View SDD</button>
-                                <button className='docbut'>View Report</button>
-                                <button className='docbut' onClick={()=>{window.open(abstract)}}>View Abstaract</button>
+                                <button className='docbut'><FontAwesomeIcon icon={faFilePdf}/> View SRS</button>
+                                <button className='docbut'><FontAwesomeIcon icon={faFilePdf}/> View SDD</button>
+                                <button className='docbut'><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
+                                <button className='docbut' onClick={()=>{window.open(abstract)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
                             </div>
                         </div>
                     </div>
