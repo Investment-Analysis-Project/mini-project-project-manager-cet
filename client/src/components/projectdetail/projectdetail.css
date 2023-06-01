@@ -145,10 +145,10 @@
 }
 
 .projectsubbut{
-    background:rgb(24, 149, 76);
+    background:rgb(14, 101, 51);
     font-weight: 600;
     border: none;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     transition: box-shadow 0.3s;
     cursor: pointer;
     border-radius: 5px;

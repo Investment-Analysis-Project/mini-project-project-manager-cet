@@ -4,6 +4,7 @@ import baseurl from '../../baseurl/baseurl';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBarsProgress, faCircleCheck, faCodeBranch, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectDetail=()=>{
     const [p_id,setp_id]=useState("");
@@ -87,8 +88,13 @@ const ProjectDetail=()=>{
                     <div className='division'>
                         <div>
                             <div className='projectsub'>
-                                <p className='projectteam'>Project Done By <button className='projectsubbut' onClick={()=>{navigate(`/team/${team_id}`)}}>{team_id}</button></p>
-                                <p className='projectteam'>Status of Project <button className='projectsubbut'>{{completed} ? "Completed" : "Ongoing"}</button></p>
+                                <p className='projectteam'>Project Done By <button className='projectsubbut' onClick={()=>{navigate(`/team/${team_id}`)}}><FontAwesomeIcon icon={faPeopleGroup}/> {team_id}</button></p>
+                                <p className='projectteam'>Status of Project 
+                                    <button className='projectsubbut'>
+                                        {completed ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faCodeBranch}/>} 
+                                        {completed ? " Completed" : " Ongoing"}
+                                    </button>
+                                </p>
                                 <p className='projectteam'>Project Domain <button className='projectsubbut'>{domain}</button></p>
                             </div>
                             <div className='projectsdoc'>
