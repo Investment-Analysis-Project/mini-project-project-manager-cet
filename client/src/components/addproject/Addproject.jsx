@@ -3,7 +3,9 @@ import './addproject.css';
 import baseurl from '../../baseurl/baseurl';
 import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Fileuploader from '../fileuploader/Fileuploader'
+import { faFile, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 const Addproject = () => {
     const [p_id,setp_id]=useState("");
@@ -53,7 +55,7 @@ const Addproject = () => {
                               
                         <input className='inp' type="text" value={completed} onChange={e=>setcompleted(e.target.value)} placeholder="Completed"/>
                              
-                        <button type="submit" className='but' onClick={submitForm}>Add</button>
+                        <button type="submit" className='but' onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button>
         
                 </div>
 

@@ -38,6 +38,7 @@
     border: none;
     outline: none;
     transition: box-shadow 0.3s;
+    cursor: pointer;
 }
 
 button:focus{
@@ -46,5 +47,5 @@ button:focus{
 
   
 .logbut:active{
-    box-shadow: 0px 0px 2px 2px rgb(45, 240, 126);
+    box-shadow: 0px 0px 2px 2px black;
   }

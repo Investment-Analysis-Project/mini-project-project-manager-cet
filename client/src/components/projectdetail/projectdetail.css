@@ -6,16 +6,18 @@
     margin-top: 20px;
 }
 
-.outputform{
+/* .outputform{
     margin-top: 20px;
-    background: rgb(23, 91, 249);
+    background:rgb(45, 240, 126);
+    color: black;
     width:100%;
     max-width: 1024px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5px;
-    gap: 20px;
+    padding: 10px;
+    gap: 30px;
+    border-radius: 5px;
 }
 
 #nexteam{
@@ -34,27 +36,34 @@
 }
 
 .formcontrol{
-    width: 800px;
+    width: 70%;
     font-size: 20px;
     border:none;
     border-radius: 5px;
     outline: none;
     overflow-wrap:break-word;
     text-align: left;
+    padding-left: 10px;
 }
 
 .formcontroldesc{
-    width: 800px;
+    width: 80%;
     font-size: 20px;
     overflow-wrap:break-word;
     text-align: left;
-    color: rgb(93, 212, 119);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    background: rgb(255, 255, 255);
+    border: 2px solid;
 }
 
 .lab{
-    color: aliceblue;
+    color: black;
     font-weight: 500;
     font-size: 20px;
+    width: 20%;
 }
 
 #ablink:active{
@@ -65,4 +74,82 @@
 #ablink{
     cursor: pointer;
     outline: none;
+}
+
+ */
+
+.projectdetailcontainer{
+    margin-top: 20px;
+    color: black;
+    width:100%;
+    max-width: 1024px;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.division{
+    width: 50%;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.projectnameid{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projectid{
+    font-style:italic;
+    color: rgb(4, 91, 68);
+}
+
+.projectsdoc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    margin-top: 30px;
+}
+
+.docbut{
+    width: 50%;
+    background: rgb(23, 91, 249);
+    border: none;
+    color: aliceblue;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.docbut:active{
+    box-shadow: 0px 0px 5px 5px aliceblue;
+    outline: none;
+}
+
+.projectteam{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 5px;
+}
+
+.projectsubbut{
+    background:rgb(24, 149, 76);
+    font-weight: 600;
+    border: none;
+    color: aliceblue;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
 }

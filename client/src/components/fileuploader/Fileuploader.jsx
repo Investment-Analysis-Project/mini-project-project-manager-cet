@@ -3,6 +3,8 @@ import baseurl from '../../baseurl/baseurl';
 import { Fragment } from 'react';
 import './fileuploader.css';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const Fileupload = () => {
 
@@ -39,7 +41,7 @@ const Fileupload = () => {
     <div className='inputupload'>
         <input type="file" className="customfile" onChange={change}/>
         <label className="filelabel" htmlFor="customFile">{filename}</label>
-        <button className='upbut' onClick={submit}>Upload Abstract</button>
+        <button className='upbut' onClick={submit}> <FontAwesomeIcon icon={faUpload}/> Upload Abstract</button>
     </div>
   );
 }

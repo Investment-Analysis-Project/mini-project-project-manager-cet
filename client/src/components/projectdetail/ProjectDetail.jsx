@@ -3,6 +3,7 @@ import './projectdetail.css';
 import baseurl from '../../baseurl/baseurl';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProjectDetail=()=>{
     const [p_id,setp_id]=useState("");
@@ -40,8 +41,8 @@ const ProjectDetail=()=>{
     return(
         <div className='projectdetail'>
             <h1>Project Details</h1>
-            <div className='outputform'>
-                    <div className='detitem'>
+            <div className='projectdetailcontainer'>
+                    {/* <div className='detitem'>
                     <label className='lab' htmlFor="aa">Project ID</label>
                     <input type="text" name='aa' className="formcontrol" value={p_id}/>
                     </div>
@@ -52,7 +53,7 @@ const ProjectDetail=()=>{
                     </div>
 
                     <div className='detitem'>
-                    <label className='lab' htmlFor="cc">Project Description</label>
+                    <label className='lab' htmlFor="cc">Description</label>
                     <div className="formcontroldesc">{p_desc}</div>
                     </div>
 
@@ -74,6 +75,29 @@ const ProjectDetail=()=>{
                     <div className='detitem'>
                     <label className='lab' htmlFor="gg">View Abstract</label>
                     <input type="text" name='gg' className="formcontrol" id='ablink' value={abstract} onClick={()=>{window.open(abstract)}}/>
+                    </div> */}
+                    <div className='division'>
+                        <div className='projectnameid'>
+                            <h1>{p_name}</h1>
+                            <span className='projectid'>{p_id}</span>
+                        </div>
+                        <p className='projectdesc'>{p_desc}</p>
+                    </div>
+
+                    <div className='division'>
+                        <div>
+                            <div className='projectsub'>
+                                <p className='projectteam'>Project Done By <button className='projectsubbut' onClick={()=>{navigate(`/team/${team_id}`)}}>{team_id}</button></p>
+                                <p className='projectteam'>Status of Project <button className='projectsubbut'>{{completed} ? "Completed" : "Ongoing"}</button></p>
+                                <p className='projectteam'>Project Domain <button className='projectsubbut'>{domain}</button></p>
+                            </div>
+                            <div className='projectsdoc'>
+                                <button className='docbut'>View SRS</button>
+                                <button className='docbut'>View SDD</button>
+                                <button className='docbut'>View Report</button>
+                                <button className='docbut' onClick={()=>{window.open(abstract)}}>View Abstaract</button>
+                            </div>
+                        </div>
                     </div>
             </div>   
         </div>
