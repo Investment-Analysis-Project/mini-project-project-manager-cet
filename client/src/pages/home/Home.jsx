@@ -1,19 +1,51 @@
 import React from 'react';
 import './home.css';
 import Navbar from '../../components/navbar/Navbar';
-import Header from '../../components/header/Header';
-import AllProjects from '../../components/allprojects/AllProjects';
-import Addproject from '../../components/addproject/Addproject';
+import { useNavigate } from 'react-router-dom';
+import img1 from './img1.jpg';
+import img2 from './img2.jpg';
+import img3 from './img3.jpg';
+import img4 from './img4.jpg';
 
-
-export const Home = () => {
+const Home = () => {
+    const navigate = useNavigate();
 
     return(
         <>
             <Navbar/>
-            <Header/>
-            <Addproject/>
-            <AllProjects/>
+            <div className='homecontainer'>
+                <div className='homeintro'>
+                    <h1>Welcome to Project Management System</h1>   
+                    <p>
+                        Welcome to the project management system of CSE departmant, where you can find
+                        previous year projects, guides, teams and also check the similarity 
+                        of your abstracts.
+                    </p>
+                </div>
+                <div className='homemenu'>
+                    <div className='homeitem' onClick={()=>navigate('/projects')}>
+                        <img src={img1} alt="" />
+                        <p>See projects</p>
+                    </div>
+
+                    <div className='homeitem' onClick={()=>navigate('/guides')}>
+                        <img src={img2} alt="" />
+                        <p>See guides</p>
+                    </div>
+
+                    <div className='homeitem' onClick={()=>navigate('/teams')}>
+                        <img src={img3} alt="" />
+                        <p>See teams</p>
+                    </div>
+
+                    <div className='homeitem' onClick={()=>navigate('/')}>
+                        <img src={img4} alt="" />
+                        <p>Search similar abstracts</p>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
+
+export default Home;
