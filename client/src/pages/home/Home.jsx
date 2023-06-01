@@ -25,22 +25,22 @@ const Home = () => {
                 <div className='homemenu'>
                     <div className='homeitem' onClick={()=>navigate('/projects')}>
                         <img src={img1} alt="" />
-                        <p>See projects</p>
+                        <p>See Projects</p>
                     </div>
 
                     <div className='homeitem' onClick={()=>navigate('/guides')}>
                         <img src={img2} alt="" />
-                        <p>See guides</p>
+                        <p>See Guides</p>
                     </div>
 
                     <div className='homeitem' onClick={()=>navigate('/teams')}>
                         <img src={img3} alt="" />
-                        <p>See teams</p>
+                        <p>See Teams</p>
                     </div>
 
                     <div className='homeitem' onClick={()=>navigate('/')}>
                         <img src={img4} alt="" />
-                        <p>Search similar abstracts</p>
+                        <p>Search Similar Abstracts</p>
                     </div>
                 </div>
             </div>

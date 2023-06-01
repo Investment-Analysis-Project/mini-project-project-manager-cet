@@ -7,6 +7,7 @@ const Header = () => {
     const {setDomain,setProgram,setYear,setCompleted}=useContext(ProjectsContext);
 
     return(
+        <div className='headercontainer'>
         <div className='header'>
             <h1>Search For Projects</h1>
             <div className='filter'>
@@ -49,6 +50,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 
