@@ -16,14 +16,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    gap:8px;
+    gap:7px;
 }
 
 .navbut{
     cursor: pointer;
     border: none;
-    background: aliceblue;
-    color: black;
+    border-radius: 5px;
+    background: transparent;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: medium;
     outline: none;
@@ -32,7 +33,7 @@
 }
 
 .navbut:active {
-    background-color:#25da7c;
+    box-shadow: 0px 0px 2px 2px rgb(45, 240, 126);
     outline: none;
 }
 
