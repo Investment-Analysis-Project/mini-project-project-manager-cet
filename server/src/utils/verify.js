@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
-const createError = require('./utils');
+const createError = require('./error');
 
 const verifyToken = (req,res,next)=>{
-    const token =req.cookies.access_token;
+    const token = req.cookies.access_token;
 
     if(!token){
         return next(createError(401,"You are not logged in"));
@@ -17,7 +17,7 @@ const verifyToken = (req,res,next)=>{
 
 const verifyUser = (req,res,next)=>{
     verifyToken(req,res,()=>{
-        if(req.user.id===req.params.id || req.user.isAdmin){
+        if(req.user.user_id===req.params.id || req.user.isadmin){
             next();
         }
         else{
@@ -28,7 +28,7 @@ const verifyUser = (req,res,next)=>{
 
 const verifyAdmin = (req,res,next)=>{
     verifyToken(req,res,()=>{
-        if(req.user.isAdmin){
+        if(req.user.isadmin){
             next();
         }
         else{

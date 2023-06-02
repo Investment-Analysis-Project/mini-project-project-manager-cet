@@ -5,13 +5,19 @@ CREATE TABLE Project(
   pro_title VARCHAR(255) NOT NULL,
   pro_desc TEXT, 
   pro_domains VARCHAR[],
-  t_id VARCHAR(10),
+  program VARCHAR(100) NOT NULL,
+  grad_year INTEGER NOT NULL,
+  guide_id VARCHAR(64) NOT NULL,
+  mem_1 VARCHAR(64) NOT NULL,
+  mem_2 VARCHAR(64),
+  mem_3 VARCHAR(64),
+  mem_4 VARCHAR(64),
   pro_status BOOLEAN,
   abstract_link TEXT,
   report_link TEXT,
   hosted_link TEXT,
   code_link TEXT,
-  FOREIGN KEY (t_id) REFERENCES Team(team_id)
+  FOREIGN KEY (guide_id) REFERENCES Faculty(faculty_id)
 );
 
 CREATE TABLE Usertable(
@@ -25,23 +31,11 @@ CREATE TABLE Usertable(
 
 CREATE TABLE Faculty (
   faculty_id VARCHAR PRIMARY KEY,
-  faculty_name VARCHAR NOT NULL,
-  designation VARCHAR NOT NULL,
-  area_of_interest VARCHAR[] NOT NULL,
+  faculty_name VARCHAR,
+  designation VARCHAR,
+  area_of_interest VARCHAR[],
   FOREIGN KEY (faculty_id) REFERENCES Usertable(user_id)
 );
-
-CREATE TABLE Team(
-  team_id VARCHAR(10) PRIMARY KEY,
-  program VARCHAR(100) NOT NULL,
-  grad_year INTEGER NOT NULL,
-  g_id VARCHAR(64) NOT NULL,
-  mem_1 VARCHAR(64) NOT NULL,
-  mem_2 VARCHAR(64),
-  mem_3 VARCHAR(64),
-  mem_4 VARCHAR(64),
-  FOREIGN KEY (g_id) REFERENCES Faculty(faculty_id)
-)
 
 -- create table teams(
 --     t_id VARCHAR(10) PRIMARY KEY NOT NULL,

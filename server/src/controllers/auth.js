@@ -1,41 +1,41 @@
 const createError = require('../utils/error');
 const jwt=require('jsonwebtoken');
+const db = require('../db');
 
 const login = async(req,res,next)=>{
-    
     try{
-        const {username,password}=req.body;
+        const {user_id,user_password}=req.body;
 
-        if(username !== process.env.ADMIN_USERNAME){
-            res.json({message:"Wrong Username",isLoged:false});
+        const user = await db.query('SELECT * FROM Usertable where user_id=$1',[user_id]);
+        if(user.rowCount===0) return next(createError(404,"User not found"));   
+     
+        const password_row = await db.query('SELECT * FROM Usertable where user_password=$1',[user_password]);
+        if(password_row.rowCount===0) return next(createError(404,"Incorrect password"));
+
+        const user_log={
+            user_id:user_id,
+            isadmin:user.rows[0].isadmin
         }
-        else{
-            if(password!== process.env.ADMIN_PASSWORD){
-                res.json({message:"Wrong Password",isLoged:false});
-            }
-            else{
-                res.json({message:"Admin Loged In",isLoged:true})
-            }
-        }
 
-        // if(!user) return next(createError(404,"User not found"));
+        const token=jwt.sign(user_log,process.env.JWT);
 
-        // const isPasswordCorrect=await bcrypt.compare(req.body.password,user.password);
-        // if(!isPasswordCorrect) return next(createError(404,"Incorrect username or password"));
-
-        // const token=jwt.sign({id:user._id, isAdmin:user.isAdmin},process.env.JWT);
-
-        // const{password,isAdmin,...otherDetails}=user._doc
-
-        // res.cookie("access_token",token,{httpOnly:true}).status(200).json({...otherDetails});
+        res.cookie("access_token",token,{httpOnly:true});
+        
+        res.json({auth:true,token:token});
     }catch(err){
-        next(err);
+        console.log(err);
     }
 };
 
-const register = async(req,res,next)=>{
-
-
+const create = async(req,res)=>{
+    try{
+        const {user_id,user_password,user_type,isadmin,email} = req.body;
+        const {rows} = await db.query('INSERT INTO Usertable values($1,$2,$3,$4,$5) RETURNING *',[user_id,user_password,user_type,isadmin,email]);
+        const {results} = await db.query('INSERT INTO Faculty values ($1)',[user_id]);
+        res.json(rows);
+    }catch(err){
+        console.log(err);
+    }
 }
 
-module.exports = {login,register};
+module.exports = {login,create};
