@@ -2,7 +2,7 @@ const db = require('../db');
 
 const getAllGuides = async(req,res)=>{
     try{
-        const {rows} = await db.query('SELECT * FROM guides');
+        const {rows} = await db.query('SELECT id,name,area_of_interest,designation FROM Faculty');
         res.json(rows);
     }catch(err){
         console.log(err);
@@ -12,7 +12,7 @@ const getAllGuides = async(req,res)=>{
 const getidGuide = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {rows} = await db.query('SELECT * FROM guides where g_id=$1',[id]);
+        const {rows} = await db.query('SELECT name,area_of_interest,designation,expirence, contact, email FROM Faculty,Users WHERE Users.id=user_id AND Faculty.id=$1',[id]);
         res.json(rows);
     }catch(err){
         console.log(err);
