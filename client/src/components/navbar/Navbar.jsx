@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartBar, faChartColumn, faChild, faFile, faFileAlt, faHome, faPeopleGroup, faPersonChalkboard, faRightFromBracket, faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-    const {loged,setLoged}=useContext(ProjectsContext);
-
     const navigate = useNavigate();
 
     return(
@@ -17,17 +15,13 @@ const Navbar = () => {
                 <button className='navbut' onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faHome}/> Home</button>
                 <button className='navbut' onClick={()=>{navigate('/projects')}}><FontAwesomeIcon icon={faFileAlt}/> Projects</button>
                 <button className='navbut' onClick={()=>{navigate('/guides')}}><FontAwesomeIcon icon={faPersonChalkboard}/> Guides</button>
-                <button className='navbut' onClick={()=>{navigate('/teams')}}><FontAwesomeIcon icon={faPeopleGroup}/> Teams</button>
-                {loged && <button className='navbut' onClick={()=>{navigate('/students')}}><FontAwesomeIcon icon={faChild}/> Students</button>}
             </div>
-            {loged ? 
-                (<div className='admin'>
-                    <button className='navbut' onClick={()=>{setLoged(false)}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
-                </div>)  : 
-                
-                (<div className='admin'>
-                    <button className='navbut' onClick={()=>{navigate('/login')}}><FontAwesomeIcon icon={faUserSecret}/> Admin</button>
-                </div>)}
+            {/* <div className='admin'>
+                <button className='navbut' onClick={()=>{setLoged(false)}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
+            </div>
+            <div className='admin'>
+                <button className='navbut' onClick={()=>{navigate('/login')}}><FontAwesomeIcon icon={faUserSecret}/> Admin</button>
+            </div> */}
         </div>
     );
 }

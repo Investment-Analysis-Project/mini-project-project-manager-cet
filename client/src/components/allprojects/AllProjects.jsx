@@ -6,11 +6,9 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const AllProjects = (props) => {
 
-   const {projects,setProjects,domain,loged,completed,year,program}=useContext(ProjectsContext);
+   const {projects,setProjects,domain,status,year,program}=useContext(ProjectsContext);
 
     let navigate = useNavigate();
-
-    console.log(loged);
 
     useEffect(()=>{
         const fetchData =async()=>{
@@ -24,7 +22,7 @@ const AllProjects = (props) => {
         }
     };
         fetchData();    
-  },[domain]);
+  },[]);
 
     let filteredprojects = projects;
         
@@ -39,17 +37,17 @@ const AllProjects = (props) => {
     }
 
     if (year !== "All"){
-        filteredprojects = filteredprojects.filter((item)=>item.grad_year===year);
+        filteredprojects = filteredprojects.filter((item)=>item.grad_year===parseInt(year));
         console.log(filteredprojects);
     }
 
-    if (completed !== "All"){
-       if(completed==="true"){
-        filteredprojects = filteredprojects.filter((item)=>item.completed===true);
+    if (status !== "All"){
+       if(status==="true"){
+        filteredprojects = filteredprojects.filter((item)=>item.status===true);
        }
 
-       if(completed==="false"){
-        filteredprojects = filteredprojects.filter((item)=>item.completed===false);
+       if(status==="false"){
+        filteredprojects = filteredprojects.filter((item)=>item.status===false);
        }
     }
 
@@ -72,10 +70,10 @@ const AllProjects = (props) => {
             {filteredprojects.map((res,i)=>{
                 return(
                 <tr key={i}>
-                <td onClick={()=>navigate(`/project/${res.p_id}`)} id="projectpointer">{res.p_id}</td>
-                <td>{res.p_name}</td>
+                <td onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">{res.pro_id}</td>
+                <td>{res.pro_title}</td>
                 <td>{res.domain}</td>
-                <td>{res.completed ? "Finished" : "Ongoing"}</td>
+                <td>{res.status ? "Finished" : "Ongoing"}</td>
                 </tr>);
             })}
             </tbody>

@@ -7,7 +7,6 @@ const Guides = () => {
     return (
       <div className='guides'>
         <Navbar/>
-        <Addguide/>
         <Allguides/>
       </div>
     )

@@ -5,13 +5,13 @@ import ProjectDetail from '../../components/projectdetail/ProjectDetail';
 const Project = () => {
     return (
         <>
-        <div className='navcomp'>
-            <Navbar/>
-        </div>
-               
-        <div className='projectcomp'>
-            <ProjectDetail/> 
-        </div>
+            <div className='navcomp'>
+                <Navbar/>
+            </div>
+                    
+            <div className='projectcomp'>
+                <ProjectDetail/> 
+            </div>
         </>
     )
 }

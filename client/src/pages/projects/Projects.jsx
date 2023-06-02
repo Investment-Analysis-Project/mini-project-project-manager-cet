@@ -12,7 +12,6 @@ export const Projects = () => {
         <>
             <Navbar/>
             <Header/>
-            <Addproject/>
             <AllProjects/>
         </>
     );
