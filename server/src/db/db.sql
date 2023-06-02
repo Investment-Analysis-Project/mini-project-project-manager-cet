@@ -13,8 +13,28 @@ CREATE TABLE ProjectDisplay (
   member4 VARCHAR(64),
   abstract TEXT,
   report TEXT,
+  domains VARCHAR[],
   hosted_link VARCHAR(255),
   code TEXT
+);
+
+CREATE TABLE Users {
+  id SERIAL PRIMARY KEY,
+  username varchar NOT NULL UNIQUE,
+  password VARCHAR NOT NULL,
+  email VARCHAR UNIQUE,
+  user_type VARCHAR NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+};
+
+CREATE TABLE Faculty (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES Users (id),
+  name VARCHAR,
+  designation VARCHAR,
+  area_of_interest VARCHAR[],
+  experience TEXT,
+  contact VARCHAR
 );
 
 -- create table teams(
@@ -23,12 +43,6 @@ CREATE TABLE ProjectDisplay (
 --     program VARCHAR(10) NOT NULL,
 --     grad_year varchar(4) NOT NULL
 -- );
-
--- create table guides(
---     g_id VARCHAR(10) PRIMARY KEY NOT NULL,
---     name VARCHAR(20) NOT NULL,
---     areas_of_interest  VARCHAR[]
--- ); 
 
 -- create table students(
 --     s_id VARCHAR(10) PRIMARY KEY NOT NULL,
