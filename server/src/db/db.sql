@@ -13,6 +13,7 @@ CREATE TABLE ProjectDisplay (
   member4 VARCHAR(64),
   abstract TEXT,
   report TEXT,
+  domains VARCHAR[],
   hosted_link VARCHAR(255),
   code TEXT
 );
