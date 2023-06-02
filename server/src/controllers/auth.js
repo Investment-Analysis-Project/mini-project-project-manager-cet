@@ -2,6 +2,7 @@ const createError = require('../utils/error');
 const jwt=require('jsonwebtoken');
 
 const login = async(req,res,next)=>{
+    
     try{
         const {username,password}=req.body;
 
@@ -32,4 +33,9 @@ const login = async(req,res,next)=>{
     }
 };
 
-module.exports = {login};
+const register = async(req,res,next)=>{
+
+
+}
+
+module.exports = {login,register};

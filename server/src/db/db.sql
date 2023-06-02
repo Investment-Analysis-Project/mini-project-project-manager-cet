@@ -1,41 +1,47 @@
-create database projectmanager;
+create database promansys;
 
-CREATE TABLE ProjectDisplay (
-  id SERIAL PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  program VARCHAR(100) NOT NULL,
-  department VARCHAR(100) NOT NULL,
-  year YEAR NOT NULL,
-  guide VARCHAR(64),
-  member1 VARCHAR(64),
-  member2 VARCHAR(64),
-  member3 VARCHAR(64),
-  member4 VARCHAR(64),
-  abstract TEXT,
-  report TEXT,
-  domains VARCHAR[],
-  hosted_link VARCHAR(255),
-  code TEXT
+CREATE TABLE Project(
+  pro_id VARCHAR(10) PRIMARY KEY,
+  pro_title VARCHAR(255) NOT NULL,
+  pro_desc TEXT, 
+  pro_domains VARCHAR[],
+  t_id VARCHAR(10),
+  pro_status BOOLEAN,
+  abstract_link TEXT,
+  report_link TEXT,
+  hosted_link TEXT,
+  code_link TEXT,
+  FOREIGN KEY (t_id) REFERENCES Team(team_id)
 );
 
-CREATE TABLE Users {
-  id SERIAL PRIMARY KEY,
-  username varchar NOT NULL UNIQUE,
-  password VARCHAR NOT NULL,
-  email VARCHAR UNIQUE,
-  user_type VARCHAR NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT NOW()
-};
+CREATE TABLE Usertable(
+  user_id VARCHAR(10) PRIMARY KEY,
+  user_password VARCHAR(20) NOT NULL,
+  user_type VARCHAR(20) NOT NULL,
+  isAdmin BOOLEAN NOT NULL DEFAULT false,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT NOW()
+);
 
 CREATE TABLE Faculty (
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES Users (id),
-  name VARCHAR,
-  designation VARCHAR,
-  area_of_interest VARCHAR[],
-  experience TEXT,
-  contact VARCHAR
+  faculty_id VARCHAR PRIMARY KEY,
+  faculty_name VARCHAR NOT NULL,
+  designation VARCHAR NOT NULL,
+  area_of_interest VARCHAR[] NOT NULL,
+  FOREIGN KEY (faculty_id) REFERENCES Usertable(user_id)
 );
+
+CREATE TABLE Team(
+  team_id VARCHAR(10) PRIMARY KEY,
+  program VARCHAR(100) NOT NULL,
+  grad_year INTEGER NOT NULL,
+  g_id VARCHAR(64) NOT NULL,
+  mem_1 VARCHAR(64) NOT NULL,
+  mem_2 VARCHAR(64),
+  mem_3 VARCHAR(64),
+  mem_4 VARCHAR(64),
+  FOREIGN KEY (g_id) REFERENCES Faculty(faculty_id)
+)
 
 -- create table teams(
 --     t_id VARCHAR(10) PRIMARY KEY NOT NULL,

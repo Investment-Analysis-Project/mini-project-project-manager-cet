@@ -2,7 +2,7 @@ const db = require('../db');
 
 const getAllProjects = async(req,res)=>{
     try{
-        const {rows} = await db.query('select * from projects as p join teams as t on p.team_id=t.t_id');
+        const {rows} = await db.query('select * from Project as p join Team as t on p.t_id=t.team_id');
         res.json(rows);
     }catch(err){
         console.log(err);
@@ -12,7 +12,7 @@ const getAllProjects = async(req,res)=>{
 const getidProject = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {rows} = await db.query('SELECT * FROM projects where p_id=$1',[id]);
+        const {rows} = await db.query('SELECT * FROM Project where pro_id=$1',[id]);
         res.json(rows);
     }catch(err){
         console.log(err);
