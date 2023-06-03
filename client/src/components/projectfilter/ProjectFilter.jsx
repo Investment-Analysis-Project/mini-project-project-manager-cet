@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import './header.css';
+import './projectfilter.css';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
-const Header = () => {
+const ProjectFilter = () => {
 
     const {setDomain,setProgram,setYear,setStatus}=useContext(ProjectsContext);
 
@@ -38,6 +38,7 @@ const Header = () => {
                         <option value="Machine Learning">Machine Learning</option>
                         <option value="Blockchain">Blockchain</option>
                         <option value="Web App">Web App</option>
+                        <option value="IoT">IoT</option>
                     </select>
                 </div>
 
@@ -55,4 +56,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default ProjectFilter;

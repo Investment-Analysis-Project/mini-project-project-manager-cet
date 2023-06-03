@@ -32,8 +32,8 @@
     margin-top: 30px;
     width: 100%;
     max-width: 1024px;
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    justify-content:space-around
 }
 
 .homeitem{

@@ -43,11 +43,11 @@ const AllProjects = (props) => {
 
     if (status !== "All"){
        if(status==="true"){
-        filteredprojects = filteredprojects.filter((item)=>item.status===true);
+        filteredprojects = filteredprojects.filter((item)=>item.pro_status===true);
        }
 
        if(status==="false"){
-        filteredprojects = filteredprojects.filter((item)=>item.status===false);
+        filteredprojects = filteredprojects.filter((item)=>item.pro_status===false);
        }
     }
 
@@ -69,11 +69,20 @@ const AllProjects = (props) => {
             <tbody>
             {filteredprojects.map((res,i)=>{
                 return(
-                <tr key={i}>
-                <td onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">{res.pro_id}</td>
+                <tr key={i}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
+                <td>{res.pro_id}</td>
                 <td>{res.pro_title}</td>
-                <td>{res.domain}</td>
-                <td>{res.status ? "Finished" : "Ongoing"}</td>
+                <td>
+                    {res.pro_domains.map((item,i)=>{
+                        return(
+                            <>
+                                <span key={i}>{item}</span>
+                                <br></br>
+                            </>
+                        );
+                    })}
+                </td>
+                <td>{res.pro_status ? "Completed" : "Ongoing"}</td>
                 </tr>);
             })}
             </tbody>

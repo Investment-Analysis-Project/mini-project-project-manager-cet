@@ -21,7 +21,7 @@ const login = async(req,res,next)=>{
 
         res.cookie("access_token",token,{httpOnly:true});
         
-        res.json({auth:true,token:token});
+        res.json({auth:true,token:token,isadmin:user.rows[0].isadmin});
     }catch(err){
         console.log(err);
     }
