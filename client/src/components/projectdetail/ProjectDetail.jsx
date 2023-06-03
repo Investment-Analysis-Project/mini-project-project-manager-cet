@@ -54,7 +54,7 @@ const ProjectDetail=()=>{
                 }
             };
             fetchData();
-        },[id]);
+        },[]);
 
 
     return(

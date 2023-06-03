@@ -2,6 +2,7 @@ const createError = require('../utils/error');
 const jwt=require('jsonwebtoken');
 const db = require('../db');
 
+
 const login = async(req,res,next)=>{
     try{
         const {user_id,user_password}=req.body;
@@ -18,9 +19,7 @@ const login = async(req,res,next)=>{
         }
 
         const token=jwt.sign(user_log,process.env.JWT);
-
-        res.cookie("access_token",token,{httpOnly:true});
-        
+   
         res.json({auth:true,token:token,isadmin:user.rows[0].isadmin});
     }catch(err){
         console.log(err);

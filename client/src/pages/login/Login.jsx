@@ -5,13 +5,14 @@ import baseurl from '../../baseurl/baseurl';
 import { useNavigate } from 'react-router-dom';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import Home from '../home/Home';
+import jwt from 'jwt-decode';
 
 const Login = () => {
     const [user_id,setUserId]=useState("");
     const [user_password,setPassword]=useState("");
     const [message,setMessage]=useState("");
-
-    const {auth,setAuth}=useContext(ProjectsContext);
+  
+    const {auth,setAuth,setisAdmin,setUser_id}=useContext(ProjectsContext);
 
     let value=false;
 
@@ -37,9 +38,19 @@ const Login = () => {
                 setMessage(value.message);
                 return;
             }
+
+            const token = value.token;
+            const decodedToken = jwt(token);
+
+            localStorage.setItem('token', token);
+
             setAuth(value.auth);
+            setUser_id(user_id);
             
-            if(value.isadmin) navigate('/admin');
+            if(value.isadmin){
+                setisAdmin(decodedToken.isadmin);
+                navigate('/admin');
+            }
             else navigate(`/guide/${user_id}`);
 
         }catch(err){
@@ -48,11 +59,11 @@ const Login = () => {
     }
 
     return(
-        <>
-            <Navbar/>
+        <div>
+            {!auth ? (<><Navbar/>
             <div className='login'>
                 <h1>User Login</h1>
-                {!auth ? (<div className='loginform'>
+                <div className='loginform'>
                     <div className='logintext'>
                         <span>Username</span>
                         <input type="text" className='loginput' value={user_id} onChange={(e)=>setUserId(e.target.value)}/>
@@ -66,9 +77,9 @@ const Login = () => {
                     <span>{message}</span>
 
                     <button className='logbut' onClick={loginSubmit}>Login</button>
-                </div>) : <Home/>}
-            </div>
-        </>
+                </div>
+            </div></>) : <Home/>}
+        </div>
     )
 }
 

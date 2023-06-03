@@ -8,42 +8,42 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const Fileupload = () => {
 
-//     const [filename,setfilename]=useState('Chose File');
-//     const [file,setfile]=useState('');
+    const [filename,setfilename]=useState('Chose File');
+    const [file,setfile]=useState('');
 
-//     const {setUrl}=useContext(ProjectsContext);
+    const {setab_Url}=useContext(ProjectsContext);
 
-//     const change = (e) => {
-//         setfile(e.target.files[0]);
-//         setfilename(e.target.files[0].name);
-//     }
+    const change = (e) => {
+        setfile(e.target.files[0]);
+        setfilename(e.target.files[0].name);
+    }
 
-//     const submit = async (e)=> {
-//         e.preventDefault();
-//         const formData = new FormData();
-//         formData.append('file',file);
+    const submit = async (e)=> {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file',file);
     
-//         try{  
-//             const res = await baseurl.post('/uploads',formData,{
-//                 headers:{
-//                     'Content-Type':'multipart/form-data'
-//                 }
-//             });
-//             const fileUrl=res.data;
-//             console.log(res.data)
-//             setUrl(fileUrl);
-//         }catch(err){
-//             console.log(err);
-//         }
-//     }   
+        try{  
+            const res = await baseurl.post('/uploads',formData,{
+                headers:{
+                    'Content-Type':'multipart/form-data'
+                }
+            });
+            const fileUrl=res.data;
+            console.log(res.data)
+            setab_Url(fileUrl);
+        }catch(err){
+            console.log(err);
+        }
+    }   
 
-//   return (
-//     <div className='inputupload'>
-//         <input type="file" className="customfile" onChange={change}/>
-//         <label className="filelabel" htmlFor="customFile">{filename}</label>
-//         <button className='upbut' onClick={submit}> <FontAwesomeIcon icon={faUpload}/> Upload Abstract</button>
-//     </div>
-//   );
+  return (
+    <div className='inputupload'>
+        <input type="file" className="customfile" onChange={change}/>
+        <label className="filelabel" htmlFor="customFile">{filename}</label>
+        <button className='upbut' onClick={submit}> <FontAwesomeIcon icon={faUpload}/> Upload Abstract</button>
+    </div>
+  );
 }
 
 export default Fileupload;

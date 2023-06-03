@@ -27,7 +27,6 @@ const addProject = async(req,res)=>{
         const { rows } = await db.query('INSERT INTO Project VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16) RETURNING *',[pro_id,pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,
             pro_status,abstract_link,report_link,hosted_link,code_link]);
 
-        console.log(req.user);
         res.json(rows);
     }catch(err){
         console.log(err);

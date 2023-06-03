@@ -1,10 +1,11 @@
 import React from 'react';
-import './guide.css'
+import './guide.css';
+import Navbar from '../../components/navbar/Navbar';
 
 const Guide = () => {
     return(
         <div>
-            Single Guide
+            <Navbar/>
         </div>
     );
 }

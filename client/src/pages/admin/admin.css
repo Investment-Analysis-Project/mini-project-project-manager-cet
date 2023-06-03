@@ -1,0 +1,4 @@
+.adminprofile{
+    display: flex;
+    flex-direction: column;
+}
