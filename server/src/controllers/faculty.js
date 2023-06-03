@@ -2,7 +2,7 @@ const db = require('../db');
 
 const getAllfaculty = async(req,res)=>{
     try{
-        const {rows} = await db.query('SELECT faculty_id,faculty_name,designation FROM Faculty');
+        const {rows} = await db.query('SELECT * FROM Faculty');
         res.json(rows);
     }catch(err){
         console.log(err);

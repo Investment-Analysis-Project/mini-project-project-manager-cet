@@ -27,7 +27,7 @@ const AllProjects = (props) => {
     let filteredprojects = projects;
         
     if (domain !== "All"){
-      filteredprojects = filteredprojects.filter((item)=>item.domain===domain);
+      filteredprojects = filteredprojects.filter((item)=>item.pro_domains.includes(domain));
       console.log(filteredprojects);
     }
 
@@ -69,16 +69,16 @@ const AllProjects = (props) => {
             <tbody>
             {filteredprojects.map((res,i)=>{
                 return(
-                <tr key={i}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
+                <tr key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
                 <td>{res.pro_id}</td>
                 <td>{res.pro_title}</td>
                 <td>
                     {res.pro_domains.map((item,i)=>{
                         return(
-                            <>
-                                <span key={i}>{item}</span>
+                            <div key={i}>
+                                <span>{item}</span>
                                 <br></br>
-                            </>
+                            </div>
                         );
                     })}
                 </td>

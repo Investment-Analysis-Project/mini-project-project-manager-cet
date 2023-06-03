@@ -22,7 +22,7 @@ app.use('/api/uploads', uploads_routes);
 app.use((err,req,res,next)=>{ 
     const errorStatus = err.status|| 500;
     const errorMessage = err.message|| "Something went wrong!"
-    return res.status(errorStatus).json({
+    res.json({
       success:false,
       status:errorStatus,
       message:errorMessage,

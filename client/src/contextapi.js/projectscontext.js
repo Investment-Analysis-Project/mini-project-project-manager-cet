@@ -12,7 +12,9 @@ export const ProjectsContextProvider = (props)=>{
     const [program,setProgram]=useState("All");
     const [year,setYear]=useState("All");
     const [status,setStatus]=useState("All");
-    
+    const [auth,setAuth]=useState(false);
+    const [skill,setSkill]=useState("All");
+ 
     const addProject= (project)=>{
         setProjects([...projects,project]);
     };
@@ -22,7 +24,7 @@ export const ProjectsContextProvider = (props)=>{
     }
 
     const contextValues={projects,setProjects,addProject,guides,setGuides,addGuide,url,setUrl,domain,
-        setDomain,status,setStatus,program,setProgram,year,setYear};
+        setDomain,status,setStatus,program,setProgram,year,setYear,auth,setAuth,skill,setSkill};
 
     return(
         <ProjectsContext.Provider value={contextValues}>
