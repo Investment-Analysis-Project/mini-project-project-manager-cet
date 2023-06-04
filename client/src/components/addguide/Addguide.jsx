@@ -9,6 +9,8 @@ const Addguide = () => {
     const [user_id,setuser_id]=useState("");
     const [user_password,setuser_passwor]=useState("");
     const [email,setemail]=useState("");
+
+    const {addGuide}=useContext(ProjectsContext);
    
     const submitForm = async(e)=>{
         e.preventDefault();
@@ -29,6 +31,7 @@ const Addguide = () => {
                 }
               }
             );
+            addGuide(response.data[0]);
             console.log(response);
         }catch(err){
             console.log(err);

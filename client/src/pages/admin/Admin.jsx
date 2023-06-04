@@ -7,7 +7,7 @@ import baseurl from '../../baseurl/baseurl';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Admin = () => {
-    const {user_id,setUser_id}=useContext(ProjectsContext);
+    const {user_id}=useContext(ProjectsContext);
     const [email,setemail]=useState("");
 
     const token = localStorage.getItem('token');
@@ -15,11 +15,7 @@ const Admin = () => {
     useEffect(()=>{
         const fetchData =async()=>{
             try{
-            const response = await baseurl.get(`/user/email/${user_id}`,{
-                headers:{
-                    'authorization' : `Bearer ${token}`
-                }
-            });
+            const response = await baseurl.get(`/user/email/${user_id}`);
             setemail(response.data[0].email);
         }catch(err){
             console.log(err)

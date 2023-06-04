@@ -10,6 +10,8 @@ const Allguides = (props) => {
 
     const navigate=useNavigate();
 
+    let filteredguides=[];
+
     useEffect(()=>{
             const fetchData =async()=>{
             try{
@@ -23,7 +25,7 @@ const Allguides = (props) => {
         fetchData();
     },[]);
 
-    let filteredguides = guides;
+    filteredguides = guides;
 
     if (skill !== "All"){
         filteredguides = filteredguides.filter((item)=>item.area_of_interest.includes(skill));

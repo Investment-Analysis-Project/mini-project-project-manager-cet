@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './allprojects.css';
 import { useNavigate } from 'react-router-dom';
 import baseurl from '../../baseurl/baseurl';
@@ -6,17 +6,18 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const AllProjects = (props) => {
 
-   const {projects,setProjects,domain,status,year,program}=useContext(ProjectsContext);
+   const {domain,status,year,program}=useContext(ProjectsContext);
+   const [projects,setProjects]=useState([]);
 
     let navigate = useNavigate();
+
+    let filteredprojects=[];
 
     useEffect(()=>{
         const fetchData =async()=>{
         try{
             const response = await baseurl.get("/projects");
             setProjects(response.data);
-            console.log(response.data);
-            console.log(projects);
         }catch(err){
             console.log(err)
         }
@@ -24,31 +25,28 @@ const AllProjects = (props) => {
         fetchData();    
   },[]);
 
-    let filteredprojects = projects;
-        
+    filteredprojects = projects;
+
     if (domain !== "All"){
-      filteredprojects = filteredprojects.filter((item)=>item.pro_domains.includes(domain));
-      console.log(filteredprojects);
+        filteredprojects = filteredprojects.filter((item)=>item.pro_domains.includes(domain));
     }
 
     if (program !== "All"){
         filteredprojects = filteredprojects.filter((item)=>item.program===program);
-        console.log(filteredprojects);
     }
 
     if (year !== "All"){
         filteredprojects = filteredprojects.filter((item)=>item.grad_year===parseInt(year));
-        console.log(filteredprojects);
     }
 
     if (status !== "All"){
-       if(status==="true"){
+        if(status==="true"){
         filteredprojects = filteredprojects.filter((item)=>item.pro_status===true);
-       }
+        }
 
-       if(status==="false"){
+        if(status==="false"){
         filteredprojects = filteredprojects.filter((item)=>item.pro_status===false);
-       }
+        }
     }
 
     return(

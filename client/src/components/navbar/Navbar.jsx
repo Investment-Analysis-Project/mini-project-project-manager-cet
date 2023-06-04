@@ -9,7 +9,7 @@ import { faFileAlt, faHome, faPersonChalkboard, faRightFromBracket, faSignIn, fa
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const {auth,setAuth,isAdmin,setisAdmin}=useContext(ProjectsContext);
+    const {auth,setAuth,isAdmin,setisAdmin,user_id}=useContext(ProjectsContext);
 
     return(
         <div className='navbar'>
@@ -21,6 +21,8 @@ const Navbar = () => {
                 <button className='navbut' onClick={()=>{navigate('/guides')}}><FontAwesomeIcon icon={faPersonChalkboard}/> Guides</button>
                 
                 {isAdmin && (<button className='navbut' onClick={()=>{navigate('/admin')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Page</button>)}
+
+                {auth && !isAdmin && (<button className='navbut' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faUserSecret}/> Profile</button>)}
             </div>
 
             {auth ? (<div className='admin'>

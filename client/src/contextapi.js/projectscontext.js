@@ -19,7 +19,10 @@ export const ProjectsContextProvider = (props)=>{
     const [skill,setSkill]=useState("All");
     const [isAdmin,setisAdmin]=useState(false);
     const [user_id,setUser_id]=useState("");
- 
+    const [curr_guide_name,setCurr_guide_name]=useState("");
+    const [curr_designation,setCurr_designation]=useState("");
+    const [curr_aof,setCurr_aof]=useState([]);
+    
     const addProject= (project)=>{
         setProjects([...projects,project]);
     };
@@ -31,7 +34,8 @@ export const ProjectsContextProvider = (props)=>{
     const contextValues={projects,setProjects,addProject,guides,setGuides,addGuide,domain,
         setDomain,status,setStatus,program,setProgram,year,setYear,auth,setAuth,skill,setSkill,
         abstract_url,setab_Url,report_url,setreport_Url,hosted_url,sethosted_Url,
-        code_url,setcode_Url,isAdmin,setisAdmin,user_id,setUser_id};
+        code_url,setcode_Url,isAdmin,setisAdmin,user_id,setUser_id,
+        curr_guide_name,setCurr_guide_name,curr_designation,setCurr_designation,curr_aof,setCurr_aof};
 
     return(
         <ProjectsContext.Provider value={contextValues}>
