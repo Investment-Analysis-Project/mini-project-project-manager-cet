@@ -10,7 +10,7 @@ const login = async(req,res,next)=>{
         const user = await db.query('SELECT * FROM Usertable where user_id=$1',[user_id]);
         if(user.rowCount===0) return next(createError(404,"User not found"));   
      
-        const password_row = await db.query('SELECT * FROM Usertable where user_password=$1',[user_password]);
+        const password_row = await db.query('SELECT * FROM Usertable where user_id=$1 AND user_password=$2',[user_id,user_password]);
         if(password_row.rowCount===0) return next(createError(404,"Incorrect password"));
 
         const user_log={

@@ -7,21 +7,44 @@
 
 .profiledetails{
     margin-top: 20px;
-    width: 100%;
-    max-width: 1024px;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 10px;
     gap: 20px;
     border: 2px solid black;
 }
 
+.profileeachdetail{
+    display: flex;
+    flex-direction: column;
+}
+
 .proin{
-    width: 80%;
-    border: 1px solid rgb(2, 81, 2);
+    background: rgb(6, 6, 65);
+    border-radius: 5px;
+    color: aliceblue;
+    border: none;
 }
 
 .profbut{
-    background: black;
-    color: aquamarine;
+    background: rgb(6, 6, 65);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.adminprofiletable{
+    width: 70%;
+    text-align: center;
+    table-layout: fixed
+}
+
+.adminprofiletable th,td{
+    border: 1px solid;
+}
+
+.guidedproject{
+    cursor: pointer;
 }

@@ -85,7 +85,16 @@ const ProjectDetail=()=>{
                                         {pro_status ? " Completed" : " Ongoing"}
                                     </button>
                                 </p>
-                                <p className='projectteam'>Project Domain <button className='projectsubbut'>{pro_domains}</button></p>
+                                <p className='projectteam'>Project Domain 
+                                    {pro_domains.map((item,i)=>{
+                                        return(
+                                            <>
+                                                <button className='projectsubbut' key={i}>{item}</button>
+                                            </>
+                                        )    
+                                    })}
+                                </p>
+                                    
                                 <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
                                 <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
                                 <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${guide_id}`)}>{guide_id}</button></p>     

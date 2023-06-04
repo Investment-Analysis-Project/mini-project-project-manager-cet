@@ -23,7 +23,7 @@ const updateFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
         const {faculty_name,designation,area_of_interest}=req.body;
-        const {rows} = await db.query('UPDATE Faculty SET faculty_name=$2,designation=$3 WHERE faculty_id=$1 RETURNING *',[id,faculty_name,designation]);
+        const {rows} = await db.query('UPDATE Faculty SET faculty_name=$2,designation=$3,area_of_interest=$4 WHERE faculty_id=$1 RETURNING *',[id,faculty_name,designation,area_of_interest]);
         res.json(rows);
     }catch(err){
         console.log(err);

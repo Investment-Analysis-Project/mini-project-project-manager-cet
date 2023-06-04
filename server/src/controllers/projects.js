@@ -19,6 +19,16 @@ const getidProject = async(req,res)=>{
     }
 };
 
+const getidfacultyProject = async(req,res)=>{
+    try{
+        const {id}=req.params;
+        const {rows} = await db.query('SELECT * FROM Project where guide_id=$1',[id]);
+        res.json(rows);
+    }catch(err){
+        console.log(err);
+    }
+};
+
 const addProject = async(req,res)=>{
     try{
         const {pro_id,pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,pro_status,abstract_link,
@@ -52,4 +62,4 @@ const deleteProject = async(req,res)=>{
     }
 };
 
-module.exports = {getAllProjects,getidProject,addProject,updateProject,deleteProject};
+module.exports = {getAllProjects,getidProject,addProject,updateProject,deleteProject,getidfacultyProject};

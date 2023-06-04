@@ -7,17 +7,18 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import baseurl from '../../baseurl/baseurl';
 
 const Profile = () => {
-    const{isAdmin,auth,user_id,setCurr_guide_name,setCurr_designation}=useContext(ProjectsContext);
+    const{isAdmin,auth,user_id,setCurr_guide_name,setCurr_designation,setCurr_aof}=useContext(ProjectsContext);
 
     const navigate = useNavigate();
 
     const {id}=useParams();
 
-    const [faculty_id,setfaculty_id]=useState("yyyy");
+    const [faculty_id,setfaculty_id]=useState("");
     const [faculty_name,setfaculty_name]=useState("");
     const [designation,setdesignation]=useState("");
     const [email,setemail]=useState("");
-    const [aof,setaof]=useState([])
+    const [aof,setaof]=useState([]);
+    const [project,setproject]=useState([]);
 
     useEffect(()=>{
         const fetchData = async()=>{
@@ -32,6 +33,7 @@ const Profile = () => {
 
                 setCurr_guide_name(response1.data[0].faculty_name);
                 setCurr_designation(response1.data[0].designation);
+                setCurr_aof(response1.data[0].area_of_interest);
             }catch(err)
             {
                 console.log(err);
@@ -40,19 +42,79 @@ const Profile = () => {
         fetchData();
     },[]);
 
+    useEffect(()=>{
+        const fetchData = async()=>{
+            try{
+                const response=await baseurl.get(`/projects/guide/${id}`);
+                setproject(response.data);     
+            }catch(err)
+            {
+                console.log(err);
+            }
+        };
+        fetchData();
+    },[]);
 
-     
     return(
         <div className='profile'>
            <h1>Profile Page</h1>
-           <div className='profiledetails'>
-                <input className='proin' type="text" readOnly value={faculty_id}/>
-                <input className='proin' type="text" readOnly value={faculty_name}/>
-                <input className='proin' type="text" readOnly value={designation}/>
-                <input className='proin' type="text" readOnly value={email}/>
-                <span>{aof}</span>
-                {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile</button>)}
-           </div>
+           {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
+            <div className='profiledetails'>
+                <div className='profileeachdetail'>
+                    <label htmlFor="">Guide Id</label>
+                    <input className='proin' type="text" readOnly value={faculty_id}/>
+                </div>
+
+                <div className='profileeachdetail'>
+                    <label htmlFor="">Guide Name</label>
+                    <input className='proin' type="text" readOnly value={faculty_name}/>
+                </div>
+
+                <div className='profileeachdetail'>
+                    <label htmlFor="">Designation</label>
+                    <input className='proin' type="text" readOnly value={designation}/>
+                </div>
+
+                <div className='profileeachdetail'>
+                    <label htmlFor="">E-Mail</label>
+                    <input className='proin' type="text" readOnly value={email}/>
+                </div>
+
+                <div className='guideskill'>
+                    <h2>Areas of Interest</h2>
+                    {aof.map((item,i)=>{
+                        return(
+                            <ul key={i}>
+                                <li>{item}</li>
+                            </ul>
+                        )
+                    })}
+                </div>
+
+                <div className='guideskill'>
+                    <h2>Guided Projects</h2>
+                          
+                    <table className='adminprofiletable'>
+                        <thead>
+                            <tr className='bg-primary'>
+                                <th scope="col">Project ID</th>
+                                <th scope="col">Title</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        {project.map((item,i)=>{
+                            return(
+                            <tr key={item.pro_id}>
+                                <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
+                                <td>{item.pro_title}</td>
+                            </tr>
+                            )
+                        })}
+                        </tbody>
+                    </table>
+                 </div>           
+           </div> 
         </div>
     )
 }
