@@ -25,15 +25,33 @@ const Admin = () => {
     },[]);
 
     return(
-        <div>
+        <>
             <Navbar/>
-            <div className='adminprofile'>
-                <span>{user_id}</span>
-                <span>{email}</span>
+            <div className='adminpanel'> 
+                <div className='adminprofile'>
+                    <h1>Admin Panel</h1>
+
+                    <table className='adminprofiletable'>
+                        <thead>
+                            <tr className='bg-primary'>
+                                <th scope="col">User ID</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>{user_id}</td>
+                                <td>{email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            
             <Addproject/>
             <Addguide/>
-        </div>
+        </>
     )
 }
 

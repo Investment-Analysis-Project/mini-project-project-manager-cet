@@ -44,7 +44,7 @@ const Profile = () => {
      
     return(
         <div className='profile'>
-           <h1>Profile Details</h1>
+           <h1>Profile Page</h1>
            <div className='profiledetails'>
                 <input className='proin' type="text" readOnly value={faculty_id}/>
                 <input className='proin' type="text" readOnly value={faculty_name}/>

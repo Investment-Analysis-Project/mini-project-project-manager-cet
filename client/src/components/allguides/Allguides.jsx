@@ -28,7 +28,8 @@ const Allguides = (props) => {
     filteredguides = guides;
 
     if (skill !== "All"){
-        filteredguides = filteredguides.filter((item)=>item.area_of_interest.includes(skill));
+        filteredguides = filteredguides.filter((item)=>
+        item.area_of_interest && item.area_of_interest.includes(skill));
     }
 
     return(
