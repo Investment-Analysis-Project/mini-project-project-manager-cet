@@ -18,6 +18,7 @@ const AllProjects = (props) => {
         try{
             const response = await baseurl.get("/projects");
             setProjects(response.data);
+            console.log(response.data);
         }catch(err){
             console.log(err)
         }
@@ -53,7 +54,7 @@ const AllProjects = (props) => {
         
     <div className='allprojects'>
         <div className='projectcontainer'>
-            <table className="table table-striped table-dark">
+            <table className="table table-striped table-dark border">
 
             <thead>
                 <tr className='bg-primary'>

@@ -44,6 +44,7 @@
     flex-direction: column;
     gap:10px;
     margin-top: 30px;
+    border: 2px solid;
 }
 
 .docbut{
@@ -78,4 +79,14 @@
     transition: box-shadow 0.3s;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.memtable{
+    width: 100%;
+    text-align: center;
+    table-layout: fixed
+}
+
+.memtable th,td{
+    border: 1px solid;
 }

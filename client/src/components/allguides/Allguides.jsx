@@ -48,8 +48,8 @@ const Allguides = (props) => {
                 <tbody>
                 {filteredguides.map((res)=>{
                     return(
-                    <tr key={res.faculty_id}>
-                    <td onClick={()=>navigate(`/guide/${res.faculty_id}`)}>{res.faculty_id}</td>
+                    <tr key={res.faculty_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.faculty_id}`)}>
+                    <td>{res.faculty_id}</td>
                     <td>{res.faculty_name}</td>
                     <td>{res.designation}</td>
                     </tr>)

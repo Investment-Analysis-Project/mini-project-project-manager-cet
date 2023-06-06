@@ -4,15 +4,12 @@ import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import Navbar from '../../components/navbar/Navbar';
 import { useNavigate, useParams } from 'react-router-dom';
 import baseurl from '../../baseurl/baseurl';
+import DynamicForm from '../../components/dynamicinput/DynamicInput';
 
 const EditGuide = () => {
-    const {curr_guide_name,curr_designation,user_id,isAdmin,auth,setCurr_guide_name,setCurr_designation,curr_aof,setCurr_aof}=useContext(ProjectsContext);
+    const {curr_guide_name,curr_designation,user_id,isAdmin,auth,setCurr_guide_name,
+        setCurr_designation,curr_aof,setCurr_aof,inputs,setInputs}=useContext(ProjectsContext);
     
-    const [skill1,setskill1]=useState(curr_aof[0]);
-    const [skill2,setskill2]=useState(curr_aof[1]);
-    
-    let aof=[];
-
     const {id}=useParams();
 
     const navigate=useNavigate();
@@ -20,9 +17,9 @@ const EditGuide = () => {
     const updateprofile = async(e)=>{
         e.preventDefault();
 
-        const token = localStorage.getItem('token');
+        const aof=[...curr_aof,...inputs];
 
-        aof = [...aof,skill1,skill2];
+        const token = localStorage.getItem('token');
 
         try{
             const response = await baseurl.put(`/faculty/${id}`,{
@@ -35,9 +32,8 @@ const EditGuide = () => {
                     }
                 }
             );
-
-            navigate(`/guide/${id}`);
-            
+            navigate(`/guide/${id}`); 
+            setInputs(['Machine Learning']);  
         }catch(err){
             console.log(err);
         }
@@ -60,7 +56,7 @@ const EditGuide = () => {
                         <input name="designation" className='editin' type="text" onChange={(e)=>setCurr_designation(e.target.value)} placeholder={curr_designation}/>
                     </div>
 
-                    <div className='editguideinput'>
+                    {/* <div className='editguideinput'>
                         <label htmlFor="skill1">Skill 1</label>
                         <input name="skill1" className='editin' type="text" onChange={(e)=>setskill1(e.target.value)} placeholder={curr_aof[0]}/>
                     </div>
@@ -68,7 +64,9 @@ const EditGuide = () => {
                     <div className='editguideinput'>
                         <label htmlFor="skill2">Skill 2</label>
                         <input name="skill2" className='editin' type="text" onChange={(e)=>setskill2(e.target.value)} placeholder={curr_aof[1]}/>
-                    </div>
+                    </div> */}
+
+                    <DynamicForm/>
 
                     {auth && (id===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
                 </div>

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './addproject.css';
 import baseurl from '../../baseurl/baseurl';
 import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Fileuploader from '../fileuploader/Fileuploader'
-import { faFile, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import {faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import DynamicForm from '../dynamicinput/DynamicInput';
 
 const Addproject = () => {
     const [pro_id,setpro_id]=useState("");
     const [pro_title,setpro_title]=useState("");
     const [pro_desc,setpro_desc]=useState("");
-    const [domain1,setdomain1]=useState("");
     const [program,setprogram]=useState("");
     const [grad_year,setgrad_year]=useState("");
     const [guide_id,setguide_id]=useState("");
@@ -25,14 +25,11 @@ const Addproject = () => {
     const [hosted_link,sethosted_link]=useState("");
     const [code_link,setcode_link]=useState("");
     
-    const {addProject,abstract_url,setab_Url,report_url,setreport_Url,hosted_url,sethosted_Url,code_url,setcode_Url}=useContext(ProjectsContext);
-
-    let pro_domains=[];
-
+    const {addProject,abstract_url,setab_Url,report_url,setreport_Url,
+        hosted_url,sethosted_Url,code_url,setcode_Url,inputs,setInputs}=useContext(ProjectsContext);
+  
     const submitForm = async(e)=>{
         e.preventDefault();
-
-        pro_domains=[...pro_domains,domain1];
 
         const token = localStorage.getItem('token');
 
@@ -41,7 +38,7 @@ const Addproject = () => {
                 pro_id,
                 pro_title,
                 pro_desc,
-                pro_domains,
+                pro_domains:inputs,
                 program,
                 grad_year,
                 guide_id,
@@ -60,8 +57,9 @@ const Addproject = () => {
                     }
                 }
             );
-            addProject(response.data[0])
+            addProject(response.data[0]);
             console.log(response);
+            setInputs(['Machine Learning']); 
         }catch(err){
             console.log(err);
         }
@@ -79,7 +77,7 @@ const Addproject = () => {
                    
                         <input className='inp' type="text" value={pro_desc} onChange={e=>setpro_desc(e.target.value)} placeholder="Desc"/>
                 
-                        <input className='inp' type="text" value={domain1} onChange={e=>setdomain1(e.target.value)} placeholder="Domain"/>
+                        <DynamicForm/>
                         
                         <input className='inp' type="text" value={program} onChange={e=>setprogram(e.target.value)} placeholder="Program"/>
                                                        
@@ -97,7 +95,7 @@ const Addproject = () => {
 
                         <input className='inp' type="text" value={pro_status} onChange={e=>setpro_status(e.target.value)} placeholder="Completed"/>
                              
-                        <button type="submit" className='but' onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button>
+                        <button type="submit" className='addprobut' onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button>
         
                 </div>
 

@@ -29,7 +29,7 @@ const Navbar = () => {
                 <button className='navbut' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
             </div>) :
             (<div className='admin'>
-                <button className='navbut' onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faSignIn}/> Login</button>
+                <button className='navbut' onClick={()=>{navigate('/login')}}><FontAwesomeIcon icon={faSignIn}/> Login</button>
             </div>)}
         </div>
     );

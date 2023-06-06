@@ -4,7 +4,7 @@ import baseurl from '../../baseurl/baseurl';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBarsProgress, faCircleCheck, faCode, faCodeBranch, faFilePdf, faLink, faPager, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
+import { faBarsProgress, faChartLine, faCircleCheck, faCode, faCodeBranch, faFilePdf, faLink, faPager, faPeopleGroup, faSignal } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectDetail=()=>{
     const [pro_id,setpro_id]=useState("");
@@ -56,7 +56,7 @@ const ProjectDetail=()=>{
             fetchData();
         },[]);
 
-
+    
     return(
         <div className='projectdetail'>
             <h1>Project Details</h1>
@@ -81,7 +81,7 @@ const ProjectDetail=()=>{
                             <div className='projectsub'>
                                 <p className='projectteam'>Status of Project 
                                     <button className='projectsubbut'>
-                                        {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faCodeBranch}/>} 
+                                        {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faChartLine}/>} 
                                         {pro_status ? " Completed" : " Ongoing"}
                                     </button>
                                 </p>
@@ -97,7 +97,30 @@ const ProjectDetail=()=>{
                                     
                                 <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
                                 <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
-                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${guide_id}`)}>{guide_id}</button></p>     
+                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${guide_id}`)}>{guide_id}</button></p>  
+                            
+                                <table className='memtable'>
+                                    <thead>
+                                        <tr className='bg-primary'>
+                                            <th scope="col">Done By</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td className='guidedproject'>{mem_1}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='guidedproject'>{mem_2}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='guidedproject'>{mem_3}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='guidedproject'>{mem_4}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>        
                             </div>
                     </div>
             </div>   
