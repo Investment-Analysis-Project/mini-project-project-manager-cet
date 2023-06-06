@@ -88,9 +88,9 @@ const ProjectDetail=()=>{
                                 <p className='projectteam'>Project Domain 
                                     {pro_domains.map((item,i)=>{
                                         return(
-                                            <>
-                                                <button className='projectsubbut' key={i}>{item}</button>
-                                            </>
+                                            
+                                            <button className='projectsubbut' key={i}>{item}</button>
+                                            
                                         )    
                                     })}
                                 </p>

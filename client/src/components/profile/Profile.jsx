@@ -33,7 +33,8 @@ const Profile = () => {
 
                 setCurr_guide_name(response1.data[0].faculty_name);
                 setCurr_designation(response1.data[0].designation);
-                setCurr_aof(response1.data[0].area_of_interest);
+                if(response1.data[0].area_of_interest)
+                    setCurr_aof(response1.data[0].area_of_interest);
             }catch(err)
             {
                 console.log(err);
@@ -82,7 +83,7 @@ const Profile = () => {
 
                 <div className='guideskill'>
                     <h2>Areas of Interest</h2>
-                    {aof.map((item,i)=>{
+                    {aof && aof.map((item,i)=>{
                         return(
                             <ul key={i}>
                                 <li>{item}</li>
@@ -103,7 +104,7 @@ const Profile = () => {
                         </thead>
 
                         <tbody>
-                        {project.map((item,i)=>{
+                        {project && project.map((item,i)=>{
                             return(
                             <tr key={item.pro_id}>
                                 <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>

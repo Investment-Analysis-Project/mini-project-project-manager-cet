@@ -71,7 +71,7 @@ const Login = () => {
 
                     <div className='logintext'>
                         <span>Password</span>
-                        <input type="text" className='loginput' value={user_password} onChange={(e)=>setPassword(e.target.value)}/>
+                        <input type="password" className='loginput' value={user_password} onChange={(e)=>setPassword(e.target.value)}/>
                     </div>
 
                     <span>{message}</span>

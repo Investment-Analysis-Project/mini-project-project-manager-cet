@@ -40,8 +40,7 @@ const Fileupload = () => {
   return (
     <div className='inputupload'>
         <input type="file" className="customfile" onChange={change}/>
-        <label className="filelabel" htmlFor="customFile">{filename}</label>
-        <button className='upbut' onClick={submit}> <FontAwesomeIcon icon={faUpload}/> Upload Abstract</button>
+        <button className='upbut' onClick={submit}> <FontAwesomeIcon icon={faUpload}/> Upload</button>
     </div>
   );
 }

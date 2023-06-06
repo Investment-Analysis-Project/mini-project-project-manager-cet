@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
+import './dynamicinput.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const DynamicForm = () => {
   const {inputs,setInputs}=useContext(ProjectsContext);
@@ -24,22 +27,18 @@ const DynamicForm = () => {
   return (
     <>
       {inputs.map((input, index) => (
-        <div key={index}>
+        <div className='dynamicinput' key={index}>
     
-          <select onChange={(e) => handleInputChange(index,e)}>
+          <select className='selectinput' onChange={(e) => handleInputChange(index,e)}>
                 <option value="Machine Learning">Machine Learning</option>
                 <option value="Blockchain">Blockchain</option>
                 <option value="Web App">Web App</option>
           </select>
 
-          <button type="button" onClick={() => handleRemoveInput(index)}>
-            Remove
-          </button>      
+          <button className='rembutdyn' type="button" onClick={() => handleRemoveInput(index)}><FontAwesomeIcon icon={faMinus}/> Remove</button>      
         </div>
       ))}
-      <button type="button" onClick={handleAddInput}>
-        Add Field
-      </button>
+      <button className='selectbut' type="button" onClick={handleAddInput}><FontAwesomeIcon icon={faPlus}/> Add</button>
     </>
   );
 };

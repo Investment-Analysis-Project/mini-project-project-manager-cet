@@ -9,7 +9,7 @@ import { faFileAlt, faHome, faPersonChalkboard, faRightFromBracket, faSignIn, fa
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const {auth,setAuth,isAdmin,setisAdmin,user_id}=useContext(ProjectsContext);
+    const {auth,setAuth,isAdmin,setisAdmin,user_id,setCurr_aof}=useContext(ProjectsContext);
 
     return(
         <div className='navbar'>

@@ -9,34 +9,45 @@
 
 .inputform{
     background: rgb(1, 37, 121);
-    border-radius: 5px;
     width: 100%;
-    height: 100px;
-    max-width:1024px ;
+    max-width:1024px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap:5px;
+    flex-direction: column;
+    gap:10px;
     padding: 5px;
     margin-top: 20px;
     font-weight: 600;
 }
 
+.inputuserdet{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputuserdetlab{
+    color: aliceblue;
+}
+
 .guideinput{
     border: none;
     border-radius: 5px;
-    width: 20%;
+    padding-left: 5px;
+    width: 100%;
     outline: none;
     font-weight: bolder;
 }
 
 .guidebut{
     border: none;
+    margin-top: 5px;
     padding: 5px;
     outline: none;
-    font-size: medium;
+    font-size: small;
     font-weight: 600;
     border-radius: 5px;
+    background: rgb(1, 37, 121);
+    color: aliceblue;
 }
 
 .guidebut:active{
