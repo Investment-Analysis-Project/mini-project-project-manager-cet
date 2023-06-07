@@ -2,9 +2,9 @@ create database promansys;
 
 CREATE TABLE Usertable(
   user_id SERIAL PRIMARY KEY,
-  username VARCHAR(20) NOT NULL UNIQUE,
-  password VARCHAR(20) NOT NULL,
-  user_type VARCHAR(20) NOT NULL,
+  user_name VARCHAR(20) NOT NULL UNIQUE,
+  user_password VARCHAR(20) NOT NULL DEFAULT 'password',
+  user_type VARCHAR(20) NOT NULL DEFAULT 'faculty',
   isAdmin BOOLEAN NOT NULL DEFAULT false,
   email VARCHAR(100) NOT NULL UNIQUE,
   created_at TIMESTAMP DEFAULT NOW()

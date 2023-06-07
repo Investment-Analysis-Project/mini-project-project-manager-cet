@@ -5,7 +5,7 @@ cloudinary.config({
     cloud_name: "djaoxwoo8",
     api_key: "987231799232359",
     api_secret: "L_i_sLmpFNqyD1Fcbhiu5Ro_dC0"
-  });
+});
 
 const uploadFile = async(req,res)=>{
     

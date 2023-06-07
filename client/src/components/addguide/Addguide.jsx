@@ -5,8 +5,10 @@ import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import {useNavigate} from 'react-router-dom';
 
 const Addguide = () => {
+    const navigate=useNavigate();
 
     const [user_id,setuser_id]=useState("");
     const [user_password,setuser_passwor]=useState("");
@@ -35,7 +37,8 @@ const Addguide = () => {
             );
             addGuide(response.data[0]);
             setCurr_aof([]);
-            console.log(response);
+            navigate(`/guide/${user_id}`)
+            console.log(response.data);
         }catch(err){
             console.log(err);
         }
