@@ -7,7 +7,7 @@ const verifyToken = (req,res,next)=>{
     const token = authHead.split(' ')[1];
 
     if(token==="null"){
-        return next(createError(401,"You are not logged in"));
+        return next(createError(401,"You are not logged in !"));
     }
 
     jwt.verify(token,process.env.JWT,(err,user)=>{
