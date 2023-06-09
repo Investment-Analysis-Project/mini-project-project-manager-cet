@@ -20,8 +20,11 @@ const verifyToken = (req,res,next)=>{
 }
 
 const verifyUser = (req,res,next)=>{
-    verifyToken(req,res,next,()=>{
-        if(req.user.user_id===req.params.id || req.user.isadmin){
+    verifyToken(req,res,()=>{
+        if(req.user.user_id===req.params.id || req.user.isadmin){  
+            console.log(req.user.user_id);
+            console.log(req.params.id);
+            console.log(req.user.isadmin)
             next();
         }
         else{
@@ -31,7 +34,7 @@ const verifyUser = (req,res,next)=>{
 }
 
 const verifyAdmin = (req,res,next)=>{
-    verifyToken(req,res,next,()=>{
+    verifyToken(req,res,()=>{
         
         if(req.user.isadmin){
             next();
