@@ -22,9 +22,6 @@ const verifyToken = (req,res,next)=>{
 const verifyUser = (req,res,next)=>{
     verifyToken(req,res,()=>{
         if(req.user.user_id===req.params.id || req.user.isadmin){  
-            console.log(req.user.user_id);
-            console.log(req.params.id);
-            console.log(req.user.isadmin)
             next();
         }
         else{
