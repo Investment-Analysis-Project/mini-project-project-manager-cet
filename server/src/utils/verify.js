@@ -12,7 +12,7 @@ const verifyToken = (req,res,next)=>{
 
     jwt.verify(token,process.env.JWT,(err,user)=>{
         if(err){
-            return next(createError(401,"You token is not valid"));
+            return next(createError(401,"You token is not valid !"));
         }
         req.user=user;
         next();
@@ -25,7 +25,7 @@ const verifyUser = (req,res,next)=>{
             next();
         }
         else{
-            return next(createError(401,"You are not authorized user"));
+            return next(createError(401,"You are not authorized user !"));
         }
     });
 }
@@ -37,7 +37,7 @@ const verifyAdmin = (req,res,next)=>{
             next();
         }
         else{  
-            return next(createError(401,"You are not admin"));
+            return next(createError(401,"You are not admin !"));
         }
     });
 }
