@@ -67,7 +67,7 @@ const ProjectDetail=()=>{
             }
         };
         fetchData();
-    },[guide_id])
+    },[guide_id]);
 
     
     return(
