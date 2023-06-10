@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Allguides = (props) => {
 
-    const {guides,setGuides,skill,setSkill}=useContext(ProjectsContext);
+    const {guides,setGuides,skill}=useContext(ProjectsContext);
 
     const navigate=useNavigate();
 
@@ -48,7 +48,7 @@ const Allguides = (props) => {
                 <tbody>
                 {filteredguides.map((res)=>{
                     return(
-                    <tr key={res.faculty_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.faculty_id}`)}>
+                    <tr key={res.faculty_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
                     <td>{res.faculty_id}</td>
                     <td>{res.faculty_name}</td>
                     <td>{res.designation}</td>

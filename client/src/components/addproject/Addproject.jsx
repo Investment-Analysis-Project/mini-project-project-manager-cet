@@ -13,7 +13,6 @@ import DynamicForm from '../dynamicinput/DynamicInput';
 const Addproject = () => {
     let navigate = useNavigate();
     
-    const [pro_id,setpro_id]=useState("");
     const [pro_title,setpro_title]=useState("");
     const [pro_desc,setpro_desc]=useState("");
     const [program,setprogram]=useState("BTECH");
@@ -39,7 +38,6 @@ const Addproject = () => {
 
         try{
             const response = await baseurl.post("/projects",{
-                pro_id,
                 pro_title,
                 pro_desc,
                 pro_domains:inputs,
@@ -64,7 +62,7 @@ const Addproject = () => {
             addProject(response.data[0]);
             console.log(response.data[0]);
             setInputs(['Machine Learning']);
-            navigate(`/project/${pro_id}`);
+            navigate(`/project/${response.data[0].pro_id}`);
         }catch(err){
             console.log(err);
         }
@@ -75,11 +73,6 @@ const Addproject = () => {
             <div className='addproject'>
                 <h1>Add Project</h1>
                 <div className='projectenter'>
-
-                        <div className='projectinputeach'>
-                        <label className='projectinputlabel'>Project Id</label>
-                        <input className='inp' type="text" value={pro_id} onChange={e=>setpro_id(e.target.value)} placeholder="ID"/>
-                        </div>
 
                         <div className='projectinputeach'>
                         <label className='projectinputlabel'>Project Title</label>

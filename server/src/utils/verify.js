@@ -21,7 +21,7 @@ const verifyToken = (req,res,next)=>{
 
 const verifyUser = (req,res,next)=>{
     verifyToken(req,res,()=>{
-        if(req.user.user_id===req.params.id || req.user.isadmin){  
+        if(req.user.user_id===parseInt(req.params.id) || req.user.isadmin){  
             next();
         }
         else{

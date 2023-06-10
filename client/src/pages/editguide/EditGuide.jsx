@@ -60,7 +60,7 @@ const EditGuide = () => {
 
                     <DynamicForm/>
 
-                    {auth && (id===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
+                    {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
                 </div>
             </div>
         </>

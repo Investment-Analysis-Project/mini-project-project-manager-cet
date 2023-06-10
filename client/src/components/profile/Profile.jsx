@@ -11,7 +11,9 @@ const Profile = () => {
 
     const navigate = useNavigate();
 
-    const {id}=useParams();
+    let {id}=useParams();
+    id=parseInt(id);
+
 
     const [faculty_id,setfaculty_id]=useState("");
     const [faculty_name,setfaculty_name]=useState("");

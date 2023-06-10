@@ -58,7 +58,6 @@ const AllProjects = (props) => {
 
             <thead>
                 <tr className='bg-primary'>
-                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Domain</th>
                     <th scope="col">Status</th>
@@ -69,7 +68,6 @@ const AllProjects = (props) => {
             {filteredprojects.map((res,i)=>{
                 return(
                 <tr key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
-                <td>{res.pro_id}</td>
                 <td>{res.pro_title}</td>
                 <td>
                     {res.pro_domains.map((item,i)=>{
