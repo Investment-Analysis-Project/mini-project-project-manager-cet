@@ -59,7 +59,7 @@ const Addproject = () => {
                     }
                 }
             );
-            addProject(response.data[0]);
+            //addProject(response.data[0]);
             console.log(response.data[0]);
             setInputs(['Machine Learning']);
             navigate(`/project/${response.data[0].pro_id}`);

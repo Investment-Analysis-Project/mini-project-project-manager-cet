@@ -34,6 +34,7 @@ const EditGuide = () => {
                 }
             );
             setInputs(['Machine Learning']);
+            setCurr_aof([]);
             navigate(`/guide/${id}`);  
             console.log(response.data) 
         }catch(err){

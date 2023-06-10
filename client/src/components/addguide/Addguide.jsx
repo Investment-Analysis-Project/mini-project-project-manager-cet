@@ -31,9 +31,10 @@ const Addguide = () => {
                 }
               }
             );
-            addGuide(response.data[0]);
+            //addGuide(response.data);
+            console.log(response.data);
             setCurr_aof([]);
-            navigate(`/guide/${response.data.user_id}`)
+            navigate(`/guides`)
         }catch(err){
             console.log(err);
         }

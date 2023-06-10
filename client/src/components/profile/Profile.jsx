@@ -37,6 +37,8 @@ const Profile = () => {
                 setCurr_designation(response1.data[0].designation);
                 if(response1.data[0].area_of_interest)
                     setCurr_aof(response1.data[0].area_of_interest);
+                else
+                    setCurr_aof([]);
             }catch(err)
             {
                 console.log(err);
