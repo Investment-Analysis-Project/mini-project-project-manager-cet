@@ -29,10 +29,14 @@ const Addproject = () => {
     const [code_link,setcode_link]=useState("");
     
     const {addProject,abstract_url,setab_Url,report_url,setreport_Url,
-        hosted_url,sethosted_Url,code_url,setcode_Url,inputs,setInputs,setCurr_aof}=useContext(ProjectsContext);
+        hosted_url,sethosted_Url,code_url,setcode_Url,inputs,setInputs,setCurr_aof,
+        setclicked,setloadstatus}=useContext(ProjectsContext);
   
     const submitForm = async(e)=>{
         e.preventDefault();
+
+        setloadstatus(false);
+        setclicked(false);
 
         const token = localStorage.getItem('token');
 
@@ -59,7 +63,6 @@ const Addproject = () => {
                     }
                 }
             );
-            //addProject(response.data[0]);
             console.log(response.data[0]);
             setInputs(['Machine Learning']);
             navigate(`/project/${response.data[0].pro_id}`);

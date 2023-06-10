@@ -14,7 +14,6 @@ const Profile = () => {
     let {id}=useParams();
     id=parseInt(id);
 
-
     const [faculty_id,setfaculty_id]=useState("");
     const [faculty_name,setfaculty_name]=useState("");
     const [designation,setdesignation]=useState("");
@@ -25,7 +24,7 @@ const Profile = () => {
     useEffect(()=>{
         const fetchData = async()=>{
             try{
-                const response1=await baseurl.get(`/faculty/${id}`);
+                const response1=await baseurl.get(`/faculty/facultydet/${id}`);
                 const response2 =await baseurl.get(`/user/email/${id}`);
                 setfaculty_id(response1.data[0].faculty_id);
                 setfaculty_name(response1.data[0].faculty_name);
@@ -50,7 +49,7 @@ const Profile = () => {
     useEffect(()=>{
         const fetchData = async()=>{
             try{
-                const response=await baseurl.get(`/projects/guide/${id}`);
+                const response=await baseurl.get(`/projects/guide/${faculty_id}`);
                 setproject(response.data);     
             }catch(err)
             {
@@ -58,7 +57,7 @@ const Profile = () => {
             }
         };
         fetchData();
-    },[]);
+    },[faculty_id]);
 
     return(
         <div className='profile'>
