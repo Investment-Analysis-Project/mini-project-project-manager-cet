@@ -63,7 +63,7 @@ const EditGuide = () => {
                         <label htmlFor="designation">Skills</label>
                         {curr_aof.map((res,i)=>{
                             return(
-                                <ul>
+                                <ul key={i}>
                                     <li>{res}</li>
                                 </ul>
                             )
