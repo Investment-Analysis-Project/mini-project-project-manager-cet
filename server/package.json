@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Govindvr/project-manager-cet#readme",
   "dependencies": {
     "aws-sdk": "^2.1381.0",
+    "bcrypt": "^5.1.0",
     "cloudinary": "^1.37.0",
     "concurrently": "^8.0.1",
     "cookie-parser": "^1.4.6",
