@@ -1,5 +1,6 @@
 const db = require('../db');
 const model = require('../models/faculty');
+const auth_function = require('../utils/auth')
 
 const getAllfaculty = async(req,res)=>{
     try{
@@ -24,16 +25,29 @@ const getidFaculty = async(req,res)=>{
 };
 
 const addFaculty = async(req,res)=>{
+
     try{
         const {username,password,email,faculty_id,faculty_name,designation,area_of_interest,
             experience,contact}=req.body;
+
+        
+        if (await auth_function.checkUsername(username) == true){
+            return res.status(400).json({ error: 'Username already exists' });
+        }
+
+        if (await auth_function.checkEmail(email) == true){
+            return res.status(400).json({ error: 'Email already exists' });
+        }
+
+        if (await auth_function.checkFacultyId(faculty_id) == true){
+            return res.status(400).json({ error: 'Faculty already exists' });
+        }
         const rows = await model.createFaculty(username,password,email,faculty_id,faculty_name,
                                                 designation,area_of_interest,experience,contact);
         console.log(rows);
         res.json(rows);
 
     }catch(err){
-        console.log(err);
     }
 };
 
