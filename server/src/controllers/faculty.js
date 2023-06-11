@@ -14,7 +14,8 @@ const getidFaculty = async(req,res)=>{
         const {id}=req.params;
         const {rows} = await db.query(`SELECT faculty_id,faculty_name,designation,
                                         area_of_interest,experince,email,contact
-                                        FROM Faculty, Usertable where faculty_id=$1 and Faculty.user_id = Usertable.user_id`,[id]);
+                                        FROM Faculty, Usertable where faculty_id=$1 and 
+                                        Faculty.user_id = Usertable.user_id`,[id]);
         res.json(rows);
     }catch(err){
         console.log(err);
@@ -46,7 +47,7 @@ const updateFaculty = async(req,res)=>{
 
 const deleteFaculty = async(req,res)=>{
     try{
-       
+       res.send("delete faculty may cause error in other tables");
     }catch(err){
         console.log(err);
     }
