@@ -8,6 +8,8 @@ cloudinary.config({
 });
 
 const uploadFile = async(req,res)=>{
+
+    let loaded=false;
     
     if(req.files===null){
         return res.status(400).json({msg:'No file uploaded'});
@@ -17,7 +19,7 @@ const uploadFile = async(req,res)=>{
 
     const result = cloudinary.uploader.upload(file.tempFilePath,{folder:"abstracts"});
     result.then((data) => {
-        res.json(data.secure_url);
+        res.json({loaded:true,url:data.secure_url});
     }).catch((err) => {
         console.log(err);
     });

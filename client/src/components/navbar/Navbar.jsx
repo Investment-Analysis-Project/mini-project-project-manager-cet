@@ -20,7 +20,7 @@ const Navbar = () => {
                 
                 <button className='navbut' onClick={()=>{navigate('/guides')}}><FontAwesomeIcon icon={faPersonChalkboard}/> Guides</button>
                 
-                {isAdmin && (<button className='navbut' onClick={()=>{navigate('/admin')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Page</button>)}
+                {isAdmin && (<button className='navbut' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Page</button>)}
 
                 {auth && !isAdmin && (<button className='navbut' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faUserSecret}/> Profile</button>)}
             </div>

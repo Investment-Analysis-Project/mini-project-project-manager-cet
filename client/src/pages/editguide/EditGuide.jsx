@@ -34,6 +34,7 @@ const EditGuide = () => {
                 }
             );
             setInputs(['Machine Learning']);
+            setCurr_aof([]);
             navigate(`/guide/${id}`);  
             console.log(response.data) 
         }catch(err){
@@ -58,9 +59,20 @@ const EditGuide = () => {
                         <input name="designation" className='editin' type="text" onChange={(e)=>setCurr_designation(e.target.value)} placeholder={curr_designation}/>
                     </div>
 
+                    <div className='editguideinput'>
+                        <label htmlFor="designation">Skills</label>
+                        {curr_aof.map((res,i)=>{
+                            return(
+                                <ul key={i}>
+                                    <li>{res}</li>
+                                </ul>
+                            )
+                        })}
+                    </div>
+
                     <DynamicForm/>
 
-                    {auth && (id===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
+                    {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
                 </div>
             </div>
         </>

@@ -23,6 +23,7 @@ const ProjectDetail=()=>{
     const [report_link,setreport_link]=useState("");
     const [hosted_link,sethosted_link]=useState("");
     const [code_link,setcode_link]=useState("");
+    const [user,setuser]=useState();
 
     const { id }=useParams();
 
@@ -55,6 +56,18 @@ const ProjectDetail=()=>{
             };
             fetchData();
         },[]);
+
+    useEffect(()=>{
+        const fetchData=async()=>{
+            try{
+                const response = await baseurl.get(`/faculty/facultyid/${guide_id}`);
+                setuser(response.data[0].user_id)
+            }catch(err){
+                console.log(err);
+            }
+        };
+        fetchData();
+    },[guide_id]);
 
     
     return(
@@ -97,7 +110,7 @@ const ProjectDetail=()=>{
                                     
                                 <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
                                 <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
-                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${guide_id}`)}>{guide_id}</button></p>  
+                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button></p>  
                             
                                 <table className='memtable'>
                                     <thead>

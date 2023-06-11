@@ -45,6 +45,7 @@ const addFaculty = async(req,res)=>{
         const rows = await model.createFaculty(username,password,email,faculty_id,faculty_name,
                                                 designation,area_of_interest,experience,contact);
         console.log(rows);
+
         res.json(rows);
 
     }catch(err){
@@ -74,4 +75,4 @@ const deleteFaculty = async(req,res)=>{
     }
 };
 
-module.exports = {getAllfaculty,getidFaculty,addFaculty,updateFaculty,deleteFaculty};
+module.exports = {getAllfaculty,getidFaculty,addFaculty,updateFaculty,deleteFaculty,getuseridFaculty};

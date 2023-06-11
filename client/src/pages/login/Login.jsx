@@ -8,27 +8,25 @@ import Home from '../home/Home';
 import jwt from 'jwt-decode';
 
 const Login = () => {
-    const [user_id,setUserId]=useState("");
+    const [user_name,setUserName]=useState("");
     const [user_password,setPassword]=useState("");
     const [message,setMessage]=useState("");
   
     const {auth,setAuth,setisAdmin,setUser_id}=useContext(ProjectsContext);
-
-    let value=false;
 
     const navigate=useNavigate();
 
     const loginSubmit = async(e) =>{
         e.preventDefault();
 
-        if(user_id===""||user_password===""){
+        if(user_name===""||user_password===""){
             setMessage("Missing Credentials !");
             return;
         }
 
         try{
             const response = await baseurl.post("/auth/login",{
-                user_id,
+                user_name,
                 user_password
              });
 
@@ -45,13 +43,13 @@ const Login = () => {
             localStorage.setItem('token', token);
 
             setAuth(value.auth);
-            setUser_id(user_id);
+            setUser_id(value.user_id);
             
             if(value.isadmin){
                 setisAdmin(decodedToken.isadmin);
-                navigate('/admin');
+                navigate('/adminpanel');
             }
-            else navigate(`/guide/${user_id}`);
+            else navigate(`/guide/${value.user_id}`);
 
         }catch(err){
             console.log(err);
@@ -66,7 +64,7 @@ const Login = () => {
                 <div className='loginform'>
                     <div className='logintext'>
                         <span>Username</span>
-                        <input type="text" className='loginput' value={user_id} onChange={(e)=>setUserId(e.target.value)}/>
+                        <input type="text" className='loginput' value={user_name} onChange={(e)=>setUserName(e.target.value)}/>
                     </div>
 
                     <div className='logintext'>

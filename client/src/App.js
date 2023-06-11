@@ -24,8 +24,8 @@ function App() {
             <Route path="/guides" element={<Guides />}/>
             <Route path="/guide/:id" element={<Guide />}/>
             <Route path="/editguide/:id" element={<EditGuide />}/>
-            <Route path="/admin" element={<Admin />}/>
-            <Route path="/similarity" element={<Similarity />}/>
+            <Route path="/adminpanel" element={<Admin />}/>
+            <Route path="/abstractsimilarity" element={<Similarity />}/>
           </Routes>
         </BrowserRouter>
       </>

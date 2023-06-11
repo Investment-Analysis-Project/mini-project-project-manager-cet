@@ -20,8 +20,8 @@ const login = async(req,res,next)=>{
         }
 
         const token=jwt.sign(user_log,process.env.JWT);
-   
-        res.json({auth:true,token:token,isadmin:user.rows[0].isadmin});
+        
+        res.json({auth:true,token:token,user_id:user.rows[0].user_id,isadmin:user.rows[0].isadmin});
     }catch(err){
         console.log(err);
     }
@@ -31,8 +31,8 @@ const create = async(req,res)=>{
     try{
         const {user_name,email,faculty_id} = req.body;
         const {rows} = await db.query('INSERT INTO Usertable (user_name,email) values ($1,$2) RETURNING user_id',[user_name,email]);
-        const {results} = await db.query('INSERT INTO Faculty (faculty_id,user_id) values ($1,$2)',[faculty_id,rows[0].user_id]);
-        res.json(results);
+        const results = await db.query('INSERT INTO Faculty (faculty_id,user_id) values ($1,$2) RETURNING *',[faculty_id,rows[0].user_id]);
+        res.json(results.rows[0]);
     }catch(err){
         console.log(err);
     }
