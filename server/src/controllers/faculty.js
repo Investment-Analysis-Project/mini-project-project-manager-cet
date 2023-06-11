@@ -27,8 +27,9 @@ const addFaculty = async(req,res)=>{
     try{
         const {username,password,email,faculty_id,faculty_name,designation,area_of_interest,
             experience,contact}=req.body;
-        const {rows} = await model.createFaculty(username,password,email,faculty_id,faculty_name,
+        const rows = await model.createFaculty(username,password,email,faculty_id,faculty_name,
                                                 designation,area_of_interest,experience,contact);
+        console.log(rows);
         res.json(rows);
 
     }catch(err){
