@@ -1,5 +1,5 @@
 const db = require('../db');
-
+const model = require('../models/faculty');
 
 const getAllfaculty = async(req,res)=>{
     try{
@@ -25,6 +25,11 @@ const getidFaculty = async(req,res)=>{
 
 const addFaculty = async(req,res)=>{
     try{
+        const {username,password,email,faculty_id,faculty_name,designation,area_of_interest,
+            experience,contact}=req.body;
+        const {rows} = await model.createFaculty(username,password,email,faculty_id,faculty_name,
+                                                designation,area_of_interest,experience,contact);
+        res.json(rows);
 
     }catch(err){
         console.log(err);

@@ -1,5 +1,5 @@
 const db = require('../db');
-const auth_funtion = require('./utils/auth')
+const auth_funtion = require('../utils/auth')
 
 const createFaculty = async (username, password, email, faculty_id, faculty_name,
                              designation, area_of_interest, experience, contact) => {
