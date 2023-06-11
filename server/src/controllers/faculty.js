@@ -11,7 +11,7 @@ const getAllfaculty = async(req,res)=>{
     }
 };
 
-const getidFaculty = async(req,res)=>{
+const getuseridFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
         const {rows} = await db.query(`SELECT faculty_id,faculty_name,designation,
