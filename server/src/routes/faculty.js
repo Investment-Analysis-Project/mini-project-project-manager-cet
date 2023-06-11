@@ -10,3 +10,18 @@ router.put('/:id',verify.verifyUser,faculty_controller.updateFaculty);
 router.delete('/:id',verify.verifyAdmin,faculty_controller.deleteFaculty);
 
 module.exports = router;
+
+
+// Format for Post request
+
+// {
+//     "username": "string",
+//     "password": "string",
+//     "email": "string",
+//     "faculty_id": "string",
+//     "faculty_name": "string",
+//     "designation": "string",
+//     "area_of_interest": "List",
+//     "experience": "Integer",
+//     "contact": "string"
+// }
