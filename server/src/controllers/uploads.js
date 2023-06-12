@@ -10,7 +10,7 @@ cloudinary.config({
 const uploadAbstract = async(req,res)=>{
  
     if(req.files===null){
-        return res.status(400).json({msg:'No file uploaded'});
+        return res.json({loaded:false,url:'No URL'});
     }
 
     const file=req.files.file;
@@ -27,7 +27,7 @@ const uploadAbstract = async(req,res)=>{
 const uploadReport = async(req,res)=>{
 
     if(req.files===null){
-        return res.status(400).json({msg:'No file uploaded'});
+        return res.json({loaded:false,url:'No URL'});
     }
 
     const file=req.files.file;
