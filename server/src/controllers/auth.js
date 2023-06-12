@@ -21,7 +21,8 @@ const login = async(req,res,next)=>{
 
         const token=jwt.sign(user_log,process.env.JWT);
         
-        res.json({auth:true,token:token,user_id:user.rows[0].user_id,isadmin:user.rows[0].isadmin});
+        //res.json({auth:true,token:token,user_id:user.rows[0].user_id,isadmin:user.rows[0].isadmin});
+        res.json({auth:true,token:token});
     }catch(err){
         console.log(err);
     }
