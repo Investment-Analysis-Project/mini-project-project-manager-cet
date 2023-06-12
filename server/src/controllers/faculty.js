@@ -14,12 +14,23 @@ const getAllfaculty = async(req,res)=>{
 const getbyidFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {rows} = await db.query('SELECT * FROM Faculty user_id=$1',[id]);
+        const {rows} = await db.query('SELECT * FROM Faculty where user_id=$1',[id]);
         res.json(rows);
     }catch(err){
         console.log(err);
     }
 };
+
+
+const getuseridFaculty = async(req,res)=>{
+    try{
+        const {id}=req.params;
+        const {rows} = await db.query('SELECT user_id FROM Faculty where faculty_id=$1',[id]);
+        res.json(rows);
+    }catch(err){
+        console.log(err);
+    }
+}
 
 const addFaculty = async(req,res)=>{
 
@@ -69,4 +80,4 @@ const deleteFaculty = async(req,res)=>{
     }
 };
 
-module.exports = {getAllfaculty,getbyidFaculty,addFaculty,updateFaculty,deleteFaculty};
+module.exports = {getAllfaculty,getbyidFaculty,addFaculty,updateFaculty,deleteFaculty,getuseridFaculty};

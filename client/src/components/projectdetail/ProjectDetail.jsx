@@ -60,7 +60,7 @@ const ProjectDetail=()=>{
     useEffect(()=>{
         const fetchData=async()=>{
             try{
-                const response = await baseurl.get(`/faculty/facultyid/${guide_id}`);
+                const response = await baseurl.get(`/faculty/faculty_user_id/${guide_id}`);
                 setuser(response.data[0].user_id)
             }catch(err){
                 console.log(err);
