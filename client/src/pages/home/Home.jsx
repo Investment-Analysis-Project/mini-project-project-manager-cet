@@ -32,7 +32,7 @@ const Home = () => {
                         <p>See Guides</p>
                     </div>
 
-                    <div className='homeitem' onClick={()=>navigate('/similarity')}>
+                    <div className='homeitem' onClick={()=>navigate('/abstractsimilarity')}>
                         <img src={img3} alt="" />
                         <p>Search Similar Abstracts</p>
                     </div>
