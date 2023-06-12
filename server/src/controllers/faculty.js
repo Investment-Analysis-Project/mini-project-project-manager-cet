@@ -14,10 +14,7 @@ const getAllfaculty = async(req,res)=>{
 const getbyidFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {rows} = await db.query(`SELECT faculty_id,faculty_name,designation,
-                                        area_of_interest,experince,email,contact
-                                        FROM Faculty, Usertable where faculty_id=$1 and 
-                                        Faculty.user_id = Usertable.user_id`,[id]);
+        const {rows} = await db.query('SELECT * FROM Faculty user_id=$1',[id]);
         res.json(rows);
     }catch(err){
         console.log(err);
