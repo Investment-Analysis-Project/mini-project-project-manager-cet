@@ -11,7 +11,7 @@ const getAllfaculty = async(req,res)=>{
     }
 };
 
-const getuseridFaculty = async(req,res)=>{
+const getbyidFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
         const {rows} = await db.query(`SELECT faculty_id,faculty_name,designation,
@@ -75,4 +75,4 @@ const deleteFaculty = async(req,res)=>{
     }
 };
 
-module.exports = {getAllfaculty,getidFaculty,addFaculty,updateFaculty,deleteFaculty,getuseridFaculty};
+module.exports = {getAllfaculty,getbyidFaculty,addFaculty,updateFaculty,deleteFaculty,getuseridFaculty};

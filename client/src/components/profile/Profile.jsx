@@ -24,7 +24,7 @@ const Profile = () => {
     useEffect(()=>{
         const fetchData = async()=>{
             try{
-                const response1=await baseurl.get(`/faculty/facultydet/${id}`);
+                const response1=await baseurl.get(`/faculty/faculty_det/${id}`);
                 const response2 =await baseurl.get(`/user/email/${id}`);
                 setfaculty_id(response1.data[0].faculty_id);
                 setfaculty_name(response1.data[0].faculty_name);
