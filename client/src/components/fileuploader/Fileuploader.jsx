@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import baseurl from '../../baseurl/baseurl';
-import { Fragment } from 'react';
 import './fileuploader.css';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,14 +10,18 @@ const Fileupload = () => {
 
     const [filename,setfilename]=useState('Chose File');
     const [file,setfile]=useState('');
+    const [rep,setrep]=useState('');
     
-
     const {setab_Url,setreport_Url,clkabs,setclkabs,abstatus,setabstatus,
         clkrep,setclkrep,repstatus,setrepstatus}=useContext(ProjectsContext);
 
     const change = (e) => {
         setfile(e.target.files[0]);
         setfilename(e.target.files[0].name);
+    }
+
+    const change_rep = (e) => {
+        setrep(e.target.files[0]);
     }
 
     const submit_abstract = async (e)=> {
@@ -50,7 +53,7 @@ const Fileupload = () => {
         setclkrep(true);
 
         const formData = new FormData();
-        formData.append('file',file);
+        formData.append('file',rep);
     
         try{  
             const res = await baseurl.post('/uploads/report',formData,{
@@ -78,7 +81,7 @@ const Fileupload = () => {
         </div>
 
         <div className='inputupload'>
-            <input type="file" className="customfile" onChange={change}/>
+            <input type="file" className="customfile" onChange={change_rep}/>
             {clkrep && (repstatus ? (<button className='loadstatus'><FontAwesomeIcon icon={faCheckCircle}/></button>):
                 (<button className='loadstatus'><FontAwesomeIcon icon={faSpinner} spin/></button>))
             }

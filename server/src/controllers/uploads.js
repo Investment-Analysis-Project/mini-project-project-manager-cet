@@ -8,9 +8,7 @@ cloudinary.config({
 });
 
 const uploadAbstract = async(req,res)=>{
-
-    let loaded=false;
-    
+ 
     if(req.files===null){
         return res.status(400).json({msg:'No file uploaded'});
     }
