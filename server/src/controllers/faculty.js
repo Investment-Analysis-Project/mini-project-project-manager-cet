@@ -1,6 +1,6 @@
 const db = require('../db');
 const model = require('../models/faculty');
-const auth_function = require('../utils/auth')
+const auth_function = require('../utils/auth');
 
 const getAllfaculty = async(req,res)=>{
     try{
@@ -52,11 +52,8 @@ const addFaculty = async(req,res)=>{
 const updateFaculty = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {faculty_name, designation, area_of_interest, experience, contact}=req.body;
-        const {rows} = await db.query(`UPDATE Faculty SET faculty_name=$2,designation=$3,
-                                        area_of_interest=$4, experince=$5, contact=$7
-                                        WHERE faculty_id=$1 RETURNING *`,
-                                        [id,faculty_name,designation,area_of_interest, experience, contact]);
+        const {faculty_name,designation,experience,contact,area_of_interest}=req.body;
+        const {rows} = await db.query('UPDATE Faculty SET faculty_name=$2,designation=$3,experience=$4,contact=$5,area_of_interest=$6 WHERE user_id=$1 RETURNING *',[id,faculty_name,designation,experience,contact,area_of_interest]);
         res.json(rows);
     }catch(err){
         console.log(err);
@@ -72,4 +69,4 @@ const deleteFaculty = async(req,res)=>{
     }
 };
 
-module.exports = {getAllfaculty,getbyidFaculty,addFaculty,updateFaculty,deleteFaculty,getuseridFaculty};
+module.exports = {getAllfaculty,getbyidFaculty,addFaculty,updateFaculty,deleteFaculty};

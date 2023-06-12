@@ -13,7 +13,6 @@ module.exports = router;
 
 
 // Format for Post request
-
 // {
 //     "username": "string",
 //     "password": "string",
