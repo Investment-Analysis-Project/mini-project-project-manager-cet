@@ -47,13 +47,14 @@ const Allguides = (props) => {
                 </thead>
 
                 <tbody>
-                {filteredguides.map((res)=>{
+                {filteredguides.map((res,i)=>{
+                    if(filteredguides[i].area_of_interest){
                     return(
                     <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
                     <td>{res.faculty_id}</td>
                     <td>{res.faculty_name}</td>
                     <td>{res.designation}</td>
-                    </tr>)
+                    </tr>)}
                 })}
                 </tbody>
 
