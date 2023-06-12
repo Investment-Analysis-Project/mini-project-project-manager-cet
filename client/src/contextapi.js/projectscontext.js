@@ -7,26 +7,29 @@ export const ProjectsContextProvider = (props)=>{
 
     const [projects,setProjects]=useState([]);
     const [guides,setGuides]=useState([]);
+
     const [abstract_url,setab_Url]=useState("");
     const [report_url,setreport_Url]=useState("");
     const [hosted_url,sethosted_Url]=useState("");
     const [code_url,setcode_Url]=useState("");
+
     const [domain,setDomain]=useState("All");
     const [program,setProgram]=useState("All");
     const [year,setYear]=useState("All");
     const [status,setStatus]=useState("All");
     const [auth,setAuth]=useState(false);
     const [skill,setSkill]=useState("All");
+
     const [isAdmin,setisAdmin]=useState(false);
     const [user_id,setUser_id]=useState("");
+
     const [curr_guide_name,setCurr_guide_name]=useState("");
     const [curr_designation,setCurr_designation]=useState("");
     const [curr_aof,setCurr_aof]=useState([]);
     const [inputs, setInputs] = useState(['Machine Learning']);
 
-    const [loadstatus,setloadstatus]=useState(false);
-    const [clicked,setclicked]=useState(false);
-
+    const [clkabs,setclkabs]=useState(false);
+    const [abstatus,setabstatus]=useState(false);
     const [clkrep,setclkrep]=useState(false);
     const [repstatus,setrepstatus]=useState(false);
     
@@ -43,7 +46,7 @@ export const ProjectsContextProvider = (props)=>{
         abstract_url,setab_Url,report_url,setreport_Url,hosted_url,sethosted_Url,
         code_url,setcode_Url,isAdmin,setisAdmin,user_id,setUser_id,
         curr_guide_name,setCurr_guide_name,curr_designation,setCurr_designation,curr_aof,setCurr_aof,
-        inputs,setInputs,loadstatus,setloadstatus,clicked,setclicked,clkrep,setclkrep,repstatus,setrepstatus};
+        inputs,setInputs,clkabs,setclkabs,abstatus,setabstatus,clkrep,setclkrep,repstatus,setrepstatus};
 
     return(
         <ProjectsContext.Provider value={contextValues}>

@@ -13,9 +13,8 @@ const Fileupload = () => {
     const [file,setfile]=useState('');
     
 
-    const {setloadstatus,loadstatus,clicked,setclicked,
-        abstract_url,setab_Url,report_url,setreport_Url,hosted_url,sethosted_Url,
-        code_url,setcode_Url,clkrep,setclkrep,repstatus,setrepstatus}=useContext(ProjectsContext);
+    const {setab_Url,setreport_Url,clkabs,setclkabs,abstatus,setabstatus,
+        clkrep,setclkrep,repstatus,setrepstatus}=useContext(ProjectsContext);
 
     const change = (e) => {
         setfile(e.target.files[0]);
@@ -25,7 +24,7 @@ const Fileupload = () => {
     const submit_abstract = async (e)=> {
         e.preventDefault();
 
-        setclicked(true);
+        setclkabs(true);
 
         const formData = new FormData();
         formData.append('file',file);
@@ -39,7 +38,7 @@ const Fileupload = () => {
             console.log(res.data)
             const fileUrl=res.data.url;
             setab_Url(fileUrl);
-            setloadstatus(res.data.loaded);
+            setabstatus(res.data.loaded);
         }catch(err){
             console.log(err);
         }
@@ -72,7 +71,7 @@ const Fileupload = () => {
     <>
         <div className='inputupload'>
             <input type="file" className="customfile" onChange={change}/>
-            {clicked && (loadstatus ? (<button className='loadstatus'><FontAwesomeIcon icon={faCheckCircle}/></button>):
+            {clkabs && (abstatus ? (<button className='loadstatus'><FontAwesomeIcon icon={faCheckCircle}/></button>):
                 (<button className='loadstatus'><FontAwesomeIcon icon={faSpinner} spin/></button>))
             }
             <button className='upbut' onClick={submit_abstract}> <FontAwesomeIcon icon={faUpload}/> Abstract</button>
