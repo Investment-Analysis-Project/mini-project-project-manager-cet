@@ -31,7 +31,6 @@ const Addguide = () => {
                 }
               }
             );
-            //addGuide(response.data);
             console.log(response.data);
             setCurr_aof([]);
             navigate(`/guides`)
