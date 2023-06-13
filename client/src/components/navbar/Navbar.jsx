@@ -33,7 +33,7 @@ const Navbar = () => {
                 {profilevisible && <div className='logindropdown'>
                     <ul className='liststyle'>
                         <li>
-                            {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Panel</p>)}
+                            {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin</p>)}
                             {!isAdmin && (<p className='profilelistitem' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faPersonCircleCheck}/> Profile</p>)}      
                         </li>
                         <li>

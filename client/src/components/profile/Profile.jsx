@@ -61,8 +61,85 @@ const Profile = () => {
 
     return(
         <div className='profile'>
-           <h1>Profile Page</h1>
-           {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
+            {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
+            <div className='profiledetails'>
+                
+                <div className='profiledivison1'>
+                    <div className='profilepic'>
+
+                    </div>
+
+                    <div className='guideskill'>
+                        <h3>Areas of Interest</h3>
+                        <div className='guideskillitems'>
+                            {aof && aof.map((item,i)=>{
+                                return(
+                                    <ul key={i}>
+                                        <li>{item}</li>
+                                    </ul>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+
+                <div className='profiledivison2'>
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">Guide Id</label>
+                        <input className='proin' type="text" readOnly value={faculty_id}/>
+                    </div>
+
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">Guide Name</label>
+                        <input className='proin' type="text" readOnly value={faculty_name}/>
+                    </div>
+
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">Designation</label>
+                        <input className='proin' type="text" readOnly value={designation}/>
+                    </div>
+
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">E-Mail</label>
+                        <input className='proin' type="text" readOnly value={email}/>
+                    </div>
+
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">Contact</label>
+                        <input className='proin' type="text" readOnly value="98745963210"/>
+                    </div>
+
+                    <div className='profileeachdetail'>
+                        <label htmlFor="">Experience</label>
+                        <input className='proin' type="text" readOnly value="12"/>
+                    </div>
+                </div>      
+            </div>
+            <div className='guideskill'>
+                    <h2>Guided Projects</h2>   
+                    <table className='adminprofiletable'>
+                        <thead>
+                            <tr className='bg-primary'>
+                                <th scope="col">Project ID</th>
+                                <th scope="col">Title</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        {project && project.map((item,i)=>{
+                            return(
+                            <tr key={item.pro_id}>
+                                <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
+                                <td>{item.pro_title}</td>
+                            </tr>
+                            )
+                        })}
+                        </tbody>
+                    </table>
+                 </div>
+
+
+           {/* {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
             <div className='profiledetails'>
                 <div className='profileeachdetail'>
                     <label htmlFor="">Guide Id</label>
@@ -118,7 +195,7 @@ const Profile = () => {
                         </tbody>
                     </table>
                  </div>           
-           </div> 
+           </div>  */}
         </div>
     )
 }
