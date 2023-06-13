@@ -31,15 +31,15 @@ const Navbar = () => {
                 <button className='navbut' onClick={profileview}><FontAwesomeIcon icon={faUserCircle}/> User</button>
 
                 {profilevisible && <div className='logindropdown'>
-                    <div className='liststyle'>
-                        <div>
+                    <ul className='liststyle'>
+                        <li>
                             {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Panel</p>)}
                             {!isAdmin && (<p className='profilelistitem' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faPersonCircleCheck}/> Profile</p>)}      
-                        </div>
-                        <div>
+                        </li>
+                        <li>
                             <p className='profilelistitem' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</p>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>}
 
                 {/* <button className='navbut' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
