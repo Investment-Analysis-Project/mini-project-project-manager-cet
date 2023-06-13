@@ -1,13 +1,18 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import './navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt, faHome, faPersonChalkboard, faRightFromBracket, faSignIn, faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt, faHome, faPerson, faPersonChalkboard, faPersonCircleCheck, faRightFromBracket, faSignIn, faUserCircle, faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [profilevisible,setprofilevisible]=useState(false);
+
+    const profileview=()=>{
+        setprofilevisible(!profilevisible);
+    }
 
     const {auth,setAuth,isAdmin,setisAdmin,user_id,setCurr_aof}=useContext(ProjectsContext);
 
@@ -23,9 +28,23 @@ const Navbar = () => {
             </div>
 
             {auth ? (<div className='admin'>
-                <button className='navbut' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
+                <button className='navbut' onClick={profileview}><FontAwesomeIcon icon={faUserCircle}/> User</button>
+
+                {profilevisible && <div className='logindropdown'>
+                    <div className='liststyle'>
+                        <div>
+                            {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Panel</p>)}
+                            {!isAdmin && (<p className='profilelistitem' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faPersonCircleCheck}/> Profile</p>)}      
+                        </div>
+                        <div>
+                            <p className='profilelistitem' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</p>
+                        </div>
+                    </div>
+                </div>}
+
+                {/* <button className='navbut' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
                 {isAdmin && (<button className='navbut' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Page</button>)}
-                {auth && !isAdmin && (<button className='navbut' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faUserSecret}/> Profile</button>)}     
+                {auth && !isAdmin && (<button className='navbut' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faUserSecret}/> Profile</button>)}*/}
             </div>) :
             (<div className='admin'>
                 <button className='navbut' onClick={()=>{navigate('/login')}}><FontAwesomeIcon icon={faSignIn}/> Login</button>
