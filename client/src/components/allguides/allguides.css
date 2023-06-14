@@ -1,14 +1,24 @@
 .allguides{
-    margin-top: 30px;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .guidecontainer{
-    width: 100%;
-    max-width: 1024px;
-    height: 100%;
-    margin-top: 30px;
-    text-align: center;
+    margin-top: 5px;
+    width: 80%;
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.guideitem{
+    width: 30%;
+    border:2px solid;
+    height: 100px;
 }

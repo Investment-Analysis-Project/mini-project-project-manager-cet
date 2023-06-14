@@ -36,7 +36,7 @@ const Allguides = (props) => {
     return(
         <div className='allguides'>
             <div className='guidecontainer'>
-                <table className="table table-striped table-dark">
+                {/* <table className="table table-striped table-dark">
 
                 <thead>
                     <tr className='bg-primary'>
@@ -58,7 +58,24 @@ const Allguides = (props) => {
                 })}
                 </tbody>
 
-                </table>
+                </table> */}
+        
+                {filteredguides.map((res,i)=>{
+                    // if(filteredguides[i].area_of_interest){
+                    // return(
+                    // <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
+                    // <td>{res.faculty_id}</td>
+                    // <td>{res.faculty_name}</td>
+                    // <td>{res.designation}</td>
+                    // </tr>)}
+                    return(
+                        <div className='guideitem'>
+
+                        </div>
+                    );
+                })}
+
+
             </div>
         </div>
     )
