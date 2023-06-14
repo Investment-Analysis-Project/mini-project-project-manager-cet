@@ -36,7 +36,27 @@ const Allguides = (props) => {
     return(
         <div className='allguides'>
             <div className='guidecontainer'>
-                {/* <table className="table table-striped table-dark">
+                
+                {filteredguides.map((res,i)=>{
+                    if(filteredguides[i].area_of_interest){ 
+                        return(
+                            <div className='guideitem' key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
+                                <span className='guide-id'>{res.faculty_id}</span>
+                                <span className='guide-name'>{res.faculty_name}</span>
+                                <span className='guide-desg'>{res.designation}</span>
+                            </div>
+                        )
+                    }
+                })}
+            </div>
+        </div>
+    )
+}
+
+export default Allguides;
+
+
+{/* <table className="table table-striped table-dark">
 
                 <thead>
                     <tr className='bg-primary'>
@@ -59,26 +79,9 @@ const Allguides = (props) => {
                 </tbody>
 
                 </table> */}
-        
-                {filteredguides.map((res,i)=>{
-                    // if(filteredguides[i].area_of_interest){
-                    // return(
-                    // <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-                    // <td>{res.faculty_id}</td>
-                    // <td>{res.faculty_name}</td>
-                    // <td>{res.designation}</td>
-                    // </tr>)}
-                    return(
-                        <div className='guideitem'>
-
-                        </div>
-                    );
-                })}
-
-
-            </div>
-        </div>
-    )
-}
-
-export default Allguides;
+// return(
+// <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
+// <td>{res.faculty_id}</td>
+// <td>{res.faculty_name}</td>
+// <td>{res.designation}</td>
+// </tr>)}

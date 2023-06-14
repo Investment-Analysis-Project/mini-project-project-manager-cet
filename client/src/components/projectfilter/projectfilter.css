@@ -8,6 +8,7 @@
 .header{
     border-radius: 10px;
     margin-top: 20px;
+    background:rgb(125, 146, 167);
     color: aliceblue;
     display: flex;
     overflow: auto;
