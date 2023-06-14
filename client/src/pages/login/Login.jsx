@@ -43,13 +43,15 @@ const Login = () => {
             localStorage.setItem('token', token);
 
             setAuth(value.auth);
-            setUser_id(value.user_id);
+            setUser_id(decodedToken.user_id);
+            console.log(decodedToken.user_id);
+            console.log(value.auth);
             
-            if(value.isadmin){
+            if(decodedToken.isadmin){
                 setisAdmin(decodedToken.isadmin);
                 navigate('/adminpanel');
             }
-            else navigate(`/guide/${value.user_id}`);
+            else navigate(`/guide/${decodedToken.user_id}`);
 
         }catch(err){
             console.log(err);

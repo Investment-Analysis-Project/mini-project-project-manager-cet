@@ -60,7 +60,7 @@ const ProjectDetail=()=>{
     useEffect(()=>{
         const fetchData=async()=>{
             try{
-                const response = await baseurl.get(`/faculty/facultyid/${guide_id}`);
+                const response = await baseurl.get(`/faculty/faculty_user_id/${guide_id}`);
                 setuser(response.data[0].user_id)
             }catch(err){
                 console.log(err);
@@ -77,7 +77,6 @@ const ProjectDetail=()=>{
                     <div className='division'>
                         <div className='projectnameid'>
                             <h1>{pro_title}</h1>
-                            <span className='projectid'>{pro_id}</span>
                         </div>
 
                         <p className='projectdesc'>{pro_desc}</p>
@@ -85,7 +84,7 @@ const ProjectDetail=()=>{
                         <div className='projectsdoc'>
                                 <button className='docbut'><FontAwesomeIcon icon={faPager}/> View Deployment</button>
                                 <button className='docbut'><FontAwesomeIcon icon={faCode}/> View Code</button>
-                                <button className='docbut'><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
+                                <button className='docbut' onClick={()=>{window.open(report_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
                                 <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
                         </div>
                     </div>

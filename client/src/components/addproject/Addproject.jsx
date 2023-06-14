@@ -28,15 +28,16 @@ const Addproject = () => {
     const [hosted_link,sethosted_link]=useState("");
     const [code_link,setcode_link]=useState("");
     
-    const {addProject,abstract_url,setab_Url,report_url,setreport_Url,
-        hosted_url,sethosted_Url,code_url,setcode_Url,inputs,setInputs,setCurr_aof,
-        setclicked,setloadstatus}=useContext(ProjectsContext);
+    const {abstract_url,report_url,hosted_url,code_url,inputs,setInputs,
+        setclkabs,setabstatus,setclkrep,setrepstatus}=useContext(ProjectsContext);
   
     const submitForm = async(e)=>{
         e.preventDefault();
 
-        setloadstatus(false);
-        setclicked(false);
+        setclkabs(false);
+        setabstatus(false);
+        setclkrep(false);
+        setrepstatus(false);
 
         const token = localStorage.getItem('token');
 
@@ -127,8 +128,8 @@ const Addproject = () => {
                         </div>
 
                         <div className="projectinputeach">
-                        <label className='projectinputlabel'>Documents</label>   
-                        <Fileuploader/>
+                            <label className='projectinputlabel'>Documents</label>   
+                            <Fileuploader/>
                         </div>
                 </div>
                 <button type="submit" className='addprobut' onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button>   

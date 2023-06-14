@@ -53,7 +53,7 @@ const AllProjects = (props) => {
         
     <div className='allprojects'>
         <div className='projectcontainer'>
-            <table className="table table-striped table-dark border">
+            {/* <table className="table table-striped table-dark border">
 
             <thead>
                 <tr className='bg-primary'>
@@ -83,7 +83,26 @@ const AllProjects = (props) => {
             })}
             </tbody>
 
-            </table>
+            </table> */}
+
+            {filteredprojects.map((res,i)=>{
+                return(
+                    <div className='projectitem' key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
+                        <span className='project-title'>{res.pro_title}</span>
+                        <span className='project-domain'>
+                            {res.pro_domains.map((item,i)=>{
+                                return(
+                                    <div key={i}>
+                                        <span>{item}</span>
+                                        <br></br>
+                                    </div>
+                                );
+                            })}
+                        </span>
+                        <span className='project-status'>{res.pro_status ? "Completed" : "Ongoing"}</span>
+                    </div>
+                )
+            })}
         </div>
     </div>
     )
