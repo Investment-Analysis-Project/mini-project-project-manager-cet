@@ -1,5 +1,6 @@
 from flask import Flask, request
 import os
+from resources.pdf_extract import extract_pdf
 
 app = Flask(__name__)
 
@@ -24,6 +25,7 @@ def predict_pdf():
         """
         Process the data and make prediction here
         """
+        extracted_text = extract_pdf(file_path)     
 
         os.remove(file_path)
 
