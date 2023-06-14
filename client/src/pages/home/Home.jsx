@@ -14,7 +14,7 @@ const Home = () => {
             <Navbar/>
             <div className='homecontainer'>
                 <div className='homeintro'>
-                    <h1>Welcome to Project Management System</h1>   
+                    <h2>Welcome to Project Management System</h2>   
                     <p>
                         Welcome to the project management system of CSE departmant, where you can find
                         previous year projects, guides, and also check the similarity 
