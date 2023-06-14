@@ -21,6 +21,10 @@ def predict_pdf():
         # Save the file to a desired location
         file.save(file_path)
         print("File saved successfully.")
+        """
+        Process the data and make prediction here
+        """
+
         os.remove(file_path)
 
         return "File uploaded successfully."
