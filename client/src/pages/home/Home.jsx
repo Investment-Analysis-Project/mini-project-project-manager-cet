@@ -14,8 +14,9 @@ const Home = () => {
             <Navbar/>
             <div className='homecontainer'>
                 <div className='homeintro'>
-                    <img src='cseh.png'></img>
-                    <h1>Welcome to Project Management System</h1>   
+
+                    <h2>Welcome to Project Management System</h2>   
+
                     <p>
                         Welcome to the project management system of the CSE departmant of College Of Engineering Trivandrum, <br></br>where you can find
                         previous year projects, guides, and also check the similarity 
@@ -36,7 +37,7 @@ const Home = () => {
                         <p>See Guides</p>
                     </div>
 
-                    <div className='homeitem' onClick={()=>navigate('/similarity')}>
+                    <div className='homeitem' onClick={()=>navigate('/abstractsimilarity')}>
                         <img src={img3} alt="" />
                         <p>Search Similar Abstracts</p>
                     </div>

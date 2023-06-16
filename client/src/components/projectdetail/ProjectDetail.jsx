@@ -23,6 +23,7 @@ const ProjectDetail=()=>{
     const [report_link,setreport_link]=useState("");
     const [hosted_link,sethosted_link]=useState("");
     const [code_link,setcode_link]=useState("");
+    const [user,setuser]=useState();
 
     const { id }=useParams();
 
@@ -56,6 +57,18 @@ const ProjectDetail=()=>{
             fetchData();
         },[]);
 
+    useEffect(()=>{
+        const fetchData=async()=>{
+            try{
+                const response = await baseurl.get(`/faculty/faculty_user_id/${guide_id}`);
+                setuser(response.data[0].user_id)
+            }catch(err){
+                console.log(err);
+            }
+        };
+        fetchData();
+    },[guide_id]);
+
     
     return(
         <div className='projectdetail'>
@@ -64,7 +77,6 @@ const ProjectDetail=()=>{
                     <div className='division'>
                         <div className='projectnameid'>
                             <h1>{pro_title}</h1>
-                            <span className='projectid'>{pro_id}</span>
                         </div>
 
                         <p className='projectdesc'>{pro_desc}</p>
@@ -72,7 +84,7 @@ const ProjectDetail=()=>{
                         <div className='projectsdoc'>
                                 <button className='docbut'><FontAwesomeIcon icon={faPager}/> View Deployment</button>
                                 <button className='docbut'><FontAwesomeIcon icon={faCode}/> View Code</button>
-                                <button className='docbut'><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
+                                <button className='docbut' onClick={()=>{window.open(report_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
                                 <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
                         </div>
                     </div>
@@ -97,7 +109,7 @@ const ProjectDetail=()=>{
                                     
                                 <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
                                 <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
-                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${guide_id}`)}>{guide_id}</button></p>  
+                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button></p>  
                             
                                 <table className='memtable'>
                                     <thead>

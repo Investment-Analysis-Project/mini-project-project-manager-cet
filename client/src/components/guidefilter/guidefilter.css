@@ -2,23 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .header{
     border-radius: 10px;
     margin-top: 20px;
-    background:rgb(5, 120, 53);
-    color: aliceblue;
+    background:rgb(120, 171, 223);
+    color: rgb(0, 32, 59);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: 100%;
-    max-width: 1024px;
+    width: 80%;
 }
 
-.header h1{
+.headercontainer h1{
     font-weight: 800;
 }
 

@@ -13,7 +13,6 @@ import DynamicForm from '../dynamicinput/DynamicInput';
 const Addproject = () => {
     let navigate = useNavigate();
     
-    const [pro_id,setpro_id]=useState("");
     const [pro_title,setpro_title]=useState("");
     const [pro_desc,setpro_desc]=useState("");
     const [program,setprogram]=useState("BTECH");
@@ -29,17 +28,21 @@ const Addproject = () => {
     const [hosted_link,sethosted_link]=useState("");
     const [code_link,setcode_link]=useState("");
     
-    const {addProject,abstract_url,setab_Url,report_url,setreport_Url,
-        hosted_url,sethosted_Url,code_url,setcode_Url,inputs,setInputs,setCurr_aof}=useContext(ProjectsContext);
+    const {abstract_url,report_url,hosted_url,code_url,inputs,setInputs,
+        setclkabs,setabstatus,setclkrep,setrepstatus}=useContext(ProjectsContext);
   
     const submitForm = async(e)=>{
         e.preventDefault();
+
+        setclkabs(false);
+        setabstatus(false);
+        setclkrep(false);
+        setrepstatus(false);
 
         const token = localStorage.getItem('token');
 
         try{
             const response = await baseurl.post("/projects",{
-                pro_id,
                 pro_title,
                 pro_desc,
                 pro_domains:inputs,
@@ -61,9 +64,9 @@ const Addproject = () => {
                     }
                 }
             );
-            addProject(response.data[0]);
-            console.log(response);
-            setInputs(['Machine Learning']); 
+            console.log(response.data[0]);
+            setInputs(['Machine Learning']);
+            navigate(`/project/${response.data[0].pro_id}`);
         }catch(err){
             console.log(err);
         }
@@ -74,11 +77,6 @@ const Addproject = () => {
             <div className='addproject'>
                 <h1>Add Project</h1>
                 <div className='projectenter'>
-
-                        <div className='projectinputeach'>
-                        <label className='projectinputlabel'>Project Id</label>
-                        <input className='inp' type="text" value={pro_id} onChange={e=>setpro_id(e.target.value)} placeholder="ID"/>
-                        </div>
 
                         <div className='projectinputeach'>
                         <label className='projectinputlabel'>Project Title</label>
@@ -130,8 +128,8 @@ const Addproject = () => {
                         </div>
 
                         <div className="projectinputeach">
-                        <label className='projectinputlabel'>Documents</label>   
-                        <Fileuploader/>
+                            <label className='projectinputlabel'>Documents</label>   
+                            <Fileuploader/>
                         </div>
                 </div>
                 <button type="submit" className='addprobut' onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button>   

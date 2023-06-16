@@ -34,14 +34,12 @@ const Admin = () => {
                     <table className='adminprofiletable'>
                         <thead>
                             <tr className='bg-primary'>
-                                <th scope="col">User ID</th>
                                 <th scope="col">Email</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>{user_id}</td>
                                 <td>{email}</td>
                             </tr>
                         </tbody>

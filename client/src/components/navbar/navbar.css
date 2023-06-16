@@ -41,3 +41,34 @@
 .admin{
     margin-top: 5px;
 }
+
+.logindropdown{
+    width:150px;
+    background: rgba(176, 10, 10, 0.966);
+    display: flex;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:82px;
+    right:1px;
+}
+
+.liststyle{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.profilelistitem{
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.profilelistitem:hover{
+    font-weight: 600;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
