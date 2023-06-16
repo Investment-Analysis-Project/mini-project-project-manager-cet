@@ -1,5 +1,5 @@
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Geologica', sans-serif;
 }
 
 .navbar{
@@ -49,7 +49,6 @@
     position: absolute;
     display: flex;
     justify-content: center;
-  
     top:72px;
     right:1px;
 }

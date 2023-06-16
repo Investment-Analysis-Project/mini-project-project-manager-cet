@@ -43,7 +43,7 @@ const ProjectFilter = () => {
                 </div>
 
                 <div className='drop'>
-                    <label htmlFor="status">Staus </label>
+                    <label htmlFor="status">Status </label>
                     <select name="status" onChange={(e)=>setStatus(e.target.value)}>
                         <option value="All">All</option>
                         <option value="true">Completed</option>
