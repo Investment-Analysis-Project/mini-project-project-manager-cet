@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     padding: 10px; 
-    background:
 }
 
 .homeintro h1{
@@ -28,7 +27,7 @@
 }
 
 .homemenu{
-    margin-top: 70px;
+    margin-top: 30px;
     width: 100%;
     max-width: 1024px;
     display:flex;
@@ -43,7 +42,7 @@
     border-radius: 5px;
     align-items: center;
     cursor: pointer;
-    box-shadow: 1px 3px 2px 2px #00143d;
+    box-shadow: 2px 3px 2px 2px #00143d;
     font-weight: bold;
     border-radius: 10px;
 }
@@ -56,6 +55,6 @@
 
 .homeitem:hover{
     transform: scale(1.05);
-    box-shadow: 0px 2px 2px 2px #00143d;
+    box-shadow: 2px 3px 2px 2px #00143d;
 }
 

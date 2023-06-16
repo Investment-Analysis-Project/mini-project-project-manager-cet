@@ -20,7 +20,6 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
     gap:20px;
 }
 
@@ -28,15 +27,20 @@
     font-weight: 600;
     font-size: 25px;
     color: rgb(5, 21, 161);
+    padding-left: 10px;
+    background: #a4afc9;
 }
 
 .project-domain{
-    font-weight: 600;  
+    font-weight: 500;  
+    padding-left: 10px;
 }
 
 .project-status{
-    font-weight: 600;
-    color: rgb(17, 122, 62);
+    font-weight: 500;
+    color: rgb(5, 121, 49);
+    padding-left: 10px;
+    
 }
 
 .projectitem:active{

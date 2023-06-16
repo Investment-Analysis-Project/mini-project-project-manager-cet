@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import './allprojects.css';
 import { useNavigate } from 'react-router-dom';
 import baseurl from '../../baseurl/baseurl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 const AllProjects = (props) => {
 
@@ -59,12 +61,14 @@ const AllProjects = (props) => {
                     <div className='projectitem' key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
                         <span className='project-title'>{res.pro_title}</span>
                         <span className='project-domain'>
+                            <span>Domians <FontAwesomeIcon icon={faLayerGroup}/> </span>
+                            <br></br>
                             {res.pro_domains.map((item,i)=>{
                                 return(
-                                    <div key={i}>
-                                        <span>{item}</span>
+                                    <>
+                                        <span key={i}>{item} </span>
                                         <br></br>
-                                    </div>
+                                    </>
                                 );
                             })}
                         </span>
