@@ -1,10 +1,11 @@
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .navbar{
-    background: rgb(1, 37, 121);
-    height: 80px;
+    /* background: rgb(21, 21, 143); */
+    background-image: linear-gradient(180deg,#15158F,#4D53B3);
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,7 @@
     border-radius: 5px;
     background: transparent;
     color: aliceblue;
-    font-weight: 600;
+    font-weight: 500;
     font-size: medium;
     outline: none;
     padding: 5px;
