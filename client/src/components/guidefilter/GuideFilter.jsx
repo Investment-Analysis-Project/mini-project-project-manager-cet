@@ -7,8 +7,8 @@ const GuideFilter = () => {
 
     return(
     <div className='headercontainer'>
+        <h1>Explore Guides</h1>
         <div className='header'>
-            <h1>Search For Guides</h1>
             <div className='filter'>
                 <div className='drop'>
                     <label htmlFor="skill">Area Of Interest</label>

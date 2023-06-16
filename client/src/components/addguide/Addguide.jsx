@@ -4,12 +4,14 @@ import baseurl from '../../baseurl/baseurl';
 import { useContext } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdd, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import {useNavigate} from 'react-router-dom';
 
 const Addguide = () => {
+    const navigate=useNavigate();
 
-    const [user_id,setuser_id]=useState("");
-    const [user_password,setuser_passwor]=useState("");
+    const [user_name,setuser_name]=useState("");
+    const [faculty_id,setfaculty_id]=useState("");
     const [email,setemail]=useState("");
 
     const {addGuide,setCurr_aof}=useContext(ProjectsContext);
@@ -21,11 +23,7 @@ const Addguide = () => {
 
         try{
             const response = await baseurl.post("/auth/create",{
-              user_id,
-              user_password,
-              user_type :'faculty',
-              isadmin:false,
-              email},
+              user_name,email,faculty_id},
               {
                 headers:
                 {
@@ -33,9 +31,9 @@ const Addguide = () => {
                 }
               }
             );
-            addGuide(response.data[0]);
+            console.log(response.data);
             setCurr_aof([]);
-            console.log(response);
+            navigate(`/guides`)
         }catch(err){
             console.log(err);
         }
@@ -48,15 +46,15 @@ const Addguide = () => {
                 <div className='inputform'>
                         <div className='inputuserdet'>
                             <label className='inputuserdetlab'>Username</label>
-                            <input className='guideinput' type="text" value={user_id} onChange={e=>setuser_id(e.target.value)} placeholder="ID"/>
-                        </div>
-                        <div className='inputuserdet'>
-                            <label className='inputuserdetlab'>Password</label>
-                            <input className='guideinput' type="text" value={user_password} onChange={e=>setuser_passwor(e.target.value)} placeholder="Password"/>
+                            <input className='guideinput' type="text" value={user_name} onChange={e=>setuser_name(e.target.value)} placeholder="ID"/>
                         </div>
                         <div className='inputuserdet'>
                             <label className='inputuserdetlab'>Email</label>
                             <input className='guideinput' type="text" value={email} onChange={e=>setemail(e.target.value)} placeholder="Email"/>
+                        </div>
+                        <div className='inputuserdet'>
+                            <label className='inputuserdetlab'>Faculty Id</label>
+                            <input className='guideinput' type="text" value={faculty_id} onChange={e=>setfaculty_id(e.target.value)} placeholder="Faculty Id"/>
                         </div>
                 </div>
                 <button className='guidebut' type="submit"  onClick={submitForm}><FontAwesomeIcon icon={faFileCirclePlus}/> Add</button> 

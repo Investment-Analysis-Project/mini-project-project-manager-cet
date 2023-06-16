@@ -7,9 +7,9 @@ const ProjectFilter = () => {
     const {setDomain,setProgram,setYear,setStatus}=useContext(ProjectsContext);
 
     return(
-        <div className='headercontainer'>
-        <div className='header'>
-            <h1>Search For Projects</h1>
+    <div className='headercontainer'>
+        <h1>Explore Projects</h1>
+        <div className='header'> 
             <div className='filter'>
                 <div className='drop'>
                     <label htmlFor="program">Program </label>

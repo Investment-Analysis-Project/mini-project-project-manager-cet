@@ -2,8 +2,8 @@ import React from 'react';
 
 const Similarity = () => {
     return(
-        <div>
-            Similarity Checking Page
+        <div className='similarity'>
+            This is abstract similarity checking Page
         </div>
     )
 }

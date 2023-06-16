@@ -1,7 +1,28 @@
 create database promansys;
 
+CREATE TABLE Usertable(
+  user_id SERIAL PRIMARY KEY,
+  user_name VARCHAR(20) NOT NULL UNIQUE,
+  user_password VARCHAR(20) NOT NULL DEFAULT 'password',
+  user_type VARCHAR(20) NOT NULL DEFAULT 'faculty',
+  isAdmin BOOLEAN NOT NULL DEFAULT false,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE Faculty (
+  faculty_id VARCHAR PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  faculty_name VARCHAR,
+  designation VARCHAR,
+  experience INTEGER,
+  contact VARCHAR(10),
+  area_of_interest VARCHAR[],
+  FOREIGN KEY (user_id) REFERENCES Usertable(user_id)
+);
+
 CREATE TABLE Project(
-  pro_id VARCHAR(10) PRIMARY KEY,
+  pro_id SERIAL PRIMARY KEY,
   pro_title VARCHAR(255) NOT NULL,
   pro_desc TEXT, 
   pro_domains VARCHAR[],
@@ -19,34 +40,3 @@ CREATE TABLE Project(
   code_link TEXT,
   FOREIGN KEY (guide_id) REFERENCES Faculty(faculty_id)
 );
-
-CREATE TABLE Usertable(
-  user_id VARCHAR(10) PRIMARY KEY,
-  user_password VARCHAR(20) NOT NULL,
-  user_type VARCHAR(20) NOT NULL,
-  isAdmin BOOLEAN NOT NULL DEFAULT false,
-  email VARCHAR(100) NOT NULL UNIQUE,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
-CREATE TABLE Faculty (
-  faculty_id VARCHAR PRIMARY KEY,
-  faculty_name VARCHAR,
-  designation VARCHAR,
-  area_of_interest VARCHAR[],
-  FOREIGN KEY (faculty_id) REFERENCES Usertable(user_id)
-);
-
--- create table teams(
---     t_id VARCHAR(10) PRIMARY KEY NOT NULL,
---     guide_id VARCHAR(10) NOT NULL,
---     program VARCHAR(10) NOT NULL,
---     grad_year varchar(4) NOT NULL
--- );
-
--- create table students(
---     s_id VARCHAR(10) PRIMARY KEY NOT NULL,
---     name VARCHAR(50) NOT NULL,
---     team_id VARCHAR(10) NOT NULL,
---     FOREIGN KEY(team_id) REFERENCES teams(t_id)
--- );

@@ -31,11 +31,12 @@ const getidfacultyProject = async(req,res)=>{
 
 const addProject = async(req,res)=>{
     try{
-        const {pro_id,pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,pro_status,abstract_link,
+        const {pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,pro_status,abstract_link,
             report_link,hosted_link,code_link} = req.body;
         
-        const { rows } = await db.query('INSERT INTO Project VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16) RETURNING *',[pro_id,pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,
-            pro_status,abstract_link,report_link,hosted_link,code_link]);
+        const { rows } = await db.query('INSERT INTO Project (pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,pro_status,abstract_link,report_link,hosted_link,code_link) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) RETURNING *',
+        [pro_title,pro_desc,pro_domains,program,grad_year,guide_id,mem_1,mem_2,mem_3,mem_4,pro_status,abstract_link,
+        report_link,hosted_link,code_link]);
 
         res.json(rows);
     }catch(err){
@@ -46,8 +47,8 @@ const addProject = async(req,res)=>{
 const updateProject = async(req,res)=>{
     try{
         const {id}=req.params;
-        const {pro_desc,pro_domains,abstract_link,report_link,hosted_link,code_link}=req.body;
-        const {rows} = await db.query('UPDATE Project SET pro_desc=$2,pro_domains=$3,abstract_link=$4,report_link=$5,hosted_link=$6,code_link=$7 WHERE pro_id=$1 RETURNING *',[id,pro_desc,pro_domains,abstract_link,report_link,hosted_link,code_link]);
+        const {pro_desc,pro_domains,pro_status,abstract_link,report_link,hosted_link,code_link}=req.body;
+        const {rows} = await db.query('UPDATE Project SET pro_desc=$2,pro_domains=$3,pro_status=$4,abstract_link=$5,report_link=$6,hosted_link=$7,code_link=$8 WHERE pro_id=$1 RETURNING *',[id,pro_desc,pro_domains,pro_status,abstract_link,report_link,hosted_link,code_link]);
         res.json(rows);
     }catch(err){
         console.log(err);
