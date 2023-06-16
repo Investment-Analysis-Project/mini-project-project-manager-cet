@@ -32,7 +32,6 @@
 
 .guide-id{
     font-weight: 600;
-    font-style: italic;
 }
 
 .guide-name{
@@ -43,4 +42,13 @@
 .guide-desg{
     font-weight: 600;
     color: seagreen;
+}
+
+.guideitem:active{
+    box-shadow: 0px 0px 5px 5px rgb(125, 146, 167);
+}
+
+.guideitem:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 2px 2px rgb(125, 146, 167);
 }
