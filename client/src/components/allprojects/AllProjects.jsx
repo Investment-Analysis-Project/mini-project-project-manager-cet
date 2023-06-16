@@ -55,7 +55,6 @@ const AllProjects = (props) => {
         
     <div className='allprojects'>
         <div className='projectcontainer'>
-            
             {filteredprojects.map((res,i)=>{
                 return(
                     <div className='projectitem' key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
