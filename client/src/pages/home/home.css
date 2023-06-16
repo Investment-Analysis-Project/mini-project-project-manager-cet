@@ -15,18 +15,15 @@
    
 }
 
-.homeintro h2{
+.homeintro h1{
     text-align: center;
     color: #fffefb;
     padding-top: 20px;
-    /* font-family: 'Exo 2',sans-serif; */
-    font-size: 50px;
+    font-weight: 600;
 }
 
 .homeintro p{
-    /* font-family:'Raleway', sans-serif; */
     color: #fffefb;
-    width: 95%;
     font-weight: 500;
     font-size: 20px;
     padding: 10px;

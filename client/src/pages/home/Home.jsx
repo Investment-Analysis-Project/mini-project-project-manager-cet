@@ -17,7 +17,7 @@ const Home = () => {
             <div className='homecontainer'>
                 <div className='homeintro'>
 
-                    <h2>Welcome to Project Management System</h2>   
+                    <h1>Welcome to Project Management System</h1>   
 
                     <p>
                         Welcome to the project management system of the CSE departmant of College Of Engineering Trivandrum, <br></br>where you can find
