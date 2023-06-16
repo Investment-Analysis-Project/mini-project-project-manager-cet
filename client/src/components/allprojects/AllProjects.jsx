@@ -53,38 +53,7 @@ const AllProjects = (props) => {
         
     <div className='allprojects'>
         <div className='projectcontainer'>
-            {/* <table className="table table-striped table-dark border">
-
-            <thead>
-                <tr className='bg-primary'>
-                    <th scope="col">Name</th>
-                    <th scope="col">Domain</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-            {filteredprojects.map((res,i)=>{
-                return(
-                <tr key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">
-                <td>{res.pro_title}</td>
-                <td>
-                    {res.pro_domains.map((item,i)=>{
-                        return(
-                            <div key={i}>
-                                <span>{item}</span>
-                                <br></br>
-                            </div>
-                        );
-                    })}
-                </td>
-                <td>{res.pro_status ? "Completed" : "Ongoing"}</td>
-                </tr>);
-            })}
-            </tbody>
-
-            </table> */}
-
+            
             {filteredprojects.map((res,i)=>{
                 return(
                     <div className='projectitem' key={res.pro_id}  onClick={()=>navigate(`/project/${res.pro_id}`)} id="projectpointer">

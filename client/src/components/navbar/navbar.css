@@ -25,7 +25,7 @@
     border-radius: 5px;
     background: transparent;
     color: #fff;
-    font-weight: 550;
+    font-weight: 500;
     font-size: medium;
     outline: none;
     padding: 5px;
@@ -43,14 +43,14 @@
 
 .logindropdown{
     width:150px;
-    background: rgba(176, 10, 10, 0.966);
+    background: rgba(231, 231, 231, 0.966);
     display: flex;
     border-radius: 5px;
     position: absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
-    top:82px;
+  
+    top:72px;
     right:1px;
 }
 
@@ -63,11 +63,10 @@
 }
 
 .profilelistitem{
-    color: aliceblue;
+    color:#00143d;
     cursor: pointer;
 }
 
 .profilelistitem:hover{
-    font-weight: 600;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
 }

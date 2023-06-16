@@ -7,45 +7,46 @@
 }
 
 .projectcontainer{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 20px;
     gap: 30px;
 }
 
 .projectitem{
-    width: 30%;
+    box-shadow: 0px 0px 5px 1px  #b1b7c5;
     border-radius: 5px;
-    border: 2px solid rgb(125, 146, 167);
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    padding-left: 5px;
-    gap:10px;
+    padding-left: 10px;
+    gap:20px;
 }
 
 .project-title{
     font-weight: 600;
     font-size: 25px;
-    color: rgb(3, 65, 81);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(8, 26, 184);
+    font-family: 'Geologica', sans-serif;
 }
 
 .project-domain{
     font-weight: 600;  
+    font-family: 'Geologica', sans-serif;
 }
 
 .project-status{
     font-weight: 600;
-    color: seagreen;
+    color: rgb(17, 122, 62);
+    font-family: 'Geologica', sans-serif;
 }
 
 .projectitem:active{
-    box-shadow: 0px 0px 5px 5px rgb(125, 146, 167);
+    box-shadow: 0px 0px 5px 5px #b1b7c5;
 }
 
 .projectitem:hover{
     transform: scale(1.05);
-    box-shadow: 0px 0px 2px 2px rgb(125, 146, 167);
+    box-shadow: 0px 0px 2px 2px #b1b7c5;
 }
