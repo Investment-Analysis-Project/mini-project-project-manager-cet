@@ -1,17 +1,16 @@
-def abstract_similarity(text) :
+import pandas as pd
+import numpy as np
+from nltk.corpus import stopwords
+import nltk
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer 
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import euclidean_distances
+from nltk.tokenize import word_tokenize
 
-    import pandas as pd
-    import numpy as np
-    from nltk.corpus import stopwords
-    import nltk
-    import re
-    from sklearn.feature_extraction.text import TfidfVectorizer 
-    from sklearn.metrics.pairwise import cosine_similarity
-    from sklearn.metrics.pairwise import euclidean_distances
-    from nltk.tokenize import word_tokenize
+def abstract_similarity(text):
 
-
-    documents_df = pd.read_csv('abstracts.csv')
+    documents_df = pd.read_csv('resources/abstracts.csv')
     #print(documents_df)
     stop_words_l=stopwords.words('english')
     documents_df['documents_cleaned']=documents_df.Abstract.apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]',' ',w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]',' ',w).lower() not in stop_words_l) )
@@ -34,7 +33,7 @@ def abstract_similarity(text) :
     most_similar_docs = similarities.argsort()[0][-5:][::-1]  # Get top 5 similar documents
     for doc_index in most_similar_docs:
         record_dict = documents_df.iloc[doc_index].to_dict()
-        df_dict[doc_index] = record_dict
+        df_dict[int(doc_index)] = record_dict
     return df_dict
 
 

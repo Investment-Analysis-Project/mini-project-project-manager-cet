@@ -1,6 +1,7 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import os
 from resources.pdf_extract import extract_pdf
+from resources.tfidf import abstract_similarity
 
 app = Flask(__name__)
 
@@ -25,11 +26,12 @@ def predict_pdf():
         """
         Process the data and make prediction here
         """
-        extracted_text = extract_pdf(file_path)     
+        extracted_text = extract_pdf(file_path)
 
+        abstracts = abstract_similarity(extracted_text)   
         os.remove(file_path)
 
-        return "File uploaded successfully."
+        return jsonify(abstracts)
     return "Invalid request."
 
 if __name__ == "__main__":
