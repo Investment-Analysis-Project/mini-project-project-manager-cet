@@ -19,16 +19,15 @@
     text-align: center;
     color: #fffefb;
     padding-top: 20px;
-    font-family: 'Exo 2',sans-serif;
-    font-weight: 400;
+    /* font-family: 'Exo 2',sans-serif; */
     font-size: 50px;
 }
 
 .homeintro p{
-    font-family:'Raleway', sans-serif;
+    /* font-family:'Raleway', sans-serif; */
     color: #fffefb;
     width: 95%;
-    font-size: small;
+    font-weight: 500;
     font-size: 20px;
     padding: 10px;
     text-align: center;

@@ -1,10 +1,8 @@
 *{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar{
-    /* background: rgb(21, 21, 143); */
-    /* background-image: linear-gradient(180deg,#15158F,#4D53B3); */
     background-color: #00143d;
     height: 70px;
     display: flex;
@@ -27,7 +25,7 @@
     border-radius: 5px;
     background: transparent;
     color: #fff;
-    font-weight: 600;
+    font-weight: 550;
     font-size: medium;
     outline: none;
     padding: 5px;
@@ -35,7 +33,7 @@
 }
 
 .navbut:active {
-    box-shadow: 0px 0px 1px 2px aliceblue;
+    box-shadow: 1px 1px 1px 1px aliceblue;
     outline: none;
 }
 
