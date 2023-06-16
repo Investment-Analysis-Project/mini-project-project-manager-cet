@@ -3,89 +3,62 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+.projectdetail h1{
+    color: rgb(0, 0, 0);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.projectdesc{
+    margin-top: 30px;
+    width: 90%;
+    border: none;
+    box-shadow: 2px 3px 1px 1px #00143d;
 }
 
 .projectdetailcontainer{
     margin-top: 20px;
     color: black;
-    width:100%;
-    max-width: 1024px;
-    display: flex;
-    padding: 10px;
+    width:90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
 .division{
-    width: 50%;
-    border: 1.5px solid;
+    box-shadow: 2px 2px 1px 1px #00143d;
     display: flex;
     flex-direction: column;
     padding: 5px;
     border-radius: 5px;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.projectnameid{
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
-.projectid{
-    font-style:italic;
-    color: rgb(4, 91, 68);
+.divsionspan{
+    font-weight: 600;
 }
 
-.projectsdoc{
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-    margin-top: 30px;
+.projectsubbut{
+    background:rgb(14, 101, 51);
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .docbut{
-    width: 100%;
     background: rgb(1, 37, 121);
     border: none;
     color: aliceblue;
     cursor: pointer;
     border-radius: 5px;
-    font-size: medium;
-    font-weight: 600;
-}
-
-.docbut:active{
-    box-shadow: 0px 0px 2px 2px rgb(4, 91, 68);
-    outline: none;
-}
-
-.projectteam{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: 5px;
-}
-
-.projectsubbut{
-    background:rgb(14, 101, 51);
-    font-weight: 600;
-    border: none;
-    color: rgb(255, 255, 255);
-    transition: box-shadow 0.3s;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
 .memtable{
-    width: 100%;
-    text-align: center;
-    table-layout: fixed
-}
-
-.memtable th,td{
-    border: 1px solid;
+    box-shadow: 2px 3px 1px 1px #00143d;
+    table-layout: fixed;
+    border:none;
+    text-align:center;
 }

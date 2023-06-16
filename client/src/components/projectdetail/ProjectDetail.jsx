@@ -72,69 +72,128 @@ const ProjectDetail=()=>{
     
     return(
         <div className='projectdetail'>
-            <h1>Project Details</h1>
+            <h1>{pro_title}</h1>
+            <p className='projectdesc'>At Bankrate we strive to help you make smarter financial decisions. While we adhere to strict editorial integrity, this post may contain references to products from our partners. Here’s an explanation for how we make money. Learn more about who we are and our promise to guide you through life’s financial journey.</p>
             <div className='projectdetailcontainer'>
-                    <div className='division'>
-                        <div className='projectnameid'>
-                            <h1>{pro_title}</h1>
-                        </div>
 
-                        <p className='projectdesc'>{pro_desc}</p>
-                        
-                        <div className='projectsdoc'>
-                                <button className='docbut'><FontAwesomeIcon icon={faPager}/> View Deployment</button>
-                                <button className='docbut'><FontAwesomeIcon icon={faCode}/> View Code</button>
-                                <button className='docbut' onClick={()=>{window.open(report_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
-                                <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
-                        </div>
-                    </div>
+                <div className='division'>
+                    <span className='divsionspan'>Status</span>
+                    <button className='projectsubbut'>
+                        {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faChartLine}/>} 
+                        {pro_status ? " Completed" : " Ongoing"}
+                    </button>
+                </div>
 
-                    <div className='division'>
-                            <div className='projectsub'>
-                                <p className='projectteam'>Status of Project 
-                                    <button className='projectsubbut'>
-                                        {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faChartLine}/>} 
-                                        {pro_status ? " Completed" : " Ongoing"}
-                                    </button>
-                                </p>
-                                <p className='projectteam'>Project Domain 
-                                    {pro_domains.map((item,i)=>{
-                                        return(
-                                            
-                                            <button className='projectsubbut' key={i}>{item}</button>
-                                            
-                                        )    
-                                    })}
-                                </p>
-                                    
-                                <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
-                                <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
-                                <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button></p>  
+                <div className='division'>
+                    <span className='divsionspan'>Domain</span>
+                    {pro_domains.map((item,i)=>{
+                        return(
                             
-                                <table className='memtable'>
-                                    <thead>
-                                        <tr className='bg-primary'>
-                                            <th scope="col">Done By</th>
-                                        </tr>
-                                    </thead>
+                            <button className='projectsubbut' key={i}>{item}</button>
+                            
+                        )    
+                    })}
+                </div>
 
-                                    <tbody>
-                                        <tr>
-                                            <td className='guidedproject'>{mem_1}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className='guidedproject'>{mem_2}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className='guidedproject'>{mem_3}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className='guidedproject'>{mem_4}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>        
-                            </div>
+                <div className='division'>
+                    <span className='divsionspan'>Program</span>
+                    <button className='projectsubbut'>{program}</button>
+                </div>
+
+                <div className='division'>
+                    <span className='divsionspan'>Year</span>
+                    <button className='projectsubbut'>{grad_year}</button>
+                </div>
+
+                <div className='division'>
+                    <span className='divsionspan'>Guide</span>
+                    <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button> 
+                </div>
+
+                <div className='division'>
+                    <span className='divsionspan'>Abstract</span>
+                    <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
+                </div>
+
+                <table className='memtable'>
+                    <thead>
+                        <tr className='bg-primary'>
+                            <th scope="col">Done By</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td className='guidedproject'>{mem_1}</td>
+                        </tr>
+                        <tr>
+                            <td className='guidedproject'>{mem_2}</td>
+                        </tr>
+                        <tr>
+                            <td className='guidedproject'>{mem_3}</td>
+                        </tr>
+                        <tr>
+                            <td className='guidedproject'>{mem_4}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                    
+                {/* <div className='division'> 
+                    <div className='projectsdoc'>
+                            <button className='docbut'><FontAwesomeIcon icon={faPager}/> View Deployment</button>
+                            <button className='docbut'><FontAwesomeIcon icon={faCode}/> View Code</button>
+                            <button className='docbut' onClick={()=>{window.open(report_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
+                            <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
                     </div>
+                </div>
+
+                <div className='division'>
+                    <div className='projectsub'>
+                        <p className='projectteam'>Status of Project 
+                            <button className='projectsubbut'>
+                                {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faChartLine}/>} 
+                                {pro_status ? " Completed" : " Ongoing"}
+                            </button>
+                        </p>
+                        <p className='projectteam'>Project Domain 
+                            {pro_domains.map((item,i)=>{
+                                return(
+                                    
+                                    <button className='projectsubbut' key={i}>{item}</button>
+                                    
+                                )    
+                            })}
+                        </p>
+                            
+                        <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
+                        <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
+                        <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button></p>  
+                    
+                        <table className='memtable'>
+                            <thead>
+                                <tr className='bg-primary'>
+                                    <th scope="col">Done By</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td className='guidedproject'>{mem_1}</td>
+                                </tr>
+                                <tr>
+                                    <td className='guidedproject'>{mem_2}</td>
+                                </tr>
+                                <tr>
+                                    <td className='guidedproject'>{mem_3}</td>
+                                </tr>
+                                <tr>
+                                    <td className='guidedproject'>{mem_4}</td>
+                                </tr>
+                            </tbody>
+                        </table>        
+                    </div> 
+                </div>*/}
             </div>   
         </div>
     )
