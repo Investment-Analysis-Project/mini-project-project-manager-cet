@@ -1,0 +1,19 @@
+.roww{
+   width:100%; 
+   background-color: #4D53B3;
+}
+
+.carousel{
+    margin-top: 0px;
+}
+
+.content{
+    font-family: 'Exo 2',sans-serif;
+    color: #FFFEFB;
+    text-align: center;
+}
+
+.desc{
+    font-family: 'Raleway',sans-serif;
+   
+}
