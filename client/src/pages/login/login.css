@@ -7,7 +7,7 @@
 
 .loginform{
     margin-top: 30px;
-    border: 1.5px solid black;
+    box-shadow: 2px 3px 2px 2px #00143d;;
     border-radius: 5px;
     padding: 10px;
     display: flex;
@@ -49,5 +49,5 @@ button:focus{
 
   
 .logbut:active{
-    box-shadow: 0px 0px 2px 2px black;
+    background: coral;
   }
