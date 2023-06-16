@@ -8,16 +8,16 @@
 
 .homeintro{
 
-    /* box-shadow: 0px 0px 5px 5px #4d53b3; */
-    background-color: #4D53B3;
+  
+    background-color: #00143d;
     width: 100%;
-    /* max-width: 1024px; */
+    height:50%;
 
     font-size: 30px;
     display: flex;
     flex-direction: column;
- 
-    padding: 5px;
+    padding: 10px;
+   
 }
 
 .homeintro h2{
@@ -25,6 +25,8 @@
     color: #fffefb;
     padding-top: 20px;
     font-family: 'Exo 2',sans-serif;
+    font-weight: 400;
+    font-size: 70px;
 
 }
 
@@ -40,11 +42,12 @@
 }
 
 .homemenu{
-    margin-top: 50px;
+    margin-top: 70px;
     width: 100%;
     max-width: 1024px;
     display:flex;
-    justify-content:space-around
+    justify-content:space-around;
+   
 
 }
 
@@ -55,7 +58,7 @@
     border-radius: 5px;
     align-items: center;
     cursor: pointer;
-    box-shadow: 1px 3px 2px 2px #4d53b3;
+    box-shadow: 1px 3px 2px 2px #00143d;
     font-weight: bold;
     border-radius: 10px;
 
