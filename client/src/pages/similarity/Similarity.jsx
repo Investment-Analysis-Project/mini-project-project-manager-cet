@@ -15,8 +15,15 @@ const Similarity = () => {
     }
 
     const search = async(e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('file',file);
+        
         try{
-            const resp = await axios.get('http://localhost:5000/test');
+            const resp = await axios.post('http://localhost:5000/predict/pdf', {
+                body: formData
+              });
             console.log(resp.data);
         }catch(err){
             console.log(err);
