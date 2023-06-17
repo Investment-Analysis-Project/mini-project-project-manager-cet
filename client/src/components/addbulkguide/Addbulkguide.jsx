@@ -29,7 +29,6 @@ const Addbulkguide = () => {
         e.preventDefault();
 
         const token = localStorage.getItem('token');
-
         const reader = new FileReader();
 
         reader.onload = (e) => {
@@ -62,19 +61,13 @@ const Addbulkguide = () => {
                     console.log(err);
                 }
             })};
-
-            //Convert the JSON data to a Blob
-            // const jsonBlob = new Blob([JSON.stringify(jsonData)], { type: 'application/json' });
-            // console.log(jsonBlob);
-            //Save the JSON file
-            //saveAs(jsonBlob, 'data.json');
         };
-
         reader.readAsArrayBuffer(file);
     }
 
     return(
         <div className='addbulkguide'>
+            <h1>Add more guides at time</h1>
             <div className='bulkguide'>
                 <span>Upload the excel file</span>
                 <input type="file" className="customfile" onChange={change}/>
