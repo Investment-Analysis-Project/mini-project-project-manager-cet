@@ -9,7 +9,6 @@ const ProjectFilter = () => {
     return(
     <div className='headercontainer'>
         <h1>Explore Projects</h1>
-        <div className='header'> 
             <div className='filter'>
                 <div className='drop'>
                     <label htmlFor="program">Program </label>
@@ -43,7 +42,7 @@ const ProjectFilter = () => {
                 </div>
 
                 <div className='drop'>
-                    <label htmlFor="status">Staus </label>
+                    <label htmlFor="status">Status </label>
                     <select name="status" onChange={(e)=>setStatus(e.target.value)}>
                         <option value="All">All</option>
                         <option value="true">Completed</option>
@@ -51,7 +50,6 @@ const ProjectFilter = () => {
                     </select>
                 </div>
             </div>
-        </div>
     </div>
     );
 }
