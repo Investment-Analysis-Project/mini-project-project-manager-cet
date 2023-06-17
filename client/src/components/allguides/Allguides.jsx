@@ -54,36 +54,4 @@ const Allguides = (props) => {
         </div>
     )
 }
-
 export default Allguides;
-
-
-{/* <table className="table table-striped table-dark">
-
-                <thead>
-                    <tr className='bg-primary'>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Designation</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {filteredguides.map((res,i)=>{
-                    if(filteredguides[i].area_of_interest){
-                    return(
-                    <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-                    <td>{res.faculty_id}</td>
-                    <td>{res.faculty_name}</td>
-                    <td>{res.designation}</td>
-                    </tr>)}
-                })}
-                </tbody>
-
-                </table> */}
-// return(
-// <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-// <td>{res.faculty_id}</td>
-// <td>{res.faculty_name}</td>
-// <td>{res.designation}</td>
-// </tr>)}
