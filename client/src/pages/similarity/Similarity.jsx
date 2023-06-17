@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import Layout from '../../components/layout/Layout';
 import './similarity.css';
 import { useState } from 'react';
-import absurl from '../../absurl/absurl';
-import baseurl from '../../baseurl/baseurl'
+import axios from 'axios';
 
 const Similarity = () => {
 
@@ -17,7 +16,7 @@ const Similarity = () => {
 
     const search = async(e) => {
         try{
-            const resp = await absurl.get('http://localhost:5000/test');
+            const resp = await axios.get('http://localhost:5000/test');
             console.log(resp.data);
         }catch(err){
             console.log(err);
