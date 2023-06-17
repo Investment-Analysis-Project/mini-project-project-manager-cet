@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/Navbar';
 import Addproject from '../../components/addproject/Addproject';
 import Addguide from '../../components/addguide/Addguide';
 import baseurl from '../../baseurl/baseurl';
+import Addbulkguide from '../../components/addbulkguide/Addbulkguide';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Admin = () => {
@@ -49,6 +50,7 @@ const Admin = () => {
             
             <Addproject/>
             <Addguide/>
+            <Addbulkguide/>
         </>
     )
 }

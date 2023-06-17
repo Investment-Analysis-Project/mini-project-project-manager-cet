@@ -1,0 +1,15 @@
+.addbulkguide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bulkguide{
+    background: rgb(218, 218, 232);
+    box-shadow: 2px 2px 3px 3px rgb(100, 104, 109);
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}

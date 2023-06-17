@@ -7,15 +7,18 @@
 
 .drop_box{
     width: 80%;
-    box-shadow: 0px 0px 3px 3px #00143d;
+    box-shadow: 2px 2px 3px 3px rgb(210, 96, 54);
+    border-radius: 5px;
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .drop-zone__input {
     border: 1px dashed #00143d;
+    border-radius: 5px;
 }
 
 .drop-zone__prompt{

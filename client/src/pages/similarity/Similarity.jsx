@@ -38,7 +38,10 @@ const Similarity = () => {
                 <div className='drop_box'>
                     <h3>Search Similar Projects</h3>
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
-                    <button onClick={search}>Search</button>
+                    <button onClick={search} className='logbut'>Search</button>
+                </div>
+                <div>
+                    
                 </div>
             </div>
         </Layout>     
