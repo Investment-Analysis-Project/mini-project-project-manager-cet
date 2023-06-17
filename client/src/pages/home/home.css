@@ -72,6 +72,6 @@
 
 .homeitem:hover{
     transform: scale(1.05);
-    box-shadow: 0px 0px 2px 2px rgb(1, 37, 121);
+    box-shadow: 0px 2px 2px 2px rgb(1, 37, 121);
 }
 
