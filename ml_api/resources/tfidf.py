@@ -9,9 +9,17 @@ from sklearn.metrics.pairwise import euclidean_distances
 from nltk.tokenize import word_tokenize
 
 def abstract_similarity(text):
+    """
+    This function returns the top 5 most similar abstracts based on cosine similarity.
+
+    Parameters
+    ----------
+    text : str
+        The text extracted from the uploaded PDF file.
+        
+    """
 
     documents_df = pd.read_csv('resources/abstracts.csv')
-    #print(documents_df)
     stop_words_l=stopwords.words('english')
     documents_df['documents_cleaned']=documents_df.Abstract.apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]',' ',w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]',' ',w).lower() not in stop_words_l) )
 
@@ -25,7 +33,6 @@ def abstract_similarity(text):
 
     input_tfidf = tfidfvectoriser.transform(query_p['processed'])
     similarities = cosine_similarity(input_tfidf, tfidf_vectors)
-    #print(similarities)
     
     df_dict = {}
 

@@ -14,6 +14,9 @@ def index():
 
 @app.route("/predict/pdf", methods=["POST"])
 def predict_pdf():
+    """
+    This function extracts the text from the uploaded PDF file and returns the top 5 most similar abstracts.
+    """
     if request.method == "POST":
         #file_path = "/temp_upload/uploaded_file.pdf"
 
@@ -28,7 +31,9 @@ def predict_pdf():
         file_path = os.path.join(file_dir,file.filename)
 
         file.save(file_path)
-        print("File saved successfully.")
+        """
+        Process the data and make prediction here
+        """
 
         extracted_text = extract_pdf(file_path)
         abstracts = abstract_similarity(extracted_text)   
@@ -38,8 +43,6 @@ def predict_pdf():
         response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
         return response
     
-        #return jsonify(abstracts)
-        #return jsonify({'filename':file.filename})
 
     return "Invalid request."
 
