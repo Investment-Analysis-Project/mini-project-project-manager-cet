@@ -67,7 +67,6 @@ const Addbulkguide = () => {
 
     return(
         <div className='addbulkguide'>
-            <h1>Add more guides at time</h1>
             <div className='bulkguide'>
                 <span>Upload the excel file</span>
                 <input type="file" className="customfile" onChange={change}/>

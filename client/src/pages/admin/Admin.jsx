@@ -42,18 +42,6 @@ const Admin = () => {
                     <div className='adminoptions'>
                         <span>Upload Excel file</span>
                     </div> 
-
-                    <div className='adminoptions'>
-                        <span>View a guide</span>
-                    </div> 
-
-                    <div className='adminoptions'>
-                        <span>Upload Excel file</span>
-                    </div> 
-
-                    <div className='adminoptions'>
-                        <span>Upload Excel file</span>
-                    </div> 
                 </div>
             </div>
             

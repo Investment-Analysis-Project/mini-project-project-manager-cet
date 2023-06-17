@@ -75,7 +75,6 @@ const Addproject = () => {
     return(
         <>
             <div className='addproject'>
-                <h1>Add Project</h1>
                 <div className='projectenter'>
                     <div className='projectinputeach'>
                         <label className='projectinputlabel'>Project Title</label>

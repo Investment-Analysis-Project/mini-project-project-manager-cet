@@ -7,7 +7,7 @@
 }
 
 .projectenter{
-    background: rgb(138, 146, 163);
+    background: rgb(172, 189, 220);
     box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
     width: 90%;
     display: grid;
@@ -27,7 +27,7 @@
 }
 
 .addprobut{
-    background: rgb(138, 146, 163);
+    background: rgb(172, 189, 220);
     box-shadow: 2px 2px 1px 1px rgb(15, 4, 0);
     padding: 5px;
     border: none;

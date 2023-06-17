@@ -42,7 +42,6 @@ const Addguide = () => {
     return(
         <>
             <div className='addguide'>
-                <h1>Project Guides</h1>
                 <div className='inputform'>
                         <div className='inputuserdet'>
                             <label className='inputuserdetlab'>Username</label>
