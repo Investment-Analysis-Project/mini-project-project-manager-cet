@@ -27,17 +27,19 @@ def predict_pdf():
         file_dir = "temp_upload"
         file_path = os.path.join(file_dir,file.filename)
 
-        # Save the file to a desired location
         file.save(file_path)
         print("File saved successfully.")
-        """
-        Process the data and make prediction here
-        """
+
         extracted_text = extract_pdf(file_path)
         abstracts = abstract_similarity(extracted_text)   
         os.remove(file_path)
 
-        return jsonify(abstracts)
+        response = jsonify(abstracts)
+        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+        return response
+    
+        #return jsonify(abstracts)
+        #return jsonify({'filename':file.filename})
 
     return "Invalid request."
 
