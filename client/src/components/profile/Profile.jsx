@@ -5,6 +5,13 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import baseurl from '../../baseurl/baseurl';
+import bg from './bg.jpg';
+import bg2 from './bg2.png';
+import bg3 from './bg3.png';
+import bg4 from './bg4.png';
+
+
+
 
 const Profile = () => {
     const{isAdmin,auth,user_id,setCurr_guide_name,setCurr_designation,setCurr_aof}=useContext(ProjectsContext);
@@ -60,143 +67,170 @@ const Profile = () => {
     },[faculty_id]);
 
     return(
+       
         <div className='profile'>
-            {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
+           
+
+            {auth && (id === user_id || isAdmin) && (<button className='profbut' onClick={() => { navigate(`/editguide/${id}`); } }>Profile Edit</button>)}
+            
+            <div className='banner'>
+                <img src={bg4} alt="" />
+            </div>
+
+            <div className='grid'>
+
             <div className='profiledetails'>
-                
                 <div className='profiledivison1'>
                     <div className='profilepic'>
-
+                        <img src={bg} alt="" />
                     </div>
+                    <h3>Name</h3>
+                    <h4>Designation</h4>
 
-                    <div className='guideskill'>
-                        <h3>Areas of Interest</h3>
-                        <div className='guideskillitems'>
-                            {aof && aof.map((item,i)=>{
-                                return(
-                                    <ul key={i}>
-                                        <li>{item}</li>
-                                    </ul>
-                                )
-                            })}
-                        </div>
+                    <div className='guideskillitems'>
+                        {aof && aof.map((item, i) => {
+                            return (
+                                <ul key={i}>
+                                    <li>{item}</li>
+                                </ul>
+                            );
+                        })}
                     </div>
                 </div>
-
-                <div className='profiledivison2'>
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">Guide Id</label>
-                        <input className='proin' type="text" readOnly value={faculty_id}/>
-                    </div>
-
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">Guide Name</label>
-                        <input className='proin' type="text" readOnly value={faculty_name}/>
-                    </div>
-
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">Designation</label>
-                        <input className='proin' type="text" readOnly value={designation}/>
-                    </div>
-
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">E-Mail</label>
-                        <input className='proin' type="text" readOnly value={email}/>
-                    </div>
-
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">Contact</label>
-                        <input className='proin' type="text" readOnly value="98745963210"/>
-                    </div>
-
-                    <div className='profileeachdetail'>
-                        <label htmlFor="">Experience</label>
-                        <input className='proin' type="text" readOnly value="12"/>
-                    </div>
-                </div>      
             </div>
-            <div className='guideskill'>
-                    <h2>Guided Projects</h2>   
-                    <table className='adminprofiletable'>
-                        <thead>
-                            <tr className='bg-primary'>
-                                <th scope="col">Project ID</th>
-                                <th scope="col">Title</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
-                        {project && project.map((item,i)=>{
-                            return(
-                            <tr key={item.pro_id}>
-                                <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
-                                <td>{item.pro_title}</td>
-                            </tr>
-                            )
-                        })}
-                        </tbody>
-                    </table>
-                 </div>
+            <div className='profiledivison2'>
 
-
-           {/* {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
-            <div className='profiledetails'>
                 <div className='profileeachdetail'>
                     <label htmlFor="">Guide Id</label>
-                    <input className='proin' type="text" readOnly value={faculty_id}/>
+                    <input className='proin' type="text" readOnly value={faculty_id} />
                 </div>
 
                 <div className='profileeachdetail'>
                     <label htmlFor="">Guide Name</label>
-                    <input className='proin' type="text" readOnly value={faculty_name}/>
+                    <input className='proin' type="text" readOnly value={faculty_name} />
+
                 </div>
 
                 <div className='profileeachdetail'>
                     <label htmlFor="">Designation</label>
-                    <input className='proin' type="text" readOnly value={designation}/>
+                    <input className='proin' type="text" readOnly value={designation} />
                 </div>
 
                 <div className='profileeachdetail'>
                     <label htmlFor="">E-Mail</label>
-                    <input className='proin' type="text" readOnly value={email}/>
+                    <input className='proin' type="text" readOnly value={email} />
                 </div>
 
-                <div className='guideskill'>
-                    <h2>Areas of Interest</h2>
-                    {aof && aof.map((item,i)=>{
-                        return(
-                            <ul key={i}>
-                                <li>{item}</li>
-                            </ul>
-                        )
-                    })}
+                <div className='profileeachdetail'>
+                    <label htmlFor="">Contact</label>
+                    <input className='proin' type="text" readOnly value="98745963210" />
                 </div>
 
-                <div className='guideskill'>
+                <div className='profileeachdetail'>
+                    <label htmlFor="">Experience</label>
+                    <input className='proin' type="text" readOnly value="12" />
+                </div>
+            </div>
+
+
+
+            <div className='projectlist'>
+
+                <div className='listheading'>
                     <h2>Guided Projects</h2>
-                          
+                </div>
+                <br />
+
+                <div className='table'>
                     <table className='adminprofiletable'>
                         <thead>
-                            <tr className='bg-primary'>
+                            <tr>
                                 <th scope="col">Project ID</th>
-                                <th scope="col">Title</th>
+                                <th scope="col" className='column-adjust'>Title</th>
                             </tr>
                         </thead>
-
                         <tbody>
-                        {project && project.map((item,i)=>{
-                            return(
-                            <tr key={item.pro_id}>
-                                <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
-                                <td>{item.pro_title}</td>
+                            <tr>
+                                <td>1100</td>
+                                <td>jhwedwe</td>
                             </tr>
-                            )
-                        })}
+                            {project && project.map((item, i) => {
+                                return (
+                                    <tr key={item.pro_id}>
+                                        <td className='guidedproject' onClick={() => navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
+                                        <td>{item.pro_title}</td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
-                 </div>           
-           </div>  */}
+                </div>
+            </div>
+
+
+
+
+            {/* {auth && (id===user_id || isAdmin) &&(<button className='profbut' onClick={()=>{navigate(`/editguide/${id}`)}}>Profile Edit</button>)}
+     <div className='profiledetails'>
+         <div className='profileeachdetail'>
+             <label htmlFor="">Guide Id</label>
+             <input className='proin' type="text" readOnly value={faculty_id}/>
+         </div>
+
+         <div className='profileeachdetail'>
+             <label htmlFor="">Guide Name</label>
+             <input className='proin' type="text" readOnly value={faculty_name}/>
+         </div>
+
+         <div className='profileeachdetail'>
+             <label htmlFor="">Designation</label>
+             <input className='proin' type="text" readOnly value={designation}/>
+         </div>
+
+         <div className='profileeachdetail'>
+             <label htmlFor="">E-Mail</label>
+             <input className='proin' type="text" readOnly value={email}/>
+         </div>
+
+         <div className='guideskill'>
+             <h2>Areas of Interest</h2>
+             {aof && aof.map((item,i)=>{
+                 return(
+                     <ul key={i}>
+                         <li>{item}</li>
+                     </ul>
+                 )
+             })}
+         </div>
+
+         <div className='guideskill'>
+             <h2>Guided Projects</h2>
+                   
+             <table className='adminprofiletable'>
+                 <thead>
+                     <tr className='bg-primary'>
+                         <th scope="col">Project ID</th>
+                         <th scope="col">Title</th>
+                     </tr>
+                 </thead>
+
+                 <tbody>
+                 {project && project.map((item,i)=>{
+                     return(
+                     <tr key={item.pro_id}>
+                         <td className='guidedproject' onClick={()=>navigate(`/project/${item.pro_id}`)}>{item.pro_id}</td>
+                         <td>{item.pro_title}</td>
+                     </tr>
+                     )
+                 })}
+                 </tbody>
+             </table>
+          </div>
+    </div>  */}
         </div>
+        </div>
+        
     )
 }
 
