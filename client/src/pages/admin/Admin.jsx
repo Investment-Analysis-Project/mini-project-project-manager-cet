@@ -28,23 +28,32 @@ const Admin = () => {
     return(
         <>
             <Navbar/>
-            <div className='adminpanel'> 
+            <div className='adminpanel'>
+                <h2>Admin Panel</h2>
                 <div className='adminprofile'>
-                    <h1>Admin Panel</h1>
+                    <div className='adminoptions'>
+                        <span>Add a new project</span>
+                    </div>
 
-                    <table className='adminprofiletable'>
-                        <thead>
-                            <tr className='bg-primary'>
-                                <th scope="col">Email</th>
-                            </tr>
-                        </thead>
+                    <div className='adminoptions'>
+                        <span>Add a new guide</span>
+                    </div>
 
-                        <tbody>
-                            <tr>
-                                <td>{email}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className='adminoptions'>
+                        <span>Upload Excel file</span>
+                    </div> 
+
+                    <div className='adminoptions'>
+                        <span>View a guide</span>
+                    </div> 
+
+                    <div className='adminoptions'>
+                        <span>Upload Excel file</span>
+                    </div> 
+
+                    <div className='adminoptions'>
+                        <span>Upload Excel file</span>
+                    </div> 
                 </div>
             </div>
             

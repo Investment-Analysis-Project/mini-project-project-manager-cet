@@ -1,23 +1,23 @@
 .addproject{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 30px;
+    gap:10px
 }
 
 .projectenter{
-    background: rgb(1, 37, 121);
-    width: 100%;
-    max-width:1024px ;
-    display: flex;
-    flex-direction: column;
+    background: rgb(138, 146, 163);
+    box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap:20px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .inp{
-    width: 50%;
     outline: none;
     border: none;
     margin-top: 5px;
@@ -27,30 +27,21 @@
 }
 
 .addprobut{
-    background: rgb(1, 37, 121);
+    background: rgb(138, 146, 163);
+    box-shadow: 2px 2px 1px 1px rgb(15, 4, 0);
     padding: 5px;
     border: none;
     outline: none;
     width: 20%;
-    color: rgb(254, 254, 254);
-    font-size: small;
+    color: rgb(0, 0, 0);
     font-weight: 600;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .addprobut:active{
-    background:rgb(45, 240, 126);
+    background:rgb(239, 96, 44);
+    box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
 }
-
-/* .filecomponent{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width:100%;
-    align-items: center;
-    gap:5px;
-} */
 
 .projectinputeach{
     display: flex;
@@ -58,7 +49,7 @@
 }
 
 .projectinputlabel{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 
 .projectselectinput{
