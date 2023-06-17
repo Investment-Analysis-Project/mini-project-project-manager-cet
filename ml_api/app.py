@@ -2,12 +2,15 @@ from flask import Flask, request, jsonify
 import os
 from resources.pdf_extract import extract_pdf
 from resources.tfidf import abstract_similarity
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route("/")
+@app.route("/test",methods=["GET"])
 def index():
-    return "Hello, World!"
+    data={"msg":"Hello World!"}
+    return jsonify(data)
 
 @app.route("/predict/pdf", methods=["POST"])
 def predict_pdf():
