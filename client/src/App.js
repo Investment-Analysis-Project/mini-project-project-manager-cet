@@ -10,6 +10,7 @@ import Admin from './pages/admin/Admin';
 import EditGuide from './pages/editguide/EditGuide';
 import { ProjectsContextProvider } from './contextapi.js/projectscontext';
 import Similarity from './pages/similarity/Similarity';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (

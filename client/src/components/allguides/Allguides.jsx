@@ -3,10 +3,12 @@ import './allguides.css';
 import baseurl from '../../baseurl/baseurl';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 
 const Allguides = (props) => {
 
-    const {guides,setGuides,skill}=useContext(ProjectsContext);
+    const {guides,setGuides,skill,isAdmin}=useContext(ProjectsContext);
 
     const navigate=useNavigate();
 
@@ -38,12 +40,12 @@ const Allguides = (props) => {
             <div className='guidecontainer'>
                 
                 {filteredguides.map((res,i)=>{
-                    if(filteredguides[i].area_of_interest){ 
+                    if(filteredguides[i].area_of_interest && !isAdmin || isAdmin){ 
                         return(
                             <div className='guideitem' key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-                                <span className='guide-id'>{res.faculty_id}</span>
                                 <span className='guide-name'>{res.faculty_name}</span>
-                                <span className='guide-desg'>{res.designation}</span>
+                                <span className='guide-id'>{res.faculty_id}</span>
+                                <span className='guide-desg'>{res.designation} <FontAwesomeIcon icon={faPersonChalkboard}/></span>
                             </div>
                         )
                     }
@@ -52,36 +54,4 @@ const Allguides = (props) => {
         </div>
     )
 }
-
 export default Allguides;
-
-
-{/* <table className="table table-striped table-dark">
-
-                <thead>
-                    <tr className='bg-primary'>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Designation</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {filteredguides.map((res,i)=>{
-                    if(filteredguides[i].area_of_interest){
-                    return(
-                    <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-                    <td>{res.faculty_id}</td>
-                    <td>{res.faculty_name}</td>
-                    <td>{res.designation}</td>
-                    </tr>)}
-                })}
-                </tbody>
-
-                </table> */}
-// return(
-// <tr key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
-// <td>{res.faculty_id}</td>
-// <td>{res.faculty_name}</td>
-// <td>{res.designation}</td>
-// </tr>)}

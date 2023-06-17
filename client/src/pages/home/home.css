@@ -1,40 +1,26 @@
 .homecontainer{
-    /* margin-top: 20px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .homeintro{
-
-  
-    background-color: #00143d;
     width: 100%;
     height:50%;
-
-    font-size: 30px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-   
+    padding: 10px; 
+    background: rgb(210, 96, 54);
 }
 
-.homeintro h2{
+.homeintro h1{
     text-align: center;
-    color: #fffefb;
+    color: #ffffff;
     padding-top: 20px;
-    font-family: 'Exo 2',sans-serif;
-    font-weight: 400;
-    font-size: 70px;
-
 }
 
 .homeintro p{
-    font-family:'Raleway', sans-serif;
-    color: #fffefb;
-    width: 95%;
-    font-size: small;
+    color: #000000;
     font-size: 20px;
     padding: 10px;
     text-align: center;
@@ -42,13 +28,12 @@
 }
 
 .homemenu{
-    margin-top: 70px;
+    margin-top: 30px;
     width: 100%;
     max-width: 1024px;
     display:flex;
     justify-content:space-around;
-   
-
+    margin-bottom: 20px;
 }
 
 .homeitem{
@@ -58,10 +43,9 @@
     border-radius: 5px;
     align-items: center;
     cursor: pointer;
-    box-shadow: 1px 3px 2px 2px #00143d;
+    box-shadow: 2px 3px 2px 2px #00143d;
     font-weight: bold;
     border-radius: 10px;
-
 }
 
 .homeitem img{
@@ -73,5 +57,3 @@
 .homeitem:hover{
     transform: scale(1.05);
     box-shadow: 0px 2px 2px 2px rgb(1, 37, 121);
-}
-

@@ -2,12 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+.login h1{
+    font-weight: 800;
 }
 
 .loginform{
     margin-top: 30px;
-    border: 1.5px solid black;
+    box-shadow: 2px 3px 2px 2px #00143d;;
     border-radius: 5px;
     padding: 10px;
     display: flex;
@@ -34,7 +38,7 @@
 
 .logbut{
     width: 100px;
-    background: rgb(1, 37, 121);
+    background: #00143d;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     border: none;
@@ -49,5 +53,5 @@ button:focus{
 
   
 .logbut:active{
-    box-shadow: 0px 0px 2px 2px black;
+    background: coral;
   }

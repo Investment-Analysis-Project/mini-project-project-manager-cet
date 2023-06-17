@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import img1 from './img1.jpg';
 import img2 from './img2.jpg';
 import img3 from './img3.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Home = () => {
             <div className='homecontainer'>
                 <div className='homeintro'>
 
-                    <h2>Welcome to Project Management System</h2>   
+                    <h1>Welcome to Project Management System</h1>   
 
                     <p>
                         Welcome to the project management system of the CSE departmant of College Of Engineering Trivandrum, <br></br>where you can find
@@ -29,17 +31,17 @@ const Home = () => {
                 <div className='homemenu'>
                     <div className='homeitem' onClick={()=>navigate('/projects')}>
                         <img src={img1} alt="" />
-                        <p>See Projects</p>
+                        <p>See Projects <FontAwesomeIcon icon={faArrowRight}/></p>
                     </div>
 
                     <div className='homeitem' onClick={()=>navigate('/guides')}>
                         <img src={img2} alt="" />
-                        <p>See Guides</p>
+                        <p>See Guides <FontAwesomeIcon icon={faArrowRight} /></p>
                     </div>
 
                     <div className='homeitem' onClick={()=>navigate('/abstractsimilarity')}>
                         <img src={img3} alt="" />
-                        <p>Search Similar Abstracts</p>
+                        <p>Similar Projects <FontAwesomeIcon icon={faArrowRight} /></p>
                     </div>
                 </div>
             </div>
