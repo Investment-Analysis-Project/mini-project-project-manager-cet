@@ -8,7 +8,7 @@ import { faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 
 const Allguides = (props) => {
 
-    const {guides,setGuides,skill}=useContext(ProjectsContext);
+    const {guides,setGuides,skill,isAdmin}=useContext(ProjectsContext);
 
     const navigate=useNavigate();
 
@@ -40,7 +40,7 @@ const Allguides = (props) => {
             <div className='guidecontainer'>
                 
                 {filteredguides.map((res,i)=>{
-                    if(filteredguides[i].area_of_interest){ 
+                    if(filteredguides[i].area_of_interest && !isAdmin || isAdmin){ 
                         return(
                             <div className='guideitem' key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
                                 <span className='guide-name'>{res.faculty_name}</span>
