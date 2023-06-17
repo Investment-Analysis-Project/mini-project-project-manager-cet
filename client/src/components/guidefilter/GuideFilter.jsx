@@ -8,18 +8,16 @@ const GuideFilter = () => {
     return(
     <div className='headercontainer'>
         <h1>Explore Guides</h1>
-        <div className='header'>
-            <div className='filter'>
-                <div className='drop'>
-                    <label htmlFor="skill">Area Of Interest</label>
-                    <select name="skill" onChange={(e)=>setSkill(e.target.value)}>
-                        <option value="All">All</option>
-                        <option value="Machine Learning">Machine Learning</option>
-                        <option value="Blockchain">Blockchain</option>
-                        <option value="Web App">Web App</option>
-                        <option value="IoT">IoT</option>
-                    </select>
-                </div>
+        <div className='filter'>
+            <div className='drop'>
+                <label htmlFor="skill">Area Of Interest</label>
+                <select name="skill" onChange={(e)=>setSkill(e.target.value)}>
+                    <option value="All">All</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="Web App">Web App</option>
+                    <option value="IoT">IoT</option>
+                </select>
             </div>
         </div>
     </div>

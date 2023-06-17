@@ -15,7 +15,7 @@
     margin-top: 30px;
     width: 90%;
     border: none;
-    box-shadow: 2px 3px 1px 1px #00143d;
+    box-shadow: 2px 3px 1px 1px rgb#a4afc9;
 }
 
 .projectdetailcontainer{
@@ -28,7 +28,7 @@
 }
 
 .division{
-    box-shadow: 0px 2px 5px 1px #00143d;
+    box-shadow: 2px 2px 1px 1px #a4afc9;
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -59,8 +59,9 @@
 }
 
 .memtable{
-    box-shadow: 0px 2px 5px 1px #00143d;
+    box-shadow: 2px 2px 1px 1px #a4afc9;
     table-layout: fixed;
     border:none;
+    outline: none;
     text-align:center;
 }

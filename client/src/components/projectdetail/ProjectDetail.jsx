@@ -137,63 +137,6 @@ const ProjectDetail=()=>{
                         </tr>
                     </tbody>
                 </table>
-
-                    
-                {/* <div className='division'> 
-                    <div className='projectsdoc'>
-                            <button className='docbut'><FontAwesomeIcon icon={faPager}/> View Deployment</button>
-                            <button className='docbut'><FontAwesomeIcon icon={faCode}/> View Code</button>
-                            <button className='docbut' onClick={()=>{window.open(report_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Report</button>
-                            <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
-                    </div>
-                </div>
-
-                <div className='division'>
-                    <div className='projectsub'>
-                        <p className='projectteam'>Status of Project 
-                            <button className='projectsubbut'>
-                                {pro_status ? <FontAwesomeIcon icon={faCircleCheck}/> : <FontAwesomeIcon icon={faChartLine}/>} 
-                                {pro_status ? " Completed" : " Ongoing"}
-                            </button>
-                        </p>
-                        <p className='projectteam'>Project Domain 
-                            {pro_domains.map((item,i)=>{
-                                return(
-                                    
-                                    <button className='projectsubbut' key={i}>{item}</button>
-                                    
-                                )    
-                            })}
-                        </p>
-                            
-                        <p className='projectteam'>Program <button className='projectsubbut'>{program}</button></p>
-                        <p className='projectteam'>Graduation Year <button className='projectsubbut'>{grad_year}</button></p>
-                        <p className='projectteam'>Guided By <button className='projectsubbut' onClick={()=>navigate(`/guide/${user}`)}>{guide_id}</button></p>  
-                    
-                        <table className='memtable'>
-                            <thead>
-                                <tr className='bg-primary'>
-                                    <th scope="col">Done By</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td className='guidedproject'>{mem_1}</td>
-                                </tr>
-                                <tr>
-                                    <td className='guidedproject'>{mem_2}</td>
-                                </tr>
-                                <tr>
-                                    <td className='guidedproject'>{mem_3}</td>
-                                </tr>
-                                <tr>
-                                    <td className='guidedproject'>{mem_4}</td>
-                                </tr>
-                            </tbody>
-                        </table>        
-                    </div> 
-                </div>*/}
             </div>   
         </div>
     )
