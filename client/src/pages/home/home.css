@@ -10,11 +10,12 @@
     display: flex;
     flex-direction: column;
     padding: 10px; 
+    background: rgb(210, 96, 54);
 }
 
 .homeintro h1{
     text-align: center;
-    color: #0b0901;
+    color: #ffffff;
     padding-top: 20px;
 }
 
