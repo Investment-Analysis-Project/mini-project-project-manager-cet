@@ -11,6 +11,10 @@ const Admin = () => {
     const {user_id}=useContext(ProjectsContext);
     const [email,setemail]=useState("");
 
+    const [anp,setanp]=useState(true);
+    const [ang,setang]=useState(false);
+    const [abg,setabg]=useState(false);
+    
     const token = localStorage.getItem('token');
 
     useEffect(()=>{
@@ -31,23 +35,23 @@ const Admin = () => {
             <div className='adminpanel'>
                 <h2>Admin Panel</h2>
                 <div className='adminprofile'>
-                    <div className='adminoptions'>
+                    <div className='adminoptions' onClick={()=>{setanp(true);setang(false);setabg(false)}}>
                         <span>Add a new project</span>
                     </div>
 
-                    <div className='adminoptions'>
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(true);setabg(false)}}>
                         <span>Add a new guide</span>
                     </div>
 
-                    <div className='adminoptions'>
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true)}}>
                         <span>Upload Excel file</span>
                     </div> 
                 </div>
             </div>
             
-            <Addproject/>
-            <Addguide/>
-            <Addbulkguide/>
+            {anp && <Addproject/>}
+            {ang && <Addguide/>}
+            {abg && <Addbulkguide/>}
         </>
     )
 }

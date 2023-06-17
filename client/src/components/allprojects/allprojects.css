@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .projectcontainer{
@@ -16,6 +17,7 @@
 
 .projectitem{
     box-shadow: 0px 0px 5px 1px  #b1b7c5;
+    background: rgb(237, 237, 237);
     border-radius: 5px;
     cursor: pointer;
     display: flex;
