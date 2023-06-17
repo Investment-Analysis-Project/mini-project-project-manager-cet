@@ -28,7 +28,7 @@
 }
 
 .division{
-    box-shadow: 2px 2px 1px 1px #00143d;
+    box-shadow: 0px 2px 5px 1px #00143d;
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -38,6 +38,7 @@
 
 .divsionspan{
     font-weight: 600;
+    background: #a4afc9;
 }
 
 .projectsubbut{
@@ -57,7 +58,7 @@
 }
 
 .memtable{
-    box-shadow: 2px 3px 1px 1px #00143d;
+    box-shadow: 0px 2px 5px 1px #00143d;
     table-layout: fixed;
     border:none;
     text-align:center;
