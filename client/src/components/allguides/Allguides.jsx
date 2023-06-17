@@ -3,6 +3,8 @@ import './allguides.css';
 import baseurl from '../../baseurl/baseurl';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 
 const Allguides = (props) => {
 
@@ -43,7 +45,7 @@ const Allguides = (props) => {
                             <div className='guideitem' key={res.user_id} id="projectpointer" onClick={()=>navigate(`/guide/${res.user_id}`)}>
                                 <span className='guide-name'>{res.faculty_name}</span>
                                 <span className='guide-id'>{res.faculty_id}</span>
-                                <span className='guide-desg'>{res.designation}</span>
+                                <span className='guide-desg'>{res.designation} <FontAwesomeIcon icon={faPersonChalkboard}/></span>
                             </div>
                         )
                     }
