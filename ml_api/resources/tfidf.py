@@ -25,7 +25,7 @@ def abstract_similarity(text):
 
 
     tfidfvectoriser=TfidfVectorizer()
-    tfidfvectoriser.fit(documents_df.documents_cleaned)
+    tfidfvectoriser.fit(documents_cleaned)
     tfidf_vectors=tfidfvectoriser.transform(documents_cleaned)
     query_document = [text]
     query_p = pd.DataFrame(query_document,columns=['querys'])
