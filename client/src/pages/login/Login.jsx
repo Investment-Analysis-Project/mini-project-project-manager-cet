@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import Home from '../home/Home';
 import jwt from 'jwt-decode';
+import loginpic from './loginpic.png';
 
 const Login = () => {
     const [user_name,setUserName]=useState("");
@@ -61,8 +62,20 @@ const Login = () => {
     return(
         <div>
             {!auth ? (<><Navbar/>
+            <div className='grid'>
+
+            <div className='blankcolumn'>  
+                <div className='loginpic'>
+                            <img src={loginpic} alt="" />  
+                </div>
+                <h2>Welcome !</h2>   
+                <h4>Your gateway to all the projects of CS department. Across <br/>different domains, 
+                guided by faculties, completed and ongoing, all packed in here !</h4>
+            </div>   
+
             <div className='login'>
                 <h1>User Login</h1>
+
                 <div className='loginform'>
                     <div className='logintext'>
                         <span>Username</span>
@@ -75,9 +88,11 @@ const Login = () => {
                     </div>
 
                     <span>{message}</span>
-
                     <button className='logbut' onClick={loginSubmit}>Login</button>
                 </div>
+
+            </div>
+            
             </div></>) : <Home/>}
         </div>
     )
