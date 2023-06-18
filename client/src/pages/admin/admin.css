@@ -1,25 +1,29 @@
-.adminprofile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    width: 100%;
-    max-width: 1024px;
-    padding: 5px;
-}
-
 .adminpanel{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-}
-.adminprofiletable{
-    width: 70%;
-    text-align: center;
-    table-layout: fixed
+    margin-top: 50px;
 }
 
-.adminprofiletable th,td{
-    border: 1px solid;
+.adminprofile{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 50px;
+    gap: 30px;
+    text-align: center;
+}
+
+.adminoptions{
+    box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+    background: rgb(239, 96, 44);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.adminoptions:hover{
+    transform: scale(1.05);
 }

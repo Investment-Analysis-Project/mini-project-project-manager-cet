@@ -77,15 +77,7 @@ const Fileupload = () => {
             {clkabs && (abstatus ? (<button className='loadstatus'><FontAwesomeIcon icon={faCheckCircle}/></button>):
                 (<button className='loadstatus'><FontAwesomeIcon icon={faSpinner} spin/></button>))
             }
-            <button className='upbut' onClick={submit_abstract}> <FontAwesomeIcon icon={faUpload}/> Abstract</button>
-        </div>
-
-        <div className='inputupload'>
-            <input type="file" className="customfile" onChange={change_rep}/>
-            {clkrep && (repstatus ? (<button className='loadstatus'><FontAwesomeIcon icon={faCheckCircle}/></button>):
-                (<button className='loadstatus'><FontAwesomeIcon icon={faSpinner} spin/></button>))
-            }
-            <button className='upbut' onClick={submit_report}> <FontAwesomeIcon icon={faUpload}/> Report</button>
+            <button className='upbut' onClick={submit_abstract}> <FontAwesomeIcon icon={faUpload}/>Upload</button>
         </div>
     </>
   );

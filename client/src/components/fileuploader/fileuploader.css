@@ -1,8 +1,5 @@
 .inputupload{
-    width: 50%;
     display: flex;
-    font-weight: 700;
-    gap: 10px;
     justify-content: space-between;
     align-items: center;
 }
@@ -25,18 +22,10 @@
     font-weight: 600;
     color: black;
     border-radius: 5px;
-    width: 20%;
 }
 
-/* .filelabel{
-    border: 2px solid red;
-    margin-top: 8px;
-    color: aliceblue;
-    margin-bottom: 20px;
-} */
-
 .upbut:active{
-    background:rgb(45, 240, 126);
+    box-shadow: 2px 2px 1px 1px black;
     outline: none;
 }
 
