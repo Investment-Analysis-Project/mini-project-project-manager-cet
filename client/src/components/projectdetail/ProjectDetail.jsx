@@ -112,12 +112,12 @@ const ProjectDetail=()=>{
 
                 <div className='division'>
                     <span className='divsionspan'>Abstract</span>
-                    <button className='docbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
+                    <button className='projectsubbut' onClick={()=>{window.open(abstract_link)}}><FontAwesomeIcon icon={faFilePdf}/> View Abstaract</button>
                 </div>
 
                 <table className='memtable'>
                     <thead>
-                        <tr className='bg-primary'>
+                        <tr className='memtablerow'>
                             <th scope="col">Done By</th>
                         </tr>
                     </thead>
