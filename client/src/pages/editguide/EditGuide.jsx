@@ -9,7 +9,7 @@ import DynamicForm from '../../components/dynamicinput/DynamicInput';
 const EditGuide = () => {
     const {curr_guide_name,curr_designation,user_id,isAdmin,auth,setCurr_guide_name,
         setCurr_designation,curr_aof,setCurr_aof,inputs,setInputs,
-        curr_contact,setCurr_contact}=useContext(ProjectsContext);
+        curr_contact,setCurr_contact,curr_password,setCurr_password}=useContext(ProjectsContext);
     
     const {id}=useParams();
 
@@ -35,10 +35,22 @@ const EditGuide = () => {
                     }
                 }
             );
+
+            const result = await baseurl.put(`/user/changepassword/${id}`,{
+                password:curr_password },
+                {
+                    headers:{
+                        'authorization' : `Bearer ${token}`
+                    }
+                }
+            );
+
             setInputs(['Machine Learning']);
+            setCurr_password();
             setCurr_aof([]);
             navigate(`/guide/${id}`);  
             console.log(response.data) 
+            console.log(result.data);
         }catch(err){
             console.log(err);
         }
@@ -88,6 +100,11 @@ const EditGuide = () => {
                     <div className='editguideinput'>
                         <label htmlFor="name">Contact</label>
                         <input name="name" className='editin' type="text" onChange={(e)=>setCurr_contact(e.target.value)} placeholder={curr_contact}/>
+                    </div>
+
+                    <div className='editguideinput'>
+                        <label>Password</label>
+                        <input className='editin' type="password" onChange={(e)=>setCurr_password(e.target.value)}/>
                     </div>
                 </div>
                 {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}

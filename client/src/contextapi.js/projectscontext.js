@@ -27,6 +27,7 @@ export const ProjectsContextProvider = (props)=>{
     const [curr_designation,setCurr_designation]=useState("");
     const [curr_aof,setCurr_aof]=useState([]);
     const [curr_contact,setCurr_contact]=useState();
+    const [curr_password,setCurr_password]=useState();
 
     const [inputs, setInputs] = useState(['Machine Learning']);
 
@@ -49,7 +50,7 @@ export const ProjectsContextProvider = (props)=>{
         code_url,setcode_Url,isAdmin,setisAdmin,user_id,setUser_id,
         curr_guide_name,setCurr_guide_name,curr_designation,setCurr_designation,curr_aof,setCurr_aof,
         inputs,setInputs,clkabs,setclkabs,abstatus,setabstatus,clkrep,setclkrep,repstatus,setrepstatus,
-        curr_contact,setCurr_contact};
+        curr_contact,setCurr_contact,curr_password,setCurr_password};
 
     return(
         <ProjectsContext.Provider value={contextValues}>
