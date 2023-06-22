@@ -8,7 +8,8 @@ import DynamicForm from '../../components/dynamicinput/DynamicInput';
 
 const EditGuide = () => {
     const {curr_guide_name,curr_designation,user_id,isAdmin,auth,setCurr_guide_name,
-        setCurr_designation,curr_aof,setCurr_aof,inputs,setInputs}=useContext(ProjectsContext);
+        setCurr_designation,curr_aof,setCurr_aof,inputs,setInputs,
+        curr_contact,setCurr_contact}=useContext(ProjectsContext);
     
     const {id}=useParams();
 
@@ -26,6 +27,7 @@ const EditGuide = () => {
             const response = await baseurl.put(`/faculty/${id}`,{
                 faculty_name:curr_guide_name,
                 designation:curr_designation,
+                contact:curr_contact,
                 area_of_interest:aof },
                 {
                     headers:{
@@ -81,6 +83,11 @@ const EditGuide = () => {
                     <div>
                         <label>Add New Skills</label>
                         <DynamicForm/>
+                    </div>
+
+                    <div className='editguideinput'>
+                        <label htmlFor="name">Contact</label>
+                        <input name="name" className='editin' type="text" onChange={(e)=>setCurr_contact(e.target.value)} placeholder={curr_contact}/>
                     </div>
                 </div>
                 {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
