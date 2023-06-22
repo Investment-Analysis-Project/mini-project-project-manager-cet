@@ -36,7 +36,8 @@ const Similarity = () => {
         <Layout>
             <div className='similarity'>
                 <div className='drop_box'>
-                    <h3>Search Similar Projects</h3>
+                    <h1>Search Similar Projects</h1>
+                    <label>Upload Abstract here</label>
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>

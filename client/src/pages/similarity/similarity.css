@@ -7,7 +7,7 @@
 
 .drop_box{
     width: 80%;
-    box-shadow: 2px 2px 3px 3px rgb(210, 96, 54);
+    box-shadow: 2px 2px 2px 2px #00143d;
     border-radius: 5px;
     padding: 5px;
     display: flex;
