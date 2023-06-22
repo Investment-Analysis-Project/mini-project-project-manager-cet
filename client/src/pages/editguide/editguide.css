@@ -18,8 +18,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 10px;
-    box-shadow: 0px 0px 5px 1px  #b1b7c5;
-    background: rgb(172, 189, 220);
+    box-shadow: 2px 2px 2px 2px  rgb(1, 37, 121);;
+    background: rgb(255, 252, 252);
 }
 
 .editin{
