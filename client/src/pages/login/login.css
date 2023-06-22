@@ -126,6 +126,7 @@ button:focus{
 
   
 .logbut:active{
-    background: coral;
+
+    transform: scale(1.05);
   }
 

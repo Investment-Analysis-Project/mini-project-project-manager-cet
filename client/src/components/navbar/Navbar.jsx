@@ -33,11 +33,11 @@ const Navbar = () => {
                 {profilevisible && <div className='logindropdown'>
                     <ul className='liststyle'>
                         <li>
-                            {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Panel</p>)}
-                            {!isAdmin && (<p className='profilelistitem' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faPersonCircleCheck}/>  Profile Page</p>)}      
+                            {isAdmin && (<p className='profilelistitem' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> &nbsp;&nbsp;Admin Panel</p>)}
+                            {!isAdmin && (<p className='profilelistitem' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faPersonCircleCheck}/> &nbsp;&nbsp;&nbsp;&nbsp;Profile</p>)}      
                         </li>
                         <li>
-                            <p className='profilelistitem' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</p>
+                            <p className='profilelistitem' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout</p>
                         </li>
                     </ul>
                 </div>}

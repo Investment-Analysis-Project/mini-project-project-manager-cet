@@ -46,7 +46,7 @@ const EditGuide = () => {
         <>
             <Navbar/>
             <div className='editguide'>
-                <h1>Profile Details</h1>
+                <h1>Edit Profile</h1>
                 <div className='editguidedetails'> 
 
                     <div className='editguideinput'>
@@ -56,24 +56,34 @@ const EditGuide = () => {
 
                     <div className='editguideinput'>
                         <label htmlFor="designation">Designation</label>
-                        <input name="designation" className='editin' type="text" onChange={(e)=>setCurr_designation(e.target.value)} placeholder={curr_designation}/>
+                        <input name="name" className='editin' type="text" readOnly placeholder={curr_designation}/>
+                        <select name="year" className='editin' onChange={(e)=>setCurr_designation(e.target.value)}>
+                            <option value="Proffesor">Proffesor</option>
+                            <option value="Associate Proffesor">Associate Proffesor</option>
+                            <option value="Assistant Proffesor">Assistant Proffesor</option>
+                            <option value="Guest Proffesor">Guest Proffesor</option>
+                        </select>
                     </div>
 
                     <div className='editguideinput'>
                         <label htmlFor="designation">Skills</label>
-                        {curr_aof.map((res,i)=>{
-                            return(
-                                <ul key={i}>
-                                    <li>{res}</li>
-                                </ul>
-                            )
-                        })}
+                        <div className='editin'>
+                            {curr_aof.map((res,i)=>{
+                                return(
+                                    <ul key={i}>
+                                        <li>{res}</li>
+                                    </ul>
+                                )
+                            })}
+                        </div>
                     </div>
 
-                    <DynamicForm/>
-
-                    {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
+                    <div>
+                        <label>Add New Skills</label>
+                        <DynamicForm/>
+                    </div>
                 </div>
+                {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
             </div>
         </>
     )

@@ -3,27 +3,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:10px;
+    margin-bottom: 5px;
+}
+
+.editguide h1{
+    font-weight: 800;
 }
 
 .editguidedetails{
     margin-top: 20px;
-    width: 50%;
-    max-width: 1024px;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 10px;
-    border: 1px solid black;
+    box-shadow: 0px 0px 5px 1px  #b1b7c5;
+    background: rgb(172, 189, 220);
 }
 
 .editin{
     width: 80%;
-    border: 1px solid rgb(2, 81, 2);
+    outline: none;
+    border: 1px solid;
+    border-radius: 5px;
 }
 
 .editupd{
     background: rgb(6, 6, 65);
     border-radius: 5px;
+    width: 20%;
     border: none;
     cursor: pointer;
     color: aliceblue;
@@ -32,4 +41,9 @@
 .editguideinput{
     display: flex;
     flex-direction: column;
+    gap: 1px;
+}
+
+.editupd:active{
+    transform: scale(1.05);
 }
