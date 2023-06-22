@@ -56,9 +56,12 @@ const EditGuide = () => {
 
                     <div className='editguideinput'>
                         <label htmlFor="designation">Designation</label>
+                        <input name="name" className='editin' type="text" readOnly placeholder={curr_designation}/>
                         <select name="year" className='editin' onChange={(e)=>setCurr_designation(e.target.value)}>
                             <option value="Proffesor">Proffesor</option>
-                            <option value="Assitant Proffesor">Assitant Proffesor</option>
+                            <option value="Associate Proffesor">Associate Proffesor</option>
+                            <option value="Assistant Proffesor">Assistant Proffesor</option>
+                            <option value="Guest Proffesor">Guest Proffesor</option>
                         </select>
                     </div>
 
@@ -79,10 +82,8 @@ const EditGuide = () => {
                         <label>Add New Skills</label>
                         <DynamicForm/>
                     </div>
-
-                    {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
-
                 </div>
+                {auth && (parseInt(id)===user_id || isAdmin) && (<button className='editupd' onClick={updateprofile}>Update</button>)}
             </div>
         </>
     )

@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:10px;
+    margin-bottom: 5px;
 }
 
 .editguide h1{
@@ -30,6 +32,7 @@
 .editupd{
     background: rgb(6, 6, 65);
     border-radius: 5px;
+    width: 20%;
     border: none;
     cursor: pointer;
     color: aliceblue;
@@ -38,4 +41,9 @@
 .editguideinput{
     display: flex;
     flex-direction: column;
+    gap: 1px;
+}
+
+.editupd:active{
+    transform: scale(1.05);
 }
