@@ -21,13 +21,14 @@
 
 .dynamicinput{
     display: flex;
-    width: 80%;
-    gap: 5px;
+    justify-content: space-between;
+    width: 70%;
     margin-top: 2px;
 }
 
 .rembutdyn{
     background: rgb(255, 255, 255);
+    cursor: pointer;
     padding: 5px;
     outline: none;
     border: none;
