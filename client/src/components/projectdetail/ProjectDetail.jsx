@@ -32,7 +32,7 @@ const ProjectDetail=()=>{
     useEffect(()=>{
             const fetchData =async()=>{
                 try{
-                const response = await baseurl.get(`/projects/${id}`);
+                const response = await baseurl.get(`/projects/find/${id}`);
                 console.log(response.data[0]);
                 setpro_id(response.data[0].pro_id);
                 setpro_title(response.data[0].pro_title);

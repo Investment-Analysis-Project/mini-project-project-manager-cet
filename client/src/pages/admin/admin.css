@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    background: url('./bg4.png');
+    padding: 10px;
 }
 
 .adminpanel h1{
     font-weight: 800;
+    color: white;
 }
 
 .adminprofile{
@@ -29,6 +31,5 @@
 }
 
 .adminoptions:hover{
-    transform: scale(1.05);
-    box-shadow: 2px 2px 2px 2px #00143d;
+    background: greenyellow;
 }

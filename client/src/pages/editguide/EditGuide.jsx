@@ -43,9 +43,13 @@ const EditGuide = () => {
                     }
                 }
             );
+            
             setInputs(['Machine Learning']);
-            setCurr_password();
+            setCurr_password("");
             setCurr_aof([]);
+            setCurr_guide_name("");
+            setCurr_designation("");
+            setCurr_contact("");
             navigate(`/guide/${id}`);  
             console.log(response.data) 
             console.log(result.data);

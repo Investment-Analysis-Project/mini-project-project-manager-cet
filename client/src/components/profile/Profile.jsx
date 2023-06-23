@@ -6,11 +6,7 @@ import { useState } from 'react';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 import baseurl from '../../baseurl/baseurl';
 import bg from './bg.jpg';
-import bg2 from './bg2.png';
-import bg3 from './bg3.png';
 import bg4 from './bg4.png';
-
-
 
 
 const Profile = () => {
@@ -19,7 +15,6 @@ const Profile = () => {
     const navigate = useNavigate();
 
     let {id}=useParams();
-    id=parseInt(id);
 
     const [faculty_id,setfaculty_id]=useState("");
     const [faculty_name,setfaculty_name]=useState("");
@@ -66,6 +61,7 @@ const Profile = () => {
         fetchData();
     },[faculty_id]);
 
+    id=parseInt(id);
     return(
        
         <div className='profile'>

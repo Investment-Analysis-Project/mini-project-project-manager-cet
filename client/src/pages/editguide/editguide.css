@@ -19,13 +19,14 @@
     gap: 20px;
     padding: 10px;
     box-shadow: 2px 2px 2px 2px  rgb(1, 37, 121);;
-    background: rgb(255, 252, 252);
+    background: rgb(78, 116, 156);
 }
 
 .editin{
     width: 80%;
     outline: none;
     border-radius: 5px;
+    border: none;
 }
 
 .editupd{
