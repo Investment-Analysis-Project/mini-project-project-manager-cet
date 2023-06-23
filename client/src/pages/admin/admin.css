@@ -5,19 +5,23 @@
     margin-top: 50px;
 }
 
+.adminpanel h1{
+    font-weight: 800;
+}
+
 .adminprofile{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 50px;
     gap: 30px;
     text-align: center;
 }
 
 .adminoptions{
-    box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
-    background: rgb(239, 96, 44);
-    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px 2px #00143d;
+    background: rgb(255, 252, 252);
+    color: #00143d;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -26,4 +30,5 @@
 
 .adminoptions:hover{
     transform: scale(1.05);
+    box-shadow: 2px 2px 2px 2px #00143d;
 }

@@ -14,6 +14,7 @@ const Admin = () => {
     const [anp,setanp]=useState(true);
     const [ang,setang]=useState(false);
     const [abg,setabg]=useState(false);
+    const [sg,setsg]=useState(false);
     
     const token = localStorage.getItem('token');
 
@@ -33,18 +34,22 @@ const Admin = () => {
         <>
             <Navbar/>
             <div className='adminpanel'>
-                <h2>Admin Panel</h2>
+                <h1>Admin Panel</h1>
                 <div className='adminprofile'>
-                    <div className='adminoptions' onClick={()=>{setanp(true);setang(false);setabg(false)}}>
+                    <div className='adminoptions' onClick={()=>{setanp(true);setang(false);setabg(false);setsg(false)}}>
                         <span>Add a new project</span>
                     </div>
 
-                    <div className='adminoptions' onClick={()=>{setanp(false);setang(true);setabg(false)}}>
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(true);setabg(false);setsg(false)}}>
                         <span>Add a new guide</span>
                     </div>
 
-                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true)}}>
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true);setsg(false)}}>
                         <span>Upload Excel file</span>
+                    </div> 
+
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(true)}}>
+                        <span>Projects</span>
                     </div> 
                 </div>
             </div>

@@ -63,4 +63,14 @@ const deleteProject = async(req,res)=>{
     }
 };
 
-module.exports = {getAllProjects,getidProject,addProject,updateProject,deleteProject,getidfacultyProject};
+const countProjects = async(req,res)=>{
+    try{
+        const rows=await db.query('SELECT COUNT(*) FROM Project');
+        res.json(rows.rows)
+    }catch(e){
+
+    }
+}
+
+module.exports = {getAllProjects,getidProject,addProject,updateProject,
+    deleteProject,getidfacultyProject,countProjects};

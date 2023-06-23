@@ -18,12 +18,18 @@ def abstract_similarity(text):
         The text extracted from the uploaded PDF file.
         
     """
+    try:
+        documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
+    except:
+        documents_df = pd.read_csv('resources/abstracts.csv')
 
-    documents_df = pd.read_csv('resources/abstracts.csv')
     stop_words_l=stopwords.words('english')
+
+    documents_df = documents_df.drop(['Timestamp'], axis=1)
+    documents_df = documents_df.rename(columns={'Group Members \n(Name of all members)':'Group Members', 'Course (If Mtech)': 'Course'})
+    documents_df = documents_df.drop(['Unnamed: 9'], axis=1)
+  
     documents_cleaned=documents_df.Abstract.apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]',' ',w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]',' ',w).lower() not in stop_words_l) )
-
-
     tfidfvectoriser=TfidfVectorizer()
     tfidfvectoriser.fit(documents_cleaned)
     tfidf_vectors=tfidfvectoriser.transform(documents_cleaned)
@@ -44,5 +50,3 @@ def abstract_similarity(text):
         df_dict[int(index)] = record_dict
         index = index + 1
     return df_dict
-
-
