@@ -8,7 +8,12 @@ const Similarity = () => {
 
     const [filename,setfilename]=useState('No File');
     const [file,setfile]=useState('');
-    const [title,settitle]=useState("");
+    const [similar1,setsimilar1]=useState();
+    const [similar2,setsimilar2]=useState();
+    const [similar3,setsimilar3]=useState();
+    const [similar4,setsimilar4]=useState();
+
+    let items=[];
 
     const change = (e) => {
         setfile(e.target.files[0]);
@@ -28,13 +33,16 @@ const Similarity = () => {
                 }
             });
 
-            for (const [key, project] of Object.entries(resp.data)) {
-                console.log(`Project ${key}:`);
-                console.log(project.Abstract); 
-                console.log(project.Domain); 
-                settitle(project.Domain);
-                console.log("------------------");
-            }
+            setsimilar1(resp.data[0]);
+            setsimilar2(resp.data[1]);
+            setsimilar3(resp.data[2]);
+            setsimilar4(resp.data[4]);
+            // console.log(resp.data[0]);
+            // for (const [key,project] of Object.entries(resp.data)) {
+            //     console.log(project);
+            //     items.push(project);
+            // }
+
         }catch(err){
             console.log(err);
         }
@@ -49,14 +57,33 @@ const Similarity = () => {
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>
+    
                 <div className='pro_box'>
                     <h2>Similar Projects Found</h2>
 
-                    <div className='simpro'>
-                        <span className='simpr_title'>{title}</span>
-                        <span className='simpr_program'>Mtech</span>
-                        <span className='simpr_year'>2022</span>
-                    </div>
+                    {similar1 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar1.Domain}</span>
+                        <span className='simpr_program'>{similar1.Program}</span>
+                    </div>}
+
+                    {similar2 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar2.Domain}</span>
+                        <span className='simpr_program'>{similar2.Program}</span>
+                    </div>}
+
+                    {similar3 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar3.Domain }</span>
+                        <span className='simpr_program'>{similar3.Program }</span>
+                    </div>}
+
+                    {similar4 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar4.Domain }</span>
+                        <span className='simpr_program'>{similar4.Program }</span>
+                    </div>}
                 </div>
             </div>
         </Layout>     
