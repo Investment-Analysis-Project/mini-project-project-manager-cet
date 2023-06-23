@@ -27,8 +27,15 @@ const Similarity = () => {
                   'Content-Type': 'multipart/form-data'
                 }
               });
+            console.log(typeof(resp.data));
+            for (const [key, project] of Object.entries(resp.data)) {
+                console.log(`Project ${key}:`);
+                console.log(project.Abstract); // Access the "Abstract" property
+                console.log(project.Domain); // Access the "Domain" property
+                // Access other properties as needed
+                console.log("------------------");
+              }
             setsimilarpro(resp.data);
-            console.log(resp.data);
         }catch(err){
             console.log(err);
         }
