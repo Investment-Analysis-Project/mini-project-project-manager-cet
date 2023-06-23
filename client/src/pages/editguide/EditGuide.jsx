@@ -19,8 +19,7 @@ const EditGuide = () => {
         e.preventDefault();
 
         const aof=[...curr_aof,...inputs];
-        console.log(aof);
-
+      
         const token = localStorage.getItem('token');
 
         try{
@@ -44,7 +43,6 @@ const EditGuide = () => {
                     }
                 }
             );
-
             setInputs(['Machine Learning']);
             setCurr_password();
             setCurr_aof([]);
@@ -71,7 +69,7 @@ const EditGuide = () => {
                     <div className='editguideinput'>
                         <label htmlFor="designation">Designation</label>
                         <input name="name" className='editin' type="text" readOnly placeholder={curr_designation}/>
-                        <select name="year" className='editin' onChange={(e)=>setCurr_designation(e.target.value)}>
+                        <select name="year" className='editin' onClick={(e)=>setCurr_designation(e.target.value)} placeholder={curr_designation}>
                             <option value="Proffesor">Proffesor</option>
                             <option value="Associate Proffesor">Associate Proffesor</option>
                             <option value="Assistant Proffesor">Assistant Proffesor</option>

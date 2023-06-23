@@ -30,6 +30,5 @@
 
 .adminoptions:hover{
     transform: scale(1.05);
-    background: #00143d;
-    color: aliceblue;
+    box-shadow: 2px 2px 2px 2px #00143d;
 }

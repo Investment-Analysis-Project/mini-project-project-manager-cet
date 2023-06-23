@@ -49,7 +49,7 @@ const Admin = () => {
                     </div> 
 
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(true)}}>
-                        <span>Search Guide</span>
+                        <span>Projects</span>
                     </div> 
                 </div>
             </div>
