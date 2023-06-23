@@ -46,6 +46,7 @@ const DynamicForm = () => {
                 <option value="Formal Methods">Formal Methods</option>
                 <option value="Natural Language Processing">Natural Language Processing</option>
                 <option value="Computer Vision">Computer Vision</option>
+                <option value="Algorithms">Algorithm</option>
           </select>
 
           <button className='rembutdyn' type="button" onClick={() => handleRemoveInput(index)}><FontAwesomeIcon icon={faMinus}/> Remove</button>      
