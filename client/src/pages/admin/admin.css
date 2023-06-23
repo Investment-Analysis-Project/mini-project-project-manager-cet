@@ -21,15 +21,14 @@
 }
 
 .adminoptions{
-    box-shadow: 0px 0px 2px 2px #00143d;
-    background: rgb(255, 252, 252);
-    color: #00143d;
+    background: rgb(57, 177, 91);
+    color: #ffffff;
     border: none;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .adminoptions:hover{
-    background: greenyellow;
+  transform: scale(1.05);
 }
