@@ -5,6 +5,7 @@ import Addproject from '../../components/addproject/Addproject';
 import Addguide from '../../components/addguide/Addguide';
 import baseurl from '../../baseurl/baseurl';
 import Addbulkguide from '../../components/addbulkguide/Addbulkguide';
+import Addbulkproject from '../../components/addbulkproject/Addbulkproject';
 import { ProjectsContext } from '../../contextapi.js/projectscontext';
 
 const Admin = () => {
@@ -45,11 +46,7 @@ const Admin = () => {
                     </div>
 
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true);setsg(false)}}>
-                        <span>Upload Excel file</span>
-                    </div> 
-
-                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(true)}}>
-                        <span>Projects</span>
+                        <span>Upload Excel file guides</span>
                     </div> 
                 </div>
             </div>

@@ -73,7 +73,7 @@ const ProjectDetail=()=>{
     return(
         <div className='projectdetail'>
             <h1>{pro_title}</h1>
-            <p className='projectdesc'>At Bankrate we strive to help you make smarter financial decisions. While we adhere to strict editorial integrity, this post may contain references to products from our partners. Here’s an explanation for how we make money. Learn more about who we are and our promise to guide you through life’s financial journey.</p>
+            <p className='projectdesc'>{pro_desc}</p>
             <div className='projectdetailcontainer'>
 
                 <div className='division'>

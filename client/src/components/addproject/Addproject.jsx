@@ -54,7 +54,7 @@ const Addproject = () => {
                 mem_3,
                 mem_4,
                 pro_status,
-                abstract_link:abstract_url,
+                abstract_link:abstract_link,
                 report_link:report_url,
                 hosted_link:hosted_url,
                 code_link:code_url},
@@ -126,7 +126,10 @@ const Addproject = () => {
                     </div>
 
                     <div className="projectinputeach">
-                        <label className='projectinputlabel'>Documents</label>   
+                        <label className='projectinputlabel'>Documents</label> 
+                        <input className='inp' type="text" value={abstract_link} onChange={e=>setabstract_link(e.target.value)} placeholder={abstract_link}/>  
+                        <br></br>
+                        <span>OR</span>
                         <Fileuploader/>
                     </div>
                 </div>
