@@ -10,6 +10,13 @@ const Similarity = () => {
     const [file,setfile]=useState('');
     const [similarpro,setsimilarpro]=useState('');
     const [textsearch,settextsearch]=useState('');
+    const [similar1,setsimilar1]=useState();
+    const [similar2,setsimilar2]=useState();
+    const [similar3,setsimilar3]=useState();
+    const [similar4,setsimilar4]=useState();
+
+    let items=[];
+
     const change = (e) => {
         setfile(e.target.files[0]);
         setfilename(e.target.files[0].name);
@@ -26,8 +33,17 @@ const Similarity = () => {
                 headers: {
                   'Content-Type': 'multipart/form-data'
                 }
+
               });
-              
+              setsimilar1(resp.data[0]);
+              setsimilar2(resp.data[1]);
+              setsimilar3(resp.data[2]);
+              setsimilar4(resp.data[4]);
+              // console.log(resp.data[0]);
+              // for (const [key,project] of Object.entries(resp.data)) {
+              //     console.log(project);
+              //     items.push(project);
+              // }
             console.log(resp);
             console.log(typeof(resp.data));
             // for (const [key, project] of Object.entries(resp.data)) {
@@ -91,14 +107,33 @@ const Similarity = () => {
                     <textarea value={textsearch} onChange={handletextsearch} rows={4} cols={50}></textarea>
                     <button onClick={searchText} className='logbut'>Search</button>
                 </div>
+    
                 <div className='pro_box'>
                     <h2>Similar Projects Found</h2>
 
-                    <div className='simpro'>
-                        <span className='simpr_title'>MEDICAL IMAGE ENCRYPTION USING PERMUTATION AND CHAOTIC MAPS</span>
-                        <span className='simpr_program'>Mtech</span>
-                        <span className='simpr_year'>2022</span>
-                    </div>
+                    {similar1 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar1.Domain}</span>
+                        <span className='simpr_program'>{similar1.Program}</span>
+                    </div>}
+
+                    {similar2 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar2.Domain}</span>
+                        <span className='simpr_program'>{similar2.Program}</span>
+                    </div>}
+
+                    {similar3 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar3.Domain }</span>
+                        <span className='simpr_program'>{similar3.Program }</span>
+                    </div>}
+
+                    {similar4 &&  <div className='simpro'>
+                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_domain'>{similar4.Domain }</span>
+                        <span className='simpr_program'>{similar4.Program }</span>
+                    </div>}
                 </div>
             </div>
         </Layout>     
