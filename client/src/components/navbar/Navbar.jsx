@@ -6,7 +6,10 @@ import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faHome, faPerson, faPersonChalkboard, faPersonCircleCheck, faRightFromBracket, faSignIn, faUserCircle, faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    const {home}=props;
+
     const navigate = useNavigate();
     const [profilevisible,setprofilevisible]=useState(false);
 
@@ -18,14 +21,14 @@ const Navbar = () => {
 
     return(
         <div className='navbar'>
-            <div className='items'>
+            {!home && (<div className='items'>
                 <button className='navbut' onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faHome}/> Home</button>
                 
                 <button className='navbut' onClick={()=>{navigate('/projects')}}><FontAwesomeIcon icon={faFileAlt}/> Projects</button>
                 
                 <button className='navbut' onClick={()=>{navigate('/guides')}}><FontAwesomeIcon icon={faPersonChalkboard}/> Guides</button>
                 
-            </div>
+            </div>)}
 
             {auth ? (<div className='admin'>
                 <button className='navbut' onClick={profileview}><FontAwesomeIcon icon={faUserCircle} size='xl'/></button>
