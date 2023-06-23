@@ -84,13 +84,12 @@ const Login = () => {
                             <input type="password" className='loginput' value={user_password} onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
 
-                        <span>{message} !</span>
+                        <span>{message}</span>
 
                         <button className='logbut' onClick={loginSubmit}>Login</button>
                     </div>
 
-                </div>
-            
+                </div> 
             </div></>) : <Home/>}
         </>
     )

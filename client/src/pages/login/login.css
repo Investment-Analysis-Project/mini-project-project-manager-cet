@@ -1,7 +1,7 @@
 .loginpage{
     display: flex;
     flex-direction: row;
-    height: 87vh;
+    height:100vh;
 }
 
 .blankcolumn{
@@ -23,7 +23,7 @@
 
 .blankcolumn h4{
     color: #ffffff;
-    font-size: medium;
+    font-size: large;
 }
 
 .loginpic{
@@ -39,7 +39,6 @@
     padding: 20px;
     flex: 1;
     background-color:#ffffff;
-    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .login h1{
