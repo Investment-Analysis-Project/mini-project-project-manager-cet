@@ -19,9 +19,8 @@
 }
 
 .adminoptions{
-    box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+    box-shadow: 0px 0px 2px 2px #00143d;
     background: rgb(255, 252, 252);
-    font-weight: 600;
     color: #00143d;
     border: none;
     padding: 10px;
