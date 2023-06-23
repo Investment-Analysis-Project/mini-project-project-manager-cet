@@ -69,11 +69,7 @@ const Profile = () => {
     return(
        
         <div className='profile'>
-            
-            <div className='banner'>
-                <img src={bg4} alt="" />
-            </div>
-
+           
             <div className='profileall'>
                 <h1>Profile</h1>
 
