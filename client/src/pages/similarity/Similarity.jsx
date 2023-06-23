@@ -101,6 +101,7 @@ const Similarity = () => {
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>
+                <br></br>
                 <h3>OR</h3>
                 <div className="drop_box">
                     <label>Paste your Abstract here</label>
@@ -112,25 +113,25 @@ const Similarity = () => {
                     <h2>Similar Projects Found</h2>
 
                     {similar1 &&  <div className='simpro'>
-                        {/* <span className='simpr_title'>{similar1.P}</span> */}
+                        <span className='simpr_title'>{similar1.ProjectTitle}</span>
                         <span className='simpr_domain'>{similar1.Domain}</span>
                         <span className='simpr_program'>{similar1.Program}</span>
                     </div>}
 
                     {similar2 &&  <div className='simpro'>
-                        {/* <span className='simpr_title'>{similar1}</span> */}
+                        <span className='simpr_title'>{similar2.ProjectTitle}</span>
                         <span className='simpr_domain'>{similar2.Domain}</span>
                         <span className='simpr_program'>{similar2.Program}</span>
                     </div>}
 
                     {similar3 &&  <div className='simpro'>
-                        {/* <span className='simpr_title'>{similar1}</span> */}
+                        <span className='simpr_title'>{similar3.ProjectTitle}</span>
                         <span className='simpr_domain'>{similar3.Domain }</span>
                         <span className='simpr_program'>{similar3.Program }</span>
                     </div>}
 
                     {similar4 &&  <div className='simpro'>
-                        {/* <span className='simpr_title'>{similar1}</span> */}
+                        <span className='simpr_title'>{similar4.ProjectTitle}</span>
                         <span className='simpr_domain'>{similar4.Domain }</span>
                         <span className='simpr_program'>{similar4.Program }</span>
                     </div>}
