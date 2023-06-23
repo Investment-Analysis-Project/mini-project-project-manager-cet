@@ -47,7 +47,7 @@
 }
 
 .projectsubbut{
-    background:rgb(14, 101, 51);
+    background:#047c6a;
     border: none;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -67,5 +67,5 @@
     table-layout: fixed;
     border:none;
     outline: none;
-    text-align:center;
+    text-align:justify
 }

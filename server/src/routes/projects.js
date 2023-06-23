@@ -5,7 +5,7 @@ const verify = require('../utils/verify');
 
 router.get('/',projects_controller.getAllProjects);
 router.get('/all/projects',projects_controller.countProjects);
-router.get('/:id', projects_controller.getidProject);
+router.get('/find/:id', projects_controller.getidProject);
 router.get('/guide/:id',projects_controller.getidfacultyProject);
 router.post('/',verify.verifyAdmin,projects_controller.addProject);
 router.put('/:id',verify.verifyAdmin,projects_controller.updateProject);

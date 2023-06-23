@@ -33,7 +33,7 @@
 }
 
 .navbut:active {
-    box-shadow: 2px 2px .5px .5px aliceblue;
+    box-shadow: 1px 1px .1px .1px aliceblue;
     outline: none;
 }
 
