@@ -21,6 +21,8 @@ def abstract_similarity(text):
     except:
         documents_df = pd.read_csv('resources/abstracts.csv')
 
+    nltk.download('stopwords')  # Download the stopwords resource
+
     stop_words_l = nltk.corpus.stopwords.words('english')
 
     documents_df = documents_df.drop(['Timestamp'], axis=1)
