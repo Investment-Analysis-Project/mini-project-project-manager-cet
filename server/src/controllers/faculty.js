@@ -4,7 +4,7 @@ const auth_function = require('../utils/auth');
 
 const getAllfaculty = async(req,res)=>{
     try{
-        const {rows} = await db.query('SELECT * FROM Faculty');
+        const {rows} = await db.query('SELECT * FROM Faculty ORDER BY user_id');
         res.json(rows);
     }catch(err){
         console.log(err);
