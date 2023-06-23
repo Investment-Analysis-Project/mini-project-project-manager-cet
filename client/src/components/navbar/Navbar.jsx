@@ -41,10 +41,6 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>}
-
-                {/* <button className='navbut' onClick={()=>{setAuth(false); setisAdmin(false); localStorage.removeItem('token');navigate('/')}}><FontAwesomeIcon icon={faRightFromBracket}/> Logout</button>
-                {isAdmin && (<button className='navbut' onClick={()=>{navigate('/adminpanel')}}><FontAwesomeIcon icon={faUserSecret}/> Admin Page</button>)}
-                {auth && !isAdmin && (<button className='navbut' onClick={()=>{navigate(`/guide/${user_id}`)}}><FontAwesomeIcon icon={faUserSecret}/> Profile</button>)}*/}
             </div>) :
             (<div className='admin'>
                 <button className='navbut' onClick={()=>{navigate('/login')}}><FontAwesomeIcon icon={faSignIn}/> Login</button>
