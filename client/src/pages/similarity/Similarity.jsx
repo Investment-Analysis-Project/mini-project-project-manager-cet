@@ -101,14 +101,14 @@ const Similarity = () => {
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>
-                <br></br>
+                {/* <br></br>
                 <h3>OR</h3>
                 <div className="drop_box">
                     <label>Paste your Abstract here</label>
                     <textarea value={textsearch} onChange={handletextsearch} rows={4} cols={50}></textarea>
                     <button onClick={searchText} className='logbut'>Search</button>
                 </div>
-    
+     */}
                 <div className='pro_box'>
                     <h2>Similar Projects Found</h2>
 
