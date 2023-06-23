@@ -62,7 +62,7 @@ const Similarity = () => {
                     <h2>Similar Projects Found</h2>
 
                     {similar1 &&  <div className='simpro'>
-                        <span className='simpr_title'>{similar1}</span>
+                        <span className='simpr_title'>{similar1.P}</span>
                         <span className='simpr_domain'>{similar1.Domain}</span>
                         <span className='simpr_program'>{similar1.Program}</span>
                     </div>}
