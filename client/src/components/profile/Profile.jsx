@@ -78,16 +78,6 @@ const Profile = () => {
                 <h1>Profile</h1>
 
                 <div className='profiledetails'>
-                    <div className='profiledivison1'>
-                        <h2>Areas Of Interest</h2>
-                        <div className='guideskill'>
-                            {aof && aof.map((item, i) => {
-                                return (
-                                   <span className='guideaof' key={i}>{item}</span>
-                                );
-                            })}
-                        </div>
-                    </div>
 
                     <div className='profiledivison2'>
 
@@ -118,6 +108,22 @@ const Profile = () => {
 
                         {auth && (id === user_id || isAdmin) && (<button className='profbut' onClick={() => { navigate(`/editguide/${id}`); } }>Profile Edit</button>)}
                     </div>
+
+
+                    <div className='profiledivison1'>
+                        <h2>Areas Of Interest</h2>
+                        <div className='guideskill'>      
+                            {aof && aof.map((item, i) => {
+                                return(
+                                    <ul className='guideaof' key={i}>
+                                        <li key={i}>{item}</li>
+                                    </ul>
+                                );
+                            })}        
+                        </div>
+                    </div>
+
+                    
                 </div>
 
                 <div className='table'>
