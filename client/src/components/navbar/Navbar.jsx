@@ -28,7 +28,7 @@ const Navbar = () => {
             </div>
 
             {auth ? (<div className='admin'>
-                <button className='navbut' onClick={profileview}><FontAwesomeIcon icon={faUserCircle}/> User</button>
+                <button className='navbut' onClick={profileview}><FontAwesomeIcon icon={faUserCircle} size='xl'/></button>
 
                 {profilevisible && <div className='logindropdown'>
                     <ul className='liststyle'>
