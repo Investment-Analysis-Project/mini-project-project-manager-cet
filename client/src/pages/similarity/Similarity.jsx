@@ -8,6 +8,7 @@ const Similarity = () => {
 
     const [filename,setfilename]=useState('No File');
     const [file,setfile]=useState('');
+    const [similarpro,setsimilarpro]=useState('');
 
     const change = (e) => {
         setfile(e.target.files[0]);
@@ -26,6 +27,7 @@ const Similarity = () => {
                   'Content-Type': 'multipart/form-data'
                 }
               });
+            setsimilarpro(resp.data);
             console.log(resp.data);
         }catch(err){
             console.log(err);
@@ -41,8 +43,14 @@ const Similarity = () => {
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>
-                <div>
-                    
+                <div className='pro_box'>
+                    <h2>Similar Projects Found</h2>
+
+                    <div className='simpro'>
+                        <span className='simpr_title'>MEDICAL IMAGE ENCRYPTION USING PERMUTATION AND CHAOTIC MAPS</span>
+                        <span className='simpr_program'>Mtech</span>
+                        <span className='simpr_year'>2022</span>
+                    </div>
                 </div>
             </div>
         </Layout>     
