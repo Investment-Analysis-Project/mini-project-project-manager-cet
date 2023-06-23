@@ -18,8 +18,7 @@ def predict_pdf():
     This function extracts the text from the uploaded PDF file and returns the top 5 most similar abstracts.
     """
     if request.method == "POST":
-        #file_path = "/temp_upload/uploaded_file.pdf"
-
+  
         if 'file' not in request.files:
             return "No file uploaded."
 
@@ -27,17 +26,12 @@ def predict_pdf():
         if file.filename == '':
             return "No file selected."
         
-        file_dir = "temp_upload"
-        file_path = os.path.join(file_dir,file.filename)
-
-        file.save(file_path)
         """
         Process the data and make prediction here
         """
 
-        extracted_text = extract_pdf(file_path)
+        extracted_text = extract_pdf(file)
         abstracts = abstract_similarity(extracted_text)   
-        os.remove(file_path)
 
         response = jsonify(abstracts)
         response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
