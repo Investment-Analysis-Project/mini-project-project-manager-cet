@@ -14,7 +14,7 @@
 .adminprofile{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 50px;
     gap: 30px;
     text-align: center;

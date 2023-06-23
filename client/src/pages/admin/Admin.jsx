@@ -48,12 +48,17 @@ const Admin = () => {
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true);setsg(false)}}>
                         <span>Upload Excel file guides</span>
                     </div> 
+
+                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(true)}}>
+                        <span>Upload Excel file projects</span>
+                    </div> 
                 </div>
             </div>
             
             {anp && <Addproject/>}
             {ang && <Addguide/>}
             {abg && <Addbulkguide/>}
+            {sg&& <Addbulkproject/>}
         </>
     )
 }

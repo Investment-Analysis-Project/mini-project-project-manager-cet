@@ -15,7 +15,8 @@ const Addbulkproject = () => {
 
     const [pro_title,setpro_title]=useState("");
     const [pro_desc,setpro_desc]=useState("");
-    const [program,setprogram]=useState("BTECH");
+    const [pro_dom,setpro_dom]=useState([]);
+    const [program,setprogram]=useState("");
     const [grad_year,setgrad_year]=useState("");
     const [guide_id,setguide_id]=useState("");
     const [mem_1,setmem_1]=useState("");
@@ -46,14 +47,20 @@ const Addbulkproject = () => {
             const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
             {jsonData.map(async(item,i)=>{
-                console.log(item[0]);
-                console.log(item[1]);
-                console.log(item[2]);
                 try{
-                    const response = await baseurl.post("/auth/create",{
-                      user_name:item[0],
-                      email:item[1],
-                      faculty_id:item[2]},
+                    const response = await baseurl.post("/projects",{
+                        pro_title:item[0],
+                        pro_desc:item[1],
+                        pro_domains:item[2],
+                        program:item[3],
+                        grad_year:item[4],
+                        guide_id:item[5],
+                        mem_1:item[6],
+                        mem_2:item[7],
+                        mem_3:item[8],
+                        mem_4:item[9],
+                        pro_status:item[10],
+                        abstract_link:item[11]},
                       {
                         headers:
                         {
@@ -63,7 +70,7 @@ const Addbulkproject = () => {
                     );
                     console.log(response.data);
                     setCurr_aof([]);
-                    navigate(`/guides`)
+                    navigate(`/projects`)
                 }catch(err){
                     console.log(err);
                 }
