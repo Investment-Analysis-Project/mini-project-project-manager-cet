@@ -1,8 +1,14 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .banner{
     display: flex;
     flex-direction: column; 
     width: 100%;
-    height: 250px;
+    height: 100px;
 }
 
 .banner img {
@@ -10,33 +16,30 @@
     height: 100%;
     object-fit:fill;
 }
-.profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .profileall{
+    margin-top: 20px;
     border-radius: 5px; 
-    position: absolute;
-    top: 100px;
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .profileall h1{
     font-weight: 800;
-    color: #fff;
+    color: #00143d;
 }
 
 .profiledetails{
     border-radius: 5px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: rgb(10, 123, 66);
+    background: rgb(9, 133, 73);
+    border: 2px solid;
 }
 
 .profiledivison1{
@@ -48,7 +51,7 @@
 
 .profiledivison1 h2{
     color: #fff;
-    margin-top: 20px;
+ 
 }
 .profiledivison2{
     background-color: #ffffff;
@@ -80,12 +83,12 @@
 .proin{
     border: none;
     font-weight: 800;
-    color: rgb(11, 96, 55);
+    color: rgb(9, 133, 73);
     outline: none;
 }
 
 .profbut{
-    background: rgb(13, 133, 73);
+    background: rgb(9, 133, 73);
     border-radius: 2px;
     border: none;
     cursor: pointer;
@@ -111,6 +114,7 @@
     flex-direction: column;
     padding: 5px;
     background: #00143d;
+    border-radius: 5px;
 }
 
 .listheading{
@@ -121,7 +125,7 @@
  .projectsitemguided{
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
  }
 
 .projecteachitem{
@@ -130,7 +134,7 @@
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
-    background: rgb(8, 139, 41);
+    background: rgb(9, 133, 73);
 }
 
 

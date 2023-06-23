@@ -68,7 +68,7 @@ const Addbulkguide = () => {
     return(
         <div className='addbulkguide'>
             <div className='bulkguide'>
-                <span>Upload the excel file</span>
+                <span>Upload Excel file of guides</span>
                 <input type="file" className="customfile" onChange={change}/>
                 <button className='logbut' onClick={bulkupload}>Upload</button>
             </div>

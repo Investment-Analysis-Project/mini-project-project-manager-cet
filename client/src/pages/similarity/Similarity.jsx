@@ -22,7 +22,7 @@ const Similarity = () => {
         formData.append('file',file);
         
         try{
-            const resp = await axios.post('http://localhost:5000/predict/pdf',formData,{
+            const resp = await axios.post('https://abstract-check-api.onrender.com/predict/pdf',formData,{
                 headers: {
                   'Content-Type': 'multipart/form-data'
                 }
