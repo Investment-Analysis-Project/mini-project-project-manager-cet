@@ -26,8 +26,8 @@ export const ProjectsContextProvider = (props)=>{
     const [curr_guide_name,setCurr_guide_name]=useState("");
     const [curr_designation,setCurr_designation]=useState("");
     const [curr_aof,setCurr_aof]=useState([]);
-    const [curr_contact,setCurr_contact]=useState();
-    const [curr_password,setCurr_password]=useState();
+    const [curr_contact,setCurr_contact]=useState("");
+    const [curr_password,setCurr_password]=useState("");
 
     const [inputs, setInputs] = useState(['Machine Learning']);
 

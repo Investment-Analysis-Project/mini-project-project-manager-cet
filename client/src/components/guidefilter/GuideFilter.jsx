@@ -27,7 +27,8 @@ const GuideFilter = () => {
                     <option value="Cryptography">Cryptography</option>
                     <option value="Model Checking">Model Checking</option>
                     <option value="Formal Methods">Formal Methods</option>
-                    <option value="Model Checking">Model Checking</option>
+                    <option value="Natural Language Processing">Natural Language Processing</option>
+                    <option value="Computer Vision">Computer Vision</option>
                 </select>
             </div>
         </div>
