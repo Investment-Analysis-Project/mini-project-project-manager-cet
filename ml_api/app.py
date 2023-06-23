@@ -40,5 +40,32 @@ def predict_pdf():
 
     return "Invalid request."
 
+@app.route("/predict/text", methods=["POST"])
+def predict_text():
+    """
+    This function extracts the text from the uploaded PDF file and returns the top 5 most similar abstracts.
+    """
+    if request.method == "POST":
+  
+        if 'text' not in request.form:
+            return "No text uploaded."
+
+        text = request.form['text']
+        if text == '':
+            return "No text selected."
+        
+        """
+        Process the data and make prediction here
+        """
+
+        abstracts = abstract_similarity(text)   
+
+        response = jsonify(abstracts)
+        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+        return response
+    
+
+    return "Invalid request."
+
 if __name__ == "__main__":
     app.run(debug=True)
