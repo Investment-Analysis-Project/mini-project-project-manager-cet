@@ -1,17 +1,79 @@
+.grid{
+    margin-top: 100px;
+    position: relative;
+    height: 600px;
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 8px 10px -6px rgba(255, 255, 255, 0.5);
+}
+
+.blankcolumn{
+    flex: 1;
+    background-color: #00143d;
+    height: 600px;
+    width:680px;
+    border-radius: 10px;
+    /* margin-right: -10px; */
+    /* box-shadow: 3px 3px 2px 3px #00143d; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.blankcolumn h2{
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 2%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+}
+
+.blankcolumn h4{
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 100px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 100%;
+}
+
+.loginpic{
+    margin-top: 50%;
+    height: 600px;
+    width:680px;
+}
+
 .login{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+    height: 100%;
+    width:450px;
+    padding: 20px;
+    margin-left: -10px;
+
+    flex: 1;
+    background-color:#ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 2px 3px 2px 2px #00143d; */
+
 }
 
 .login h1{
-    font-weight: 800;
+    font-weight: 500;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 .loginform{
-    margin-top: 30px;
-    box-shadow: 2px 3px 2px 2px #00143d;;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 5px;
     padding: 10px;
     display: flex;
@@ -24,27 +86,38 @@
 .logintext{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: x-large;
     gap:10px;
     width: 100%;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: 'Exo 2', sans-serif;
+
 }
 
 .loginput{
-    border: 1.5px solid black;
-    border-radius: 5px;
+    border-top: 1.5px black;
+    border-left: 1.5px black;
+    border-right: 1.5px black;
+    /* border-radius: 5px; */
     padding-left: 5px;
 }
 
+.loginform input:focus {
+    outline: none;
+  }
+
 .logbut{
-    width: 100px;
+    width: 80%;
     background: #00143d;
     color: rgb(255, 255, 255);
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     outline: none;
     transition: box-shadow 0.3s;
     cursor: pointer;
+    height: 50px;
 }
 
 button:focus{
@@ -53,5 +126,7 @@ button:focus{
 
   
 .logbut:active{
+
     transform: scale(1.05);
   }
+
