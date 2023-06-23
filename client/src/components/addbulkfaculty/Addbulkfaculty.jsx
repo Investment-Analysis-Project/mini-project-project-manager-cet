@@ -62,7 +62,7 @@ const Addbulkfaculty = () => {
     return(
         <div className='addbulkguide'>
             <div className='bulkguide'>
-                <span>Upload the excel file of faculty</span>
+                <span>Upload Excel file of faculties</span>
                 <input type="file" className="customfile" onChange={change}/>
                 <button className='logbut' onClick={bulkupload}>Upload</button>
             </div>

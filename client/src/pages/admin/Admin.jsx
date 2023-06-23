@@ -37,7 +37,7 @@ const Admin = () => {
         <>
             <Navbar/>
             <div className='adminpanel'>
-                <h1>Admin Panel</h1>
+                {/* <h1>Admin Panel</h1> */}
                 <div className='adminprofile'>
                     <div className='adminoptions' onClick={()=>{setanp(true);setang(false);setabg(false);setsg(false);setfb(false)}}>
                         <span>Add a new project</span>
@@ -48,15 +48,15 @@ const Admin = () => {
                     </div>
 
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(true);setsg(false);setfb(false)}}>
-                        <span>Upload Excel file guides</span>
+                        <span>Upload Excel file of guides</span>
                     </div> 
 
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(true);setfb(false)}}>
-                        <span>Upload Excel file projects</span>
+                        <span>Upload Excel file of projects</span>
                     </div> 
 
                     <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(false);setfb(true)}}>
-                        <span>Upload Excel file faculty</span>
+                        <span>Upload Excel file of faculties</span>
                     </div> 
                 </div>
             </div>
