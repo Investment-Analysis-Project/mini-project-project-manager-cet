@@ -11,8 +11,6 @@ import bg3 from './bg3.png';
 import bg4 from './bg4.png';
 
 
-
-
 const Profile = () => {
     const{isAdmin,auth,user_id,setCurr_guide_name,setCurr_designation,setCurr_aof}=useContext(ProjectsContext);
 
@@ -80,14 +78,16 @@ const Profile = () => {
             <div className='grid'>
 
             <div className='profiledetails'>
+
                 <div className='profiledivison1'>
                     <div className='profilepic'>
                         <img src={bg} alt="" />
                     </div>
-                    <h3>Name</h3>
-                    <h4>Designation</h4>
+                    
 
                     <div className='guideskillitems'>
+                    <h3>Name</h3>
+                    <h4>Designation</h4>
                         {aof && aof.map((item, i) => {
                             return (
                                 <ul key={i}>
@@ -97,7 +97,6 @@ const Profile = () => {
                         })}
                     </div>
                 </div>
-            </div>
 
             <div className='profiledivison2'>
 
@@ -133,6 +132,8 @@ const Profile = () => {
                 </div>
             </div>
 
+            </div>
+
 
 
             <div className='projectlist'>
@@ -153,6 +154,10 @@ const Profile = () => {
                         <tbody>
                             <tr>
                                 <td>1100</td>
+                                <td>jhwedwe</td>
+                            </tr>
+                            <tr>
+                                <td>2100</td>
                                 <td>jhwedwe</td>
                             </tr>
                             {project && project.map((item, i) => {
