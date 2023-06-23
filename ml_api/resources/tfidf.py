@@ -18,8 +18,11 @@ def abstract_similarity(text):
         The text extracted from the uploaded PDF file.
         
     """
+    try:
+        documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
+    except:
+        documents_df = pd.read_csv('resources/abstracts.csv')
 
-    documents_df = pd.read_csv('resources/abstracts.csv')
     stop_words_l=stopwords.words('english')
 
     documents_df = documents_df.drop(['Timestamp'], axis=1)
