@@ -8,7 +8,7 @@ const Similarity = () => {
 
     const [filename,setfilename]=useState('No File');
     const [file,setfile]=useState('');
-    const [similarpro,setsimilarpro]=useState('');
+    const [title,settitle]=useState("");
 
     const change = (e) => {
         setfile(e.target.files[0]);
@@ -26,16 +26,15 @@ const Similarity = () => {
                 headers: {
                   'Content-Type': 'multipart/form-data'
                 }
-              });
-            console.log(typeof(resp.data));
+            });
+
             for (const [key, project] of Object.entries(resp.data)) {
                 console.log(`Project ${key}:`);
-                console.log(project.Abstract); // Access the "Abstract" property
-                console.log(project.Domain); // Access the "Domain" property
-                // Access other properties as needed
+                console.log(project.Abstract); 
+                console.log(project.Domain); 
+                settitle(project.Domain);
                 console.log("------------------");
-              }
-            setsimilarpro(resp.data);
+            }
         }catch(err){
             console.log(err);
         }
@@ -54,7 +53,7 @@ const Similarity = () => {
                     <h2>Similar Projects Found</h2>
 
                     <div className='simpro'>
-                        <span className='simpr_title'>MEDICAL IMAGE ENCRYPTION USING PERMUTATION AND CHAOTIC MAPS</span>
+                        <span className='simpr_title'>{title}</span>
                         <span className='simpr_program'>Mtech</span>
                         <span className='simpr_year'>2022</span>
                     </div>

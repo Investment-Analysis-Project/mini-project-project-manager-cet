@@ -21,7 +21,7 @@ const Navbar = (props) => {
 
     return(
         <div className='navbar'>
-            {!home && (<div className='items'>
+            {(!home || auth) && (<div className='items'>
                 <button className='navbut' onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faHome}/> Home</button>
                 
                 <button className='navbut' onClick={()=>{navigate('/projects')}}><FontAwesomeIcon icon={faFileAlt}/> Projects</button>
