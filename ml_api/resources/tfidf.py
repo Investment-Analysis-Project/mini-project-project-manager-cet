@@ -18,7 +18,8 @@ def abstract_similarity(text):
 
     """
     try:
-        documents_df = pd.DataFrame(get_data_from_sheet()[1:], columns=get_data()[0])
+        sheet_data = get_data_from_sheet()
+        documents_df = pd.DataFrame(sheet_data[1:], columns=sheet_data[0])
     except:
         try:
             documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
