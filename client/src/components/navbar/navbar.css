@@ -71,3 +71,9 @@
     transform: scale(1.05);
     color:#05b04f;
 }
+
+.depimage img{
+    background: #fff;
+    height: 70px;
+    object-fit: scale-down;
+}

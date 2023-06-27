@@ -5,6 +5,7 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import word_tokenize
+from resources.sheets import get_data_from_sheet
 
 def abstract_similarity(text):
     """
@@ -17,9 +18,12 @@ def abstract_similarity(text):
 
     """
     try:
-        documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
+        documents_df = pd.DataFrame(get_data_from_sheet()[1:], columns=get_data()[0])
     except:
-        documents_df = pd.read_csv('resources/abstracts.csv')
+        try:
+            documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
+        except:
+            documents_df = pd.read_csv('resources/abstracts.csv')
 
     nltk.download('stopwords')  # Download the stopwords resource
 
@@ -27,8 +31,8 @@ def abstract_similarity(text):
 
     documents_df = documents_df.drop(['Timestamp'], axis=1)
     documents_df = documents_df.rename(columns={'Group Members \n(Name of all members)': 'Group Members', 'Course (If Mtech)': 'Course'})
-    documents_df = documents_df.drop(['Unnamed: 9'], axis=1)
-
+    if 'Unnamed: 9' in documents_df.columns:
+        documents_df = documents_df.drop(['Unnamed: 9'], axis=1)
     documents_cleaned = documents_df.Abstract.apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]', ' ', w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]', ' ', w).lower() not in stop_words_l))
     tfidfvectoriser = TfidfVectorizer()
     tfidfvectoriser.fit(documents_cleaned)
