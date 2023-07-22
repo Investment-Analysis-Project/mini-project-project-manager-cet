@@ -127,7 +127,7 @@ const Addproject = () => {
 
                     <div className="projectinputeach">
                         <label className='projectinputlabel'>Documents</label> 
-                        <input className='inp' type="text" value={abstract_link} onChange={e=>setabstract_link(e.target.value)} placeholder={abstract_link}/>  
+                        <input className='inp' type="text" value={abstract_link} onChange={e=>setabstract_link(e.target.value)} placeholder="Paste Link"/>  
                         <br></br>
                         <span>OR</span>
                         <Fileuploader/>

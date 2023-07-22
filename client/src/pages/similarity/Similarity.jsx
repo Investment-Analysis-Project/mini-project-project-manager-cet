@@ -73,15 +73,20 @@ const Similarity = () => {
                 }
             }
             );
+            console.log(resp.data);
+            setsimilar1(resp.data[0]);
+            setsimilar2(resp.data[1]);
+            setsimilar3(resp.data[2]);
+            setsimilar4(resp.data[4]);
               
             
-            for (const [key, project] of Object.entries(resp.data)) {
-                console.log(`Project ${key}:`);
-                console.log(project.Abstract); // Access the "Abstract" property
-                console.log(project.Domain); // Access the "Domain" property
-                // Access other properties as needed
-                console.log("------------------");
-              }
+            // for (const [key, project] of Object.entries(resp.data)) {
+            //     console.log(`Project ${key}:`);
+            //     console.log(project.Abstract); // Access the "Abstract" property
+            //     console.log(project.Domain); // Access the "Domain" property
+            //     // Access other properties as needed
+            //     console.log("------------------");
+            //   }
             setsimilarpro(resp.data);
         }catch(err){
             console.log(err);
@@ -101,14 +106,14 @@ const Similarity = () => {
                     <input type="file" name="myFile" className="drop-zone__input" onChange={change}/>
                     <button onClick={search} className='logbut'>Search</button>
                 </div>
-                {/* <br></br>
+                <br></br>
                 <h3>OR</h3>
                 <div className="drop_box">
                     <label>Paste your Abstract here</label>
                     <textarea value={textsearch} onChange={handletextsearch} rows={4} cols={50}></textarea>
                     <button onClick={searchText} className='logbut'>Search</button>
                 </div>
-     */}
+    
                 <div className='pro_box'>
                     <h2>Similar Projects Found</h2>
 
