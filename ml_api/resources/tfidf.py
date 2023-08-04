@@ -31,7 +31,13 @@ def abstract_similarity(text):
     stop_words_l = nltk.corpus.stopwords.words('english')
 
     documents_df = documents_df.drop(['Timestamp'], axis=1)
-    documents_df = documents_df.rename(columns={'Group Members \n(Name of all members)': 'Group Members', 'Course (If Mtech)': 'Course'})
+    documents_df = documents_df.rename(columns={'Group Members \n(Name of all members)': 'GroupMembers', 
+                                                'Course (If Mtech)': 'Course', 
+                                                'Project Title': 'ProjectTitle', 
+                                                'Link to the project video': 'LinkToVideo', 
+                                                'Link to the project presentation': 'LinkToPresentation', 
+                                                'Link to the project report': 'LinkToReport',
+                                                'Program ': 'Program',})
     if 'Unnamed: 9' in documents_df.columns:
         documents_df = documents_df.drop(['Unnamed: 9'], axis=1)
     documents_cleaned = documents_df.Abstract.apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]', ' ', w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]', ' ', w).lower() not in stop_words_l))
