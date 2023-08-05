@@ -1,10 +1,8 @@
 import pandas as pd
-import numpy as np
 import nltk
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from nltk.tokenize import word_tokenize
 from resources.sheets import get_data_from_sheet
 
 def abstract_similarity(text):
@@ -25,11 +23,14 @@ def abstract_similarity(text):
             documents_df = pd.read_csv('/etc/secrets/abstracts.csv')
         except:
             documents_df = pd.read_csv('resources/abstracts.csv')
+    try:
+        nltk.data.find('corpora/stopwords.zip')
 
-    nltk.download('stopwords')  # Download the stopwords resource
+    except LookupError:
+        # Download the stopwords dataset if not already downloaded
+        nltk.download('stopwords')
 
     stop_words_l = nltk.corpus.stopwords.words('english')
-
     documents_df = documents_df.drop(['Timestamp'], axis=1)
     documents_df = documents_df.rename(columns={'Group Members \n(Name of all members)': 'GroupMembers', 
                                                 'Course (If Mtech)': 'Course', 
@@ -58,6 +59,7 @@ def abstract_similarity(text):
     most_similar_docs = similarities.argsort()[0][-5:][::-1]  # Get top 5 similar documents
     for doc_index in most_similar_docs:
         record_dict = documents_df.iloc[doc_index].to_dict()
+        record_dict.pop('Course', None)
         df_dict[int(index)] = record_dict
         index = index + 1
     return df_dict
