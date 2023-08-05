@@ -28,11 +28,13 @@ def get_data_from_sheet():
 
     try:
         cred_file = "/etc/secrets/credentials.json"
+        credentials = service_account.Credentials.from_service_account_file(cred_file, scopes=SCOPES)
     except:
         cred_file = "credentials.json"
+        credentials = service_account.Credentials.from_service_account_file(cred_file, scopes=SCOPES)
 
     try:
-        credentials = service_account.Credentials.from_service_account_file(cred_file, scopes=SCOPES)
+        
         service = discovery.build('sheets', 'v4', credentials=credentials)
 
         sheet = service.spreadsheets()
