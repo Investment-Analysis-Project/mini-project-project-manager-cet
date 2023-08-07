@@ -6,7 +6,7 @@
 
 .homeintro{
     width: 100%;
-    height:50%;
+    height:180px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -29,7 +29,7 @@
 }
 
 .homemenu{
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     max-width: 1024px;
     display:flex;
