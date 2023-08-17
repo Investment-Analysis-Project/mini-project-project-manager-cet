@@ -17,7 +17,7 @@ const comparePassword = async (password,hash) => {
 
 const checkUsername = async (username) => {
     try{
-        const query = 'SELECT COUNT(*) FROM Usertable WHERE username = $1';
+        const query = 'SELECT COUNT(*) FROM Usertable WHERE user_name = $1';
         const result = await db.query(query,[username]);
 
         const count = parseInt(result.rows[0].count) 

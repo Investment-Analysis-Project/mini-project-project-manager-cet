@@ -35,11 +35,8 @@ const getuseridFaculty = async(req,res)=>{
 const addFaculty = async(req,res)=>{
 
     try{
-        const {username,password,email,faculty_id,faculty_name,designation,area_of_interest,
-            experience,contact}=req.body;
-
-        
-        if (await auth_function.checkUsername(username) == true){
+        const {user_name,email,faculty_id,password} = req.body;
+        if (await auth_function.checkUsername(user_name) == true){
             return res.status(400).json({ error: 'Username already exists' });
         }
 
@@ -50,9 +47,9 @@ const addFaculty = async(req,res)=>{
         if (await auth_function.checkFacultyId(faculty_id) == true){
             return res.status(400).json({ error: 'Faculty already exists' });
         }
-        const rows = await model.createFaculty(username,password,email,faculty_id,faculty_name,
-                                                designation,area_of_interest,experience,contact);
-        console.log(rows);
+
+        const rows = await model.createFaculty(user_name,password,email,faculty_id);
+        // console.log(rows);
 
         res.json(rows);
 

@@ -14,16 +14,16 @@ const Addguide = () => {
     const [faculty_id,setfaculty_id]=useState("");
     const [email,setemail]=useState("");
 
-    const {addGuide,setCurr_aof}=useContext(ProjectsContext);
+    const {setCurr_aof}=useContext(ProjectsContext);
    
     const submitForm = async(e)=>{
         e.preventDefault();
 
         const token = localStorage.getItem('token');
-
+        const password = "password";
         try{
             const response = await baseurl.post("/auth/create",{
-              user_name,email,faculty_id},
+              user_name,email,faculty_id,password},
               {
                 headers:
                 {
