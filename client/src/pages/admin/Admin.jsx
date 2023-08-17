@@ -55,9 +55,9 @@ const Admin = () => {
                         <span>Upload Excel file of projects</span>
                     </div> 
 
-                    <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(false);setfb(true)}}>
+                    {/* <div className='adminoptions' onClick={()=>{setanp(false);setang(false);setabg(false);setsg(false);setfb(true)}}>
                         <span>Upload Excel file of faculties</span>
-                    </div> 
+                    </div>  */}
                 </div>
             </div>
             

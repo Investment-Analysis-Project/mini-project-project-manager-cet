@@ -14,14 +14,14 @@
 .adminprofile{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 50px;
     gap: 30px;
     text-align: center;
 }
 
 .adminoptions{
-    background: rgb(24, 108, 48);
+    background: rgb(45, 146, 74);
     color: #ffffff;
     border: none;
     padding: 5px;
